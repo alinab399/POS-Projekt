@@ -7,6 +7,20 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AnalysePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AnwesenheitsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AnalysePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AnwesenheitsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
