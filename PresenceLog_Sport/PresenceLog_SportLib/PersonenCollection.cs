@@ -9,5 +9,25 @@ namespace PresenceLog_SportLib
 {
     public class PersonenCollection
     {
+        public List<Person> Personen = new List<Person>();
+
+        public PersonenCollection()
+        {
+
+        }
+
+        public PersonenCollection(List<Person> personen)
+        {
+
+        }
+
+        public void PersonenHinzufügen(Person person)
+        {
+
+        }
     }
+
+   
+
+
 }
