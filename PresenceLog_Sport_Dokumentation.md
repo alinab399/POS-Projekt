@@ -1,4 +1,4 @@
-# **Projektname**
+# **PrecensLog Sport**
 
 ## Projektgruppe: Aleksandra Vidovic & Alina Bischof
 ## Klasse: 2AHIF
@@ -11,10 +11,10 @@
 
 
 
-Betreuer: Lukas Diem                                                                                          
-Kurzbeschreibung: 
-Programm zur Simulation von digitalen Filtern (FIR o. IIR).
-Durch Angabe des Filtertyps der Ordnung und der Koeffizienten wird die Übertragungsfunktion ermittelt und das PN Diagramm erstellt oder anhand eines PN Diagrammes die Filterkoeffizienten ermittelt.
+## Betreuer: Lukas Diem, David Bechtold                                                                                    
+## Kurzbeschreibung: Programm für Sportvereine zur Unterstützung der Anwesenheitskontrolle und Trainingsvorbereitung.
+
+
 Collage mit mindestens zwei Screenshots 
 
 
@@ -31,14 +31,20 @@ for (int i = 0; i < ausgangswerte.Length; i++)
       t2 = t1;
       t1 = omega0;
 }
+
+
 1	Inhaltsverzeichnis
 
- 
+
+
+
+
+
+
 2	Projektzeitplan
-Datum	Aufgabe	Bearbeiter	Status (%)
-19.04.2022	Solve Funktion für quadr. Gleichungen erstellen	Nesensohn	100%
-	IIR Filter 2. Ordnung berrechnen	Pircher	80%
-26.04.2022			
+|    Datum    |   Aufgabe  | Bearbeiter | Status (%) |
+| ----------- | ---------- | ---------- | ---------- |
+|             |            |            |            |
 			
 			
 			
