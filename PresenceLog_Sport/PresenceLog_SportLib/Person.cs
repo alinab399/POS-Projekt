@@ -10,7 +10,9 @@ namespace PresenceLog_SportLib
 
         public Person(string vorname, string nachname, DateTime geburtstag)
         {
-
+            this.Vorname = vorname;
+            this.Nachname = nachname;
+            this.Geburtstag = geburtstag;
         }
 
 
