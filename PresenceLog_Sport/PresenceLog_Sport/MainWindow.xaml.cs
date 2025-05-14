@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using PresenceLog_SportLib;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,8 @@ namespace PresenceLog_Sport
         public MainWindow()
         {
             InitializeComponent();
+
+            
         }
     }
 }

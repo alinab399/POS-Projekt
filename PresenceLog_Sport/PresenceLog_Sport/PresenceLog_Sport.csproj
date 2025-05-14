@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PresenceLog_SportLib\PresenceLog_SportLib.csproj" />
+  </ItemGroup>
+
 </Project>
