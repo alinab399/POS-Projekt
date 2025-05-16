@@ -52,6 +52,10 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  14.05.2025 |  Trainingsgruppe-Klasse| Alina Bischof| 50%|
 |  14.05.2025 |  Library mit Klassen erstellt| Alina Bischof| 100%|
 |  14.05.2025 | Analysepage & Anwesenheitspage erstellt| Alina Bischof| 10%|
+|  16.05.2025 | Trainingsgruppe erstellen Button Click_Event erstellt|Aleksandra Vidovic|50%|
+|  16.05.2025 | TrainingsgruppenErstellen Window aufgebaut|Aleksandra Vidovic|60%|
+|  16.05.2025 | Personen Klasse Methode: Serialize und Deserialize|Alina Bischof|80%|
+|  16.05.2025 | PersonenCollection Klasse-Methode: Load from CSV| Alina Bischof|90%|
 			
 			
 			
