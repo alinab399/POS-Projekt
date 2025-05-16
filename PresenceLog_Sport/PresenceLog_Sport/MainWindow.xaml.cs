@@ -24,7 +24,7 @@ namespace PresenceLog_Sport
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void GruppeErstellenBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }
