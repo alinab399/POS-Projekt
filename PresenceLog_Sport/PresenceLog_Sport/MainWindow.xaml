@@ -8,7 +8,7 @@
         Title="PresenceLog Sport" Height="450" Width="800">
     <Grid>
         <DatePicker HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.731,0.377"/>
-        <Button Content="neue Trainingsgruppe erstellen" HorizontalAlignment="Left" Margin="570,334,0,0" VerticalAlignment="Top" Height="45"/>
+        <Button x:Name="GruppeErstellenBtn" Content="neue Trainingsgruppe erstellen" HorizontalAlignment="Left" Margin="570,334,0,0" VerticalAlignment="Top" Height="45" Click="Button_Click"/>
 
     </Grid>
 </Window>
