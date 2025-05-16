@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,24 @@ namespace PresenceLog_SportLib
         {
 
         }
+
+
+        public void LoadFromCSV(string filename)
+        {
+            Personen.Clear();
+
+            using (StreamReader stream = new StreamReader(filename))
+            {
+                while (!stream.EndOfStream)
+                {
+                    string personenString = stream.ReadLine();
+
+                    Personen.Add(Person.Deserialize(personenString));
+                }
+            }
+        }
+
+
     }
 
    
