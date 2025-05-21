@@ -34,6 +34,33 @@
         <CheckBox Grid.Column="1" Content="Freitag" HorizontalAlignment="Left" Margin="5,28,0,0" Grid.Row="2" VerticalAlignment="Top"/>
         <CheckBox Grid.Column="1" Content="Samstag" HorizontalAlignment="Left" Margin="89,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
         <CheckBox Grid.Column="1" Content="Sonntag" HorizontalAlignment="Left" Margin="177,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
+        <ListView x:Name="ListViewMitglieder" Grid.ColumnSpan="2" Grid.Row="3">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Hinzufügen" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IstInTrainingsgruppe, UpdateSourceTrigger=PropertyChanged}">
+                                    
+                                </CheckBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Vorname" Width="200" DisplayMemberBinding="{Binding Vorname}">
+                        
+                    </GridViewColumn>
+                    <GridViewColumn Header="Nachname" Width="200" DisplayMemberBinding="{Binding Nachname}">
+                        
+                    </GridViewColumn>
+                    <GridViewColumn Header="Geburtsdatum" Width="150" DisplayMemberBinding="{Binding Geburtsdatum}">
+                        
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="AbbrechenBtn" Content="Abbrechen" Grid.Column="0" Grid.Row="4" Margin="20" Width="100"></Button>
+        <Button x:Name="OKBtn" Content="OK" Grid.Column="1" Grid.Row="5" Margin="20" Width="100"></Button>
+        
 
 
 
