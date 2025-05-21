@@ -24,5 +24,14 @@ namespace PresenceLog_Sport
         {
             InitializeComponent();
         }
+        private void AnwesendButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AbwesendButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
