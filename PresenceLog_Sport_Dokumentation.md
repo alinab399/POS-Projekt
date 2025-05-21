@@ -57,6 +57,8 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  16.05.2025 |  Personen Klasse Methode: Serialize und Deserialize|Alina Bischof|80%|
 |  16.05.2025 |  PersonenCollection Klasse-Methode: Load from CSV| Alina Bischof|90% |
 |  17.05.2025 |  Person-Klasse und PersonenCollection alle Methoden implementiert mit Fehlerbehandlung bei Laden und Speichern einer Datei| Alina Bischof | 100% |
+| 21.05.2025| Trainingsgruppe erstellen (GUI) aufgebaut| Aleksandra Vidovic und Alina Bischof | 100%|
+| 21.05.2025 | AnwesenheitsPage GUI aufgebaut| Alina Bischof | 100 % |
 			
 			
 			
