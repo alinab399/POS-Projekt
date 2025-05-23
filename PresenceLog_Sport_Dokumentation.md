@@ -59,6 +59,9 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  17.05.2025 |  Person-Klasse und PersonenCollection alle Methoden implementiert mit Fehlerbehandlung bei Laden und Speichern einer Datei| Alina Bischof | 100% |
 | 21.05.2025| Trainingsgruppe erstellen (GUI) aufgebaut| Aleksandra Vidovic und Alina Bischof | 100%|
 | 21.05.2025 | AnwesenheitsPage GUI aufgebaut| Alina Bischof | 100 % |
+| 21.05.2025 | OK_Button programmiert| Aleksandra Vidovic| 100%|
+| 21.05.2025 | Abbrechen_Button programmiert| Aleksandra Vidovic | 100 % |
+| 21.05.2025 |                               | Alina Bischof     |       |
 			
 			
 			

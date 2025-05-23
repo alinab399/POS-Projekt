@@ -23,5 +23,16 @@ namespace PresenceLog_Sport
         {
             InitializeComponent();
         }
+
+        private void OKBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true; /* Wenn man auf OK drückt, dann schließ sich das Fenster, da
+                                       * man das DialogResult auf True gesetzt hat*/
+        }
+
+        private void AbbrechenBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close(); /* Schließt das Fenster, sobald man auf den Abbrechen Button drückt*/
+        }
     }
 }
