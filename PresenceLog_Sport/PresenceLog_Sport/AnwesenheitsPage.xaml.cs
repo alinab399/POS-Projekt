@@ -30,7 +30,7 @@ namespace PresenceLog_Sport
             personenCollection.Add(new Person("Anna", "Mayer", DateTime.Now));
             personenCollection.Add(new Person("Peter", "Fritz", DateTime.Now));
 
-            ListViewMitglieder.ItemsSource = personenCollection;
+            ListViewAnwesenheit.ItemsSource = personenCollection;
 
         }
         private void AnwesendButton_Click(object sender, RoutedEventArgs e)
