@@ -11,7 +11,7 @@ namespace PresenceLog_SportLib
 {
     public class PersonenCollection
     {
-        private List<Person> Personen = new List<Person>();
+        public List<Person> Personen = new List<Person>();
 
         public PersonenCollection()
         {
