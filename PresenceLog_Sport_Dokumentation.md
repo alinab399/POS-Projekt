@@ -44,27 +44,29 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 2	Projektzeitplan
 |    Datum    |   Aufgabe  | Bearbeiter | Status (%) |
 | ----------- | ---------- | ---------- | ---------- |
-|  14.05.2025 |  Personen-Klasse| Aleksandra Vidovic | 50%|
-|  14.05.2025 |  Personen-Collection-Klasse| Aleksandra Vidovic | 50%|
-|  14.05.2025 |  Trainingsgruppe-Collection-Klasse| Aleksandra Vidovic | 50%|
-|  14.05.2025 |  Startseite| Aleksandra Vidovic | 15%|
-|  14.05.2025 |  UserControl| Aleksandra Vidovic | 100%|
-|  14.05.2025 |  Trainingsgruppe-Klasse| Alina Bischof| 50%|
-|  14.05.2025 |  Library mit Klassen erstellt| Alina Bischof| 100%|
-|  14.05.2025 |  Analysepage & Anwesenheitspage erstellt| Alina Bischof| 10%|
-|  16.05.2025 |  Trainingsgruppe erstellen Button Click_Event erstellt|Aleksandra Vidovic|50%|
-|  16.05.2025 |  TrainingsgruppenErstellen Window aufgebaut|Aleksandra Vidovic|60%|
-|  16.05.2025 |  Personen Klasse Methode: Serialize und Deserialize|Alina Bischof|80%|
-|  16.05.2025 |  PersonenCollection Klasse-Methode: Load from CSV| Alina Bischof|90% |
-|  17.05.2025 |  Person-Klasse und PersonenCollection alle Methoden implementiert mit Fehlerbehandlung bei Laden und Speichern einer Datei| Alina Bischof | 100% |
-|  21.05.2025 | Trainingsgruppe erstellen (GUI) aufgebaut| Aleksandra Vidovic und Alina Bischof | 100%|
-|  21.05.2025 | AnwesenheitsPage GUI aufgebaut| Alina Bischof | 100 % |
-|  21.05.2025 | OK_Button programmiert| Aleksandra Vidovic| 100%|
-|  21.05.2025 | Abbrechen_Button programmiert| Aleksandra Vidovic | 100 % |
+|  14.05.2025 | Personen-Klasse | Aleksandra Vidovic | 50% |
+|  14.05.2025 | Personen-Collection-Klasse | Aleksandra Vidovic | 50% |
+|  14.05.2025 | Trainingsgruppe-Collection-Klasse | Aleksandra Vidovic | 50% |
+|  14.05.2025 | Startseite | Aleksandra Vidovic | 15% |
+|  14.05.2025 | UserControl | Aleksandra Vidovic | 100% |
+|  14.05.2025 | Trainingsgruppe-Klasse | Alina Bischof| 50% |
+|  14.05.2025 | Library mit Klassen erstellt | Alina Bischof| 100% |
+|  14.05.2025 | Analysepage & Anwesenheitspage erstellt | Alina Bischof| 10% |
+|  16.05.2025 | Trainingsgruppe erstellen Button Click_Event erstellt | Aleksandra Vidovic | 50% |
+|  16.05.2025 | TrainingsgruppenErstellen Window aufgebaut | Aleksandra Vidovic | 60% |
+|  16.05.2025 | Personen Klasse Methode: Serialize und Deserialize | Alina Bischof | 80% |
+|  16.05.2025 | PersonenCollection Klasse-Methode: Load from CSV | Alina Bischof | 90% |
+|  17.05.2025 | Person-Klasse und PersonenCollection alle Methoden implementiert mit Fehlerbehandlung bei Laden und Speichern einer Datei | Alina Bischof | 100% |
+|  21.05.2025 | Trainingsgruppe erstellen (GUI) aufgebaut| Aleksandra Vidovic und Alina Bischof | 100% |
+|  21.05.2025 | AnwesenheitsPage GUI aufgebaut | Alina Bischof | 100% |
+|  21.05.2025 | OK_Button programmiert | Aleksandra Vidovic| 100% |
+|  21.05.2025 | Abbrechen_Button programmiert | Aleksandra Vidovic | 100% |
 |  21.05.2025 | AnwesenheitsPage Tabelle Binding | Alina Bischof | 10%  |
-|  26.05.2025 | die unten beschriebenen Probleme gelöst und ausgebessert | Alina Bischof | 10%  |
-| 28.05. 2025 | Beim OK Button wurde Daten hinzugefügt | Aleksandra Vidovic | 100% |
-| 28.05. 2025 | 
+|  26.05.2025 | die unten beschriebenen Probleme gelöst und ausgebessert | Alina Bischof | 10% |
+|  28.05.2025 | Beim OK Button wurde Daten hinzugefügt | Aleksandra Vidovic | 100% |
+|  28.05.2025 | AbwesendBegruendung Window erstellt und formartiert | Alina Bischof | 80% |
+|  28.05.2025 | AnwesenheitsPage Anwesend/Abwesend Button: Hintergrundfarbe und dass nur einer angeklickt werden kann | Alina Bischof | 100% |
+
 			
 			
 			
