@@ -57,15 +57,12 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  16.05.2025 |  Personen Klasse Methode: Serialize und Deserialize|Alina Bischof|80%|
 |  16.05.2025 |  PersonenCollection Klasse-Methode: Load from CSV| Alina Bischof|90% |
 |  17.05.2025 |  Person-Klasse und PersonenCollection alle Methoden implementiert mit Fehlerbehandlung bei Laden und Speichern einer Datei| Alina Bischof | 100% |
-| 21.05.2025| Trainingsgruppe erstellen (GUI) aufgebaut| Aleksandra Vidovic und Alina Bischof | 100%|
-| 21.05.2025 | AnwesenheitsPage GUI aufgebaut| Alina Bischof | 100 % |
-| 21.05.2025 | OK_Button programmiert| Aleksandra Vidovic| 100%|
-| 21.05.2025 | Abbrechen_Button programmiert| Aleksandra Vidovic | 100 % |
-| 21.05.2025 | 
-
-
-
-                              | Alina Bischof     |       |
+|  21.05.2025 | Trainingsgruppe erstellen (GUI) aufgebaut| Aleksandra Vidovic und Alina Bischof | 100%|
+|  21.05.2025 | AnwesenheitsPage GUI aufgebaut| Alina Bischof | 100 % |
+|  21.05.2025 | OK_Button programmiert| Aleksandra Vidovic| 100%|
+|  21.05.2025 | Abbrechen_Button programmiert| Aleksandra Vidovic | 100 % |
+|  21.05.2025 | AnwesenheitsPage Tabelle Binding | Alina Bischof | 10%  |
+|  26.05.2025 | die unten beschriebenen Probleme gelöst und ausgebessert | Alina Bischof | 10%  |
 			
 			
 			
@@ -95,6 +92,11 @@ Klassendiagramme, um die Klassen abzubilden.
 Wie arbeiten die Klassen miteinander? Hier könnt ihr beispielsweise Flussdiagramme verwenden, um dies abzubilden.
 4.2	Umsetzungsdetails
 Detaillierte Beschreibung der Umsetzung mit möglichen Fehlern und Lösungen
+|    Datum    |   Fehler  | Lösung | Bearbeiter |
+| ----------- | ---------- | ---------- | ---------- |
+|  26.05.2025 |  kein Zugriff auf Properties | Properties öffentlich machen | Alina Bischof |
+|  26.05.2025 |  Property einmal Geburtsdatum und einmal Geburtstag benannt | alles auf Geburtsdatum geändert | Alina Bischof |
+
 4.3	Ergebnisse, Interpretation (Tests)
 Wie läuft das Programm?
 Welche Schwachstellen hat es?   (z.B. Programmlauf nicht flüssig)
@@ -103,7 +105,10 @@ Welche Schwachstellen hat es?   (z.B. Programmlauf nicht flüssig)
 5.1	Installationsanleitung
 Was muss alles installiert werden 
 5.2	Bedienungsanleitung
-Muss so genau sein, dass auch ein neuer, unbedarfter Benutzer damit zurechtkommt.  
+Muss so genau sein, dass auch ein neuer, unbedarfter Benutzer damit zurechtkommt.
+
+
+
 6	Bekannte Bugs, Probleme
 Welche Bugs liegen noch vor? Warum konnten sie nicht behoben werden?
 

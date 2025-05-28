@@ -8,7 +8,7 @@ namespace PresenceLog_SportLib
 {
     public class TrainingsgruppeCollection
     {
-        public List<Trainingsgruppe> Trainingsgruppen;
+        public List<Trainingsgruppe> Trainingsgruppen = new List<Trainingsgruppe>();
 
         public TrainingsgruppeCollection()
         {

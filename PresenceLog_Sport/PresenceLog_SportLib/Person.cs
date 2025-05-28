@@ -5,23 +5,23 @@ namespace PresenceLog_SportLib
 {
     public class Person
     {
-        private string Vorname { get; set; }
-        private string Nachname { get; set; }
-        private DateTime Geburtstag;
-        private List<bool> Anwesend = new List<bool>();
+        public string Vorname { get; set; }
+        public string Nachname { get; set; }
+        public DateTime Geburtsdatum { get; set; }
+        public List<bool> Anwesend = new List<bool>();
 
-        public Person(string vorname, string nachname, DateTime geburtstag)
+        public Person(string vorname, string nachname, DateTime geburtsdatum)
         {
             this.Vorname = vorname;
             this.Nachname = nachname;
-            this.Geburtstag = geburtstag;
+            this.Geburtsdatum = geburtsdatum;
         }
 
-        public Person(string vorname, string nachname, DateTime geburtstag, List<bool> anwesend)
+        public Person(string vorname, string nachname, DateTime geburtsdatum, List<bool> anwesend)
         {
             this.Vorname = vorname;
             this.Nachname = nachname;
-            this.Geburtstag = geburtstag;
+            this.Geburtsdatum = geburtsdatum;
             this.Anwesend = anwesend;
         }
 
@@ -61,9 +61,9 @@ namespace PresenceLog_SportLib
         public string Serialisieren()
         {
             string anwesenheitString = AnwesenheitSerialisieren();
-            string geburtstagString = Geburtstag.ToString("yyyy-MM-dd");
+            string geburtsdatumString = Geburtsdatum.ToString("yyyy-MM-dd");
 
-            return $"{Vorname};{Nachname};{geburtstagString};{anwesenheitString}";
+            return $"{Vorname};{Nachname};{geburtsdatumString};{anwesenheitString}";
         }
 
         public static Person Deserialisieren(string serialized)
@@ -72,13 +72,13 @@ namespace PresenceLog_SportLib
 
             string vorname = DataSplit[0];
             string nachname = DataSplit[1];
-            DateTime geburtstag = DateTime.Parse(DataSplit[2]);
+            DateTime geburtsdatum = DateTime.Parse(DataSplit[2]);
             
 
             string anwesenheitString = DataSplit[3];
             List<bool> anwesend = AnwesenheitDeserialisieren(anwesenheitString);
 
-            return new Person(vorname, nachname, geburtstag, anwesend);
+            return new Person(vorname, nachname, geburtsdatum, anwesend);
         }
 
        

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PresenceLog_SportLib;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,13 @@ namespace PresenceLog_Sport
         public AnwesenheitsPage()
         {
             InitializeComponent();
+
+            ObservableCollection<Person> personenCollection = new ObservableCollection<Person>();
+            personenCollection.Add(new Person("Anna", "Mayer", DateTime.Now));
+            personenCollection.Add(new Person("Peter", "Fritz", DateTime.Now));
+
+            ListViewAnwesenheit.ItemsSource = personenCollection;
+
         }
         private void AnwesendButton_Click(object sender, RoutedEventArgs e)
         {

@@ -9,11 +9,11 @@
       Title="Anwesenheit">
 
     <Grid>
-        <ListView x:Name="ListViewMitglieder" Grid.ColumnSpan="2" Grid.Row="3">
+        <ListView x:Name="ListViewAnwesenheit" Grid.ColumnSpan="2" Grid.Row="3">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Vorname" Width="150" DisplayMemberBinding="{Binding Vorname}"></GridViewColumn>
-                    <GridViewColumn Header="Nachname" Width="150" DisplayMemberBinding="{Binding Nachname}"></GridViewColumn>
+                    <GridViewColumn Header="Vorname" Width="150" DisplayMemberBinding="{Binding Path=Vorname}"></GridViewColumn>
+                    <GridViewColumn Header="Nachname" Width="150" DisplayMemberBinding="{Binding Path=Nachname}"></GridViewColumn>
                     <GridViewColumn Header="Geburtsdatum" Width="150" DisplayMemberBinding="{Binding Geburtsdatum}"></GridViewColumn>
                     <GridViewColumn Header="Anwesend" Width="100">
                         <GridViewColumn.CellTemplate>
