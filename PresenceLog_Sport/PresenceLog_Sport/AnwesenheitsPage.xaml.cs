@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace PresenceLog_Sport
 {
     /// <summary>
@@ -25,6 +26,7 @@ namespace PresenceLog_Sport
         public AnwesenheitsPage()
         {
             InitializeComponent();
+            //PersonenCollection personen = new PersonenCollection();
 
             ObservableCollection<Person> personenCollection = new ObservableCollection<Person>();
             personenCollection.Add(new Person("Anna", "Mayer", DateTime.Now));
@@ -36,10 +38,29 @@ namespace PresenceLog_Sport
         private void AnwesendButton_Click(object sender, RoutedEventArgs e)
         {
 
+            Button clickedButton = (Button)sender;
+            StackPanel stackPanel = (StackPanel)clickedButton.Parent; // Wenn die Umwandlung nicht möglich ist, wird eine InvalidCastException geworfen
+
+            foreach (Button button in stackPanel.Children)
+            {
+                button.Background = Brushes.LightGray;
+            }
+
+            clickedButton.Background = Brushes.ForestGreen;
+
         }
 
         private void AbwesendButton_Click(object sender, RoutedEventArgs e)
         {
+            Button clickedButton = (Button)sender;
+            StackPanel stackPanel = (StackPanel)clickedButton.Parent; // Wenn die Umwandlung nicht möglich ist, wird eine InvalidCastException geworfen
+
+            foreach (Button button in stackPanel.Children)
+            {
+                button.Background = Brushes.LightGray;
+            }
+
+            clickedButton.Background = Brushes.IndianRed;
 
         }
     }

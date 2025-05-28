@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,14 +12,14 @@ namespace PresenceLog_SportLib
 {
     public class PersonenCollection
     {
-        public List<Person> Personen = new List<Person>();
+        public ObservableCollection<Person> Personen = new ObservableCollection<Person>();
 
         public PersonenCollection()
         {
 
         }
 
-        public PersonenCollection(List<Person> personen)
+        public PersonenCollection(ObservableCollection<Person> personen)
         {
             this.Personen = personen;
         }

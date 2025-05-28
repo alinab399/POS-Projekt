@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AbwesendBegruendung.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="TrainingsgruppeErstellen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,6 +26,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AbwesendBegruendung.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AnalysePage.xaml">
       <SubType>Designer</SubType>
     </Page>
