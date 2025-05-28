@@ -29,7 +29,7 @@ namespace PresenceLog_Sport
             TrainingsgruppeErstellen window = new TrainingsgruppeErstellen();
             if(window.ShowDialog() == true)
             {
-
+               
             }
         }
     }

@@ -23,19 +23,19 @@
         </Grid.RowDefinitions>
         
         <Label Content="Titel:" Grid.Column="0" Grid.Row="0"/>
-        <TextBox Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="Fußballmanschaft 2025"/>
-        <DatePicker Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="TextBoxTitel" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="Fußballmanschaft 2025"/>
+        <DatePicker x:Name="Startdate" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Content="Anfangsdatum" Grid.Row="1" Grid.Column="0"/>
         <Label Grid.Column="0" Content="Enddatum:" Grid.Row="2" />
-        <DatePicker Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"/>
+        <DatePicker x:Name="Enddate" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"/>
         <Label Content="Wochentage:" Grid.Row="3" Grid.Column="0"/>
-        <CheckBox Grid.Column="1" Content="Montag" HorizontalAlignment="Left" Margin="5,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <CheckBox Grid.Column="1" Content="Dienstag" HorizontalAlignment="Left" Margin="89,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <CheckBox Grid.Column="1" Content="Mittwoch" HorizontalAlignment="Left" Margin="177,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <CheckBox Grid.Column="1" Content="Donnerstag" HorizontalAlignment="Left" Margin="268,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <CheckBox Grid.Column="1" Content="Freitag" HorizontalAlignment="Left" Margin="5,28,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <CheckBox Grid.Column="1" Content="Samstag" HorizontalAlignment="Left" Margin="89,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
-        <CheckBox Grid.Column="1" Content="Sonntag" HorizontalAlignment="Left" Margin="177,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
+        <CheckBox x:Name="montag" Grid.Column="1" Content="Montag" HorizontalAlignment="Left" Margin="5,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+        <CheckBox x:Name="dienstag" Grid.Column="1" Content="Dienstag" HorizontalAlignment="Left" Margin="89,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+        <CheckBox x:Name="mittwoch" Grid.Column="1" Content="Mittwoch" HorizontalAlignment="Left" Margin="177,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+        <CheckBox x:Name="donnerstag" Grid.Column="1" Content="Donnerstag" HorizontalAlignment="Left" Margin="268,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+        <CheckBox x:Name="freitag" Grid.Column="1" Content="Freitag" HorizontalAlignment="Left" Margin="5,28,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+        <CheckBox x:Name="samstag" Grid.Column="1" Content="Samstag" HorizontalAlignment="Left" Margin="89,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
+        <CheckBox x:Name="sonntag" Grid.Column="1" Content="Sonntag" HorizontalAlignment="Left" Margin="177,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
         <ListView x:Name="ListViewMitglieder" Grid.ColumnSpan="2" Grid.Row="4">
             <ListView.View>
                 <GridView>
