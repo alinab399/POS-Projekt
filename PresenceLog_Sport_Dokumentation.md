@@ -64,6 +64,7 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  21.05.2025 | AnwesenheitsPage Tabelle Binding | Alina Bischof | 10%  |
 |  26.05.2025 | die unten beschriebenen Probleme gelöst und ausgebessert | Alina Bischof | 10%  |
 | 28.05. 2025 | Beim OK Button wurde Daten hinzugefügt | Aleksandra Vidovic | 100% |
+| 28.05. 2025 | 
 			
 			
 			
