@@ -8,7 +8,7 @@ namespace PresenceLog_SportLib
         public string Vorname { get; set; }
         public string Nachname { get; set; }
         public DateTime Geburtsdatum { get; set; }
-        public List<bool> Anwesend = new List<bool>();
+        public AbAnwesenheit Anwesenheit { get; set; }
 
         public Person(string vorname, string nachname, DateTime geburtsdatum)
         {
@@ -17,12 +17,12 @@ namespace PresenceLog_SportLib
             this.Geburtsdatum = geburtsdatum;
         }
 
-        public Person(string vorname, string nachname, DateTime geburtsdatum, List<bool> anwesend)
+        public Person(string vorname, string nachname, DateTime geburtsdatum, AbAnwesenheit anwesenheit)
         {
             this.Vorname = vorname;
             this.Nachname = nachname;
             this.Geburtsdatum = geburtsdatum;
-            this.Anwesend = anwesend;
+            this.Anwesenheit = anwesenheit;
         }
 
 
@@ -30,7 +30,7 @@ namespace PresenceLog_SportLib
         {
             string anwesenheitString = "";
 
-            for (int i = 0; i < Anwesend.Count; i++)
+            for (int i = 0; i < Anwesenheit.Count; i++)
             {
                 anwesenheitString += Anwesend[i].ToString();
 
@@ -76,9 +76,13 @@ namespace PresenceLog_SportLib
             
 
             string anwesenheitString = DataSplit[3];
-            List<bool> anwesend = AnwesenheitDeserialisieren(anwesenheitString);
+            AbAnwesenheit abAnwesenheit = new AbAnwesenheit();
+            abAnwesenheit = AbAnwesenheit.Deserialisieren(anwesenheitString);
+            
+            
+            
 
-            return new Person(vorname, nachname, geburtsdatum, anwesend);
+            return new Person(vorname, nachname, geburtsdatum, abAnwesenheit);
         }
 
        

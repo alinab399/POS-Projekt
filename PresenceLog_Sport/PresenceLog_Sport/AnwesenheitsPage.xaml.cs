@@ -48,6 +48,9 @@ namespace PresenceLog_Sport
 
             clickedButton.Background = Brushes.ForestGreen;
 
+            Person person = (Person)stackPanel.DataContext;
+            person.Anwesend.Add(true);
+
         }
 
         private void AbwesendButton_Click(object sender, RoutedEventArgs e)
@@ -62,6 +65,14 @@ namespace PresenceLog_Sport
 
             clickedButton.Background = Brushes.IndianRed;
 
+            Person person = (Person)stackPanel.DataContext;
+            person.Anwesend.Add(false);
+
+            AbwesendBegruendung abwesendBegruendungWindow = new AbwesendBegruendung();
+            if (abwesendBegruendungWindow.ShowDialog() == true)
+            {
+                
+            }
         }
     }
 }
