@@ -26,41 +26,9 @@ namespace PresenceLog_SportLib
         }
 
 
-        public string AnwesenheitSerialisieren()
-        {
-            string anwesenheitString = "";
-
-            for (int i = 0; i < Anwesenheit.Count; i++)
-            {
-                anwesenheitString += Anwesend[i].ToString();
-
-                if (i < Anwesend.Count - 1)
-                {
-                    anwesenheitString += ",";
-                }
-            }
-
-            return anwesenheitString;
-
-        }
-
-        public static List<bool> AnwesenheitDeserialisieren(string anwesenheitString)
-        {
-            List<bool> anwesend = new List<bool>();
-
-            string[] teile = anwesenheitString.Split(',');
-
-            foreach (string teil in teile)
-            {
-                anwesend.Add(bool.Parse(teil));
-            }
-
-            return anwesend;
-        }
-
         public string Serialisieren()
         {
-            string anwesenheitString = AnwesenheitSerialisieren();
+            string anwesenheitString = Anwesenheit.Serialisieren();
             string geburtsdatumString = Geburtsdatum.ToString("yyyy-MM-dd");
 
             return $"{Vorname};{Nachname};{geburtsdatumString};{anwesenheitString}";

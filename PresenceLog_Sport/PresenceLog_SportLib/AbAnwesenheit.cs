@@ -12,6 +12,10 @@ namespace PresenceLog_SportLib
         public string Begruendung { get; set; }
 
         public AbAnwesenheit() { }
+        public AbAnwesenheit(bool status)
+        {
+            this.Status = status;
+        }
         public AbAnwesenheit(bool status, string begruendung)
         {
             this.Status = status;
