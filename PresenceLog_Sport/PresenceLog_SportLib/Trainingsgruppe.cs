@@ -13,8 +13,14 @@ namespace PresenceLog_SportLib
         public string Name { get; set; }
         public DateTime DatumErstesTraining {  get; set; }
         public DateTime DatumLetztesTraining { get; set; }
-        public Person Mitglied { get; set; }
 
+
+        // TODO: Mitglieder Liste erstellen
+        public Person Mitglied { get; set; }
+        public Trainingsgruppe()
+        {
+
+        }
         public Trainingsgruppe(List<string> wochentage, string name, DateTime datumErstesTraining, DateTime datumLetztesTraining)
         {
             this.Wochentage = wochentage;
@@ -23,7 +29,7 @@ namespace PresenceLog_SportLib
             this.DatumLetztesTraining = datumLetztesTraining;
         }
 
-        public void MitgliederHinzufügen(Person mitglied)
+        public void MitgliederHinzufuegen(Person mitglied)
         {
 
         }

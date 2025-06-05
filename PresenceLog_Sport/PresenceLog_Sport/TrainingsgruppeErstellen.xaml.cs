@@ -20,10 +20,12 @@ namespace PresenceLog_Sport
     /// </summary>
     public partial class TrainingsgruppeErstellen : Window
     {
-        List<string> wochentage = new List<string>(){
-            "montag", "dienstag", "mittwoch", "donnerstag", "freitag", "samstag", "sonntag"
-    };
-        public string TrainingsTitel { get; set; }
+        public string Titel {  get; set; }
+        public List<string> AusgewaehlteTage {  get; set; }
+        public DateTime Anfangsdatum {  get; set; }
+        public DateTime Enddatum {  get; set; }
+        public PersonenCollection Personen { get; set; }
+
         public TrainingsgruppeErstellen()
         {
             InitializeComponent();
@@ -31,7 +33,13 @@ namespace PresenceLog_Sport
 
         private void OKBtn_Click(object sender, RoutedEventArgs e)
         {
-            TrainingsTitel = TextBoxTitel.Text;  // Titel speichern
+            Titel = TextBoxTitel.Text;
+            AusgewaehlteTage = checkedDays();
+            Anfangsdatum = DatePickerStartdatum.SelectedDate.Value;
+            Enddatum = DatePickerEnddatum.SelectedDate.Value;
+
+            // TODO: Listview mit Checkboxen
+            
             this.DialogResult = true; // Fenster mit "OK" schließen
             this.Close();
         }
@@ -39,6 +47,40 @@ namespace PresenceLog_Sport
         private void AbbrechenBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close(); /* Schließt das Fenster, sobald man auf den Abbrechen Button drückt*/
+        }
+
+        private List<string> checkedDays()
+        {
+            List <string> days = new List<string>();
+            if (CheckBoxMontag.IsChecked == true)
+            {
+                days.Add("Monday");
+            }
+            if (CheckBoxDienstag.IsChecked == true)
+            {
+                days.Add("Tuesday");
+            }
+            if (CheckBoxMittwoch.IsChecked == true)
+            {
+                days.Add("Wednesday");
+            }
+            if (CheckBoxDonnerstag.IsChecked == true)
+            {
+                days.Add("Thursday");
+            }
+            if (CheckBoxFreitag.IsChecked == true)
+            {
+                days.Add("Friday");
+            }
+            if (CheckBoxSamstag.IsChecked == true)
+            {
+                days.Add("Saturday");
+            }
+            if (CheckBoxSonntag.IsChecked == true)
+            {
+                days.Add("Sunday");
+            }
+            return days;
         }
 
        

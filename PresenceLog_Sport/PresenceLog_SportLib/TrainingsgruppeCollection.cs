@@ -20,11 +20,11 @@ namespace PresenceLog_SportLib
 
         }
         
-        public void TrainingsgruppenHinzufügen(Trainingsgruppe trainingsgruppe)
+        public void TrainingsgruppenHinzufuegen(Trainingsgruppe trainingsgruppe)
         {
-
+            Trainingsgruppen.Add(trainingsgruppe);
         }
 
-        }
     }
+}
 
