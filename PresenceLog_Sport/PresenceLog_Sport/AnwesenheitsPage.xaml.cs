@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,14 +24,17 @@ namespace PresenceLog_Sport
     /// </summary>
     public partial class AnwesenheitsPage : Page
     {
+        ObservableCollection<Person> personenCollection = new ObservableCollection<Person>();
         public AnwesenheitsPage()
         {
             InitializeComponent();
             //PersonenCollection personen = new PersonenCollection();
 
-            ObservableCollection<Person> personenCollection = new ObservableCollection<Person>();
+          
             personenCollection.Add(new Person("Anna", "Mayer", DateTime.Now));
             personenCollection.Add(new Person("Peter", "Fritz", DateTime.Now));
+
+  
 
             ListViewAnwesenheit.ItemsSource = personenCollection;
 
@@ -66,13 +70,13 @@ namespace PresenceLog_Sport
             clickedButton.Background = Brushes.IndianRed;
 
             Person person = (Person)stackPanel.DataContext;
-            person.Anwesenheit = new AbAnwesenheit(false);
 
             AbwesendBegruendung abwesendBegruendungWindow = new AbwesendBegruendung();
             if (abwesendBegruendungWindow.ShowDialog() == true)
             {
                 
             }
+            person.Anwesenheit.Begruendung = abwesendBegruendungWindow.TextBoxBegruendung.Text;
         }
     }
 }

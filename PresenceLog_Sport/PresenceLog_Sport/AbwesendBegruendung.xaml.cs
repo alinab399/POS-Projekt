@@ -23,5 +23,18 @@ namespace PresenceLog_Sport
         {
             InitializeComponent();
         }
+
+        private void ButtonOK_Click(object sender, RoutedEventArgs e)
+        {
+            string begruendung = TextBoxBegruendung.Text;
+
+            this.DialogResult = true;
+            this.Close();
+        }
+
+        private void ButtonAbbrechen_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

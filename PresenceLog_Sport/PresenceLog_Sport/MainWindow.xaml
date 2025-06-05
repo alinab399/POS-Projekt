@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="PresenceLog Sport" Height="450" Width="800">
     <Grid>
-        <DatePicker HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.731,0.377"/>
+        <DatePicker x:Name="DatePickerTraining" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.731,0.377" SelectedDateChanged="DatePickerTraining_SelectedDateChanged"/>
         <Button x:Name="GruppeErstellenBtn" Content="neue Trainingsgruppe erstellen" HorizontalAlignment="Left" Margin="570,334,0,0" VerticalAlignment="Top" Height="45" Click="GruppeErstellenBtn_Click"/>
         <Frame Source="AnwesenheitsPage.xaml"></Frame>
         

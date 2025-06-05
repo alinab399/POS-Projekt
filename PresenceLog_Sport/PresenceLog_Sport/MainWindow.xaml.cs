@@ -17,6 +17,11 @@ namespace PresenceLog_Sport
     /// </summary>
     public partial class MainWindow : Window
     {
+        // TODO: Liste aller Trainingsgruppen!
+
+
+        public TrainingsgruppeCollection trainingsgruppeCollection = new TrainingsgruppeCollection();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +35,22 @@ namespace PresenceLog_Sport
             if(window.ShowDialog() == true)
             {
                
+            }
+        }
+
+        private void DatePickerTraining_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // TODO: Filtern der Trainingsgruppen
+
+            DateTime date = DatePickerTraining.SelectedDate.Value;
+
+            
+            foreach (Trainingsgruppe gruppe in trainingsgruppeCollection.Trainingsgruppen)
+            {
+                if (gruppe.Wochentage.Contains(date.DayOfWeek))
+                {
+
+                }
             }
         }
     }

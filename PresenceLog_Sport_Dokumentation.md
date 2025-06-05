@@ -68,6 +68,7 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  28.05.2025 | AnwesenheitsPage Anwesend/Abwesend Button: Hintergrundfarbe und dass nur einer angeklickt werden kann | Alina Bischof | 100% |
 |  03.06.2025 | Begründung kann eingegeben werden aber wird noch nicht zur richtigen Person gespeichert. | Alina Bischof | 80% |
 |  03.06.2025 | AbAnwesenheitKlasse erstellt. Deshalb gibt es noch bugs.| Alina Bischof | 70% |
+|  04.06.2025 | Bugs gefixed. AbAnwesenheit Klasse funktioniert jetzt.| Alina Bischof | 100% |
 
 
 			

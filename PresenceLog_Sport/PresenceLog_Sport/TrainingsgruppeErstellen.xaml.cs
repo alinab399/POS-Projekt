@@ -35,6 +35,13 @@ namespace PresenceLog_Sport
             string titel = TextBoxTitel.Text;
             DateTime enddatum = Enddate.SelectedDate ?? DateTime.Today;
             DateTime anfangsdatum = Startdate.SelectedDate ?? DateTime.Today;
+
+            List<DayOfWeek> trainingstage = new List<DayOfWeek>();
+            if (CheckBoxMonday.Checked)
+            {
+                trainingstage.Add(DayOfWeek.Monday);
+            }
+
             Trainingsgruppe trainingsgruppe = new Trainingsgruppe(wochentage,titel,enddatum, anfangsdatum);
         }
 

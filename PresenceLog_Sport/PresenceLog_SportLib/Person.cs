@@ -1,14 +1,23 @@
 
+using System.ComponentModel;
 using System.Xml.Linq;
 
 namespace PresenceLog_SportLib
 {
-    public class Person
+    public class Person : INotifyPropertyChanged
     {
         public string Vorname { get; set; }
         public string Nachname { get; set; }
         public DateTime Geburtsdatum { get; set; }
-        public AbAnwesenheit Anwesenheit { get; set; }
+
+        private AbAnwesenheit anwesenheit = new AbAnwesenheit(false, "");
+        public AbAnwesenheit Anwesenheit { get => anwesenheit; set
+            {
+                anwesenheit = value;
+                OnPropertyChanged(nameof(Anwesenheit));
+            } }
+
+       
 
         public Person(string vorname, string nachname, DateTime geburtsdatum)
         {
@@ -25,6 +34,11 @@ namespace PresenceLog_SportLib
             this.Anwesenheit = anwesenheit;
         }
 
+        public Person()
+        {
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public string Serialisieren()
         {
@@ -53,6 +67,8 @@ namespace PresenceLog_SportLib
             return new Person(vorname, nachname, geburtsdatum, abAnwesenheit);
         }
 
+        protected void OnPropertyChanged(string property)
+        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
        
     }
 
