@@ -20,7 +20,7 @@ namespace PresenceLog_Sport
         // TODO: Liste aller Trainingsgruppen!
 
 
-        public TrainingsgruppeCollection trainingsgruppeCollection = new TrainingsgruppeCollection();
+        public TrainingsgruppeCollection<Trainingsgruppe> trainingsgruppeCollection = new TrainingsgruppeCollection();
 
         public MainWindow()
         {
