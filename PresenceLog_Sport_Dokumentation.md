@@ -71,7 +71,8 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  03.06.2025 | Home-Button und Analyse-Buttons erstellt | Aleksandra Vidovic | 100% |
 |  04.06.2025 | Bugs gefixed. AbAnwesenheit Klasse funktioniert jetzt.| Alina Bischof | 100% |
 |  04.06.2025 | Anwesenheitspage Begründung funktioniert. | Alina Bischof | 100% |
-|  04.06.2025 | MainWindow mit Trainingsgruppen anzeigen noch dran.| Alina Bischof | 20% |
+|  04.06.2025 | MainWindow mit Trainingsgruppen anzeigen in arbeit. | Alina Bischof | 20% |
+|  05.06.2025 | Im MainWindow Trainingsgruppe erstellen und mit DatePicker anzeigen lassen weiterprogrammiert. | Alina Bischof | 70% |
 
 
 			
@@ -103,13 +104,13 @@ Klassendiagramme, um die Klassen abzubilden.
 Wie arbeiten die Klassen miteinander? Hier könnt ihr beispielsweise Flussdiagramme verwenden, um dies abzubilden.
 4.2	Umsetzungsdetails
 Detaillierte Beschreibung der Umsetzung mit möglichen Fehlern und Lösungen
-|    Datum    |   Fehler  | Lösung | Bearbeiter |
+|    Datum    |   Fehler   | Lösung | Bearbeiter |
 | ----------- | ---------- | ---------- | ---------- |
 |  26.05.2025 |  kein Zugriff auf Properties | Properties öffentlich machen | Alina Bischof |
 |  26.05.2025 |  Property einmal Geburtsdatum und einmal Geburtstag benannt | alles auf Geburtsdatum geändert | Alina Bischof |
-|  04.06.2025 | Home-Button (Bild) konnte nicht richtig hinzugefügt werden | Mit dem <Image Source="Bilder/name des bildes"> verändert und damit das Foto in dem Home-Button drinnen ist, tut man das zwischen <Button><Image Source.../></Button> hinzufügen. | Aleksandra Vidovic |  
-| 04.06.2025 | Es öffnen sich die falschen Fenster, wenn man auf die button drückt, obwohl die richtigen fenster angegeben worden sind | 
-| 04.06.2025 | Wenn ich einen Titel eingebe und diesen speichern möchte, erscheint es nicht im MainWindow Fenster |            
+|  04.06.2025 |  Home-Button (Bild) konnte nicht richtig hinzugefügt werden | Mit dem <Image Source="Bilder/name des bildes"> verändert und damit das Foto in dem Home-Button drinnen ist, tut man das zwischen <Button><Image Source.../></Button> hinzufügen. | Aleksandra Vidovic |  
+|  04.06.2025 |  Es öffnen sich die falschen Fenster, wenn man auf die button drückt, obwohl die richtigen fenster angegeben worden sind | | Aleksandra Vidovic |
+|  04.06.2025 |  Wenn ich einen Titel eingebe und diesen speichern möchte, erscheint es nicht im MainWindow Fenster | | Aleksandra Vidovic |
 
 4.3	Ergebnisse, Interpretation (Tests)
 Wie läuft das Programm?
