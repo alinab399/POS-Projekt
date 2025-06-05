@@ -48,7 +48,7 @@ namespace PresenceLog_Sport
             
             foreach (Trainingsgruppe gruppe in trainingsgruppeCollection.Trainingsgruppen)
             {
-                if (gruppe.Wochentage.Contains(date.DayOfWeek))
+                if (gruppe.Wochentage.Contains(date.DayOfWeek.ToString()))
                 {
 
                 }
