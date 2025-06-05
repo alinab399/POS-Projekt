@@ -14,11 +14,11 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Width="400" Background="black" >
+            <Button Width="400" Background="black" Click="Button_Click" >
                 <Image Source="Bilder/home_button.png"/>
             </Button>
             
-            <Button Content="Analyse" Width="400" Background="Black" Foreground="White"></Button>
+            <Button Content="Analyse" Width="400" Background="Black" Foreground="White" Click="Button_Click_1"></Button>
         </StackPanel>
         <ListView x:Name="ListViewAnwesenheit" Grid.Row="1">
             <ListView.View>

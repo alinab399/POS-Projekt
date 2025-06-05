@@ -20,9 +20,10 @@ namespace PresenceLog_Sport
     /// </summary>
     public partial class TrainingsgruppeUserControl : UserControl
     {
-        public TrainingsgruppeUserControl()
+        public TrainingsgruppeUserControl(string titel)
         {
             InitializeComponent();
+         
         }
     }
 }

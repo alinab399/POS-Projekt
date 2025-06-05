@@ -27,9 +27,10 @@ namespace PresenceLog_Sport
         private void GruppeErstellenBtn_Click(object sender, RoutedEventArgs e)
         {
             TrainingsgruppeErstellen window = new TrainingsgruppeErstellen();
-            if(window.ShowDialog() == true)
-            {
-               
+        
+            if (window.ShowDialog() == true)
+            {        
+
             }
         }
     }

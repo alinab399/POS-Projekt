@@ -23,6 +23,7 @@ namespace PresenceLog_Sport
         List<string> wochentage = new List<string>(){
             "montag", "dienstag", "mittwoch", "donnerstag", "freitag", "samstag", "sonntag"
     };
+        public string TrainingsTitel { get; set; }
         public TrainingsgruppeErstellen()
         {
             InitializeComponent();
@@ -30,12 +31,9 @@ namespace PresenceLog_Sport
 
         private void OKBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true; /* Wenn man auf OK drückt, dann schließ sich das Fenster, da
-                                       * man das DialogResult auf True gesetzt hat*/
-            string titel = TextBoxTitel.Text;
-            DateTime enddatum = Enddate.SelectedDate ?? DateTime.Today;
-            DateTime anfangsdatum = Startdate.SelectedDate ?? DateTime.Today;
-            Trainingsgruppe trainingsgruppe = new Trainingsgruppe(wochentage,titel,enddatum, anfangsdatum);
+            TrainingsTitel = TextBoxTitel.Text;  // Titel speichern
+            this.DialogResult = true; // Fenster mit "OK" schließen
+            this.Close();
         }
 
         private void AbbrechenBtn_Click(object sender, RoutedEventArgs e)

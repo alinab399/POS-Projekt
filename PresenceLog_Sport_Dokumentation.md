@@ -68,6 +68,7 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  28.05.2025 | AnwesenheitsPage Anwesend/Abwesend Button: Hintergrundfarbe und dass nur einer angeklickt werden kann | Alina Bischof | 100% |
 |  03.06.2025 | Begründung kann eingegeben werden aber wird noch nicht zur richtigen Person gespeichert. | Alina Bischof | 80% |
 |  03.06.2025 | AbAnwesenheitKlasse erstellt. Deshalb gibt es noch bugs.| Alina Bischof | 70% |
+|  03.06.2025 | Home-Button und Analyse-Buttons erstellt | Aleksandra Vidovic | 100% |
 
 
 			
@@ -103,6 +104,9 @@ Detaillierte Beschreibung der Umsetzung mit möglichen Fehlern und Lösungen
 | ----------- | ---------- | ---------- | ---------- |
 |  26.05.2025 |  kein Zugriff auf Properties | Properties öffentlich machen | Alina Bischof |
 |  26.05.2025 |  Property einmal Geburtsdatum und einmal Geburtstag benannt | alles auf Geburtsdatum geändert | Alina Bischof |
+|  04.06.2025 | Home-Button (Bild) konnte nicht richtig hinzugefügt werden | Mit dem <Image Source="Bilder/name des bildes"> verändert und damit das Foto in dem Home-Button drinnen ist, tut man das zwischen <Button><Image Source.../></Button> hinzufügen. | Aleksandra Vidovic |  
+| 04.06.2025 | Es öffnen sich die falschen Fenster, wenn man auf die button drückt, obwohl die richtigen fenster angegeben worden sind | 
+| 04.06.2025 | Wenn ich einen Titel eingebe und diesen speichern möchte, erscheint es nicht im MainWindow Fenster |            
 
 4.3	Ergebnisse, Interpretation (Tests)
 Wie läuft das Programm?
