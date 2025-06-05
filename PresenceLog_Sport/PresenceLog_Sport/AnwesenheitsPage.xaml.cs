@@ -78,5 +78,21 @@ namespace PresenceLog_Sport
             }
             person.Anwesenheit.Begruendung = abwesendBegruendungWindow.TextBoxBegruendung.Text;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        { /* Home Button */
+            MainWindow erstesfenster = new MainWindow();
+            erstesfenster.ShowDialog();
+            
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        { /* Analyse Button */
+            AnalysePage analysieren = new AnalysePage();
+            this.NavigationService.Navigate(analysieren);
+            
+           
+        }
     }
 }
