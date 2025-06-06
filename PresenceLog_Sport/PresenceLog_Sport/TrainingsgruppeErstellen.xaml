@@ -5,30 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PresenceLog_Sport"
         mc:Ignorable="d"
-        Title="TrainingsgruppeErstellen" Height="450" Width="800">
-    <Grid ShowGridLines= "True">
-        <!--Titel, DatePicker(anfang und ende training), Wochentage (CheckBox), ListView für Mitglieder.-->
+        Title="TrainingsgruppeErstellen" Height="450" Width="700">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
 
         </Grid.RowDefinitions>
         
-        <Label Content="Titel:" Grid.Column="0" Grid.Row="0"/>
-        <TextBox x:Name="TextBoxTitel" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="Fußballmanschaft 2025"/>
-        <Label Content="Anfangsdatum" Grid.Row="1" Grid.Column="0"/>
+        <Label Content="Titel:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="TextBoxTitel" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="Trainingsname" VerticalAlignment="Center"/>
+        <Label Content="Anfangsdatum" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
         <DatePicker x:Name="DatePickerStartdatum" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Grid.Column="0" Content="Enddatum:" Grid.Row="2" />
+        <Label Grid.Column="0" Content="Enddatum:" Grid.Row="2" VerticalAlignment="Center"/>
         <DatePicker x:Name="DatePickerEnddatum" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"/>
-        <Label Content="Wochentage:" Grid.Row="3" Grid.Column="0"/>
+        <Label Content="Wochentage:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+
         <CheckBox x:Name="CheckBoxMontag" Grid.Column="1" Content="Montag" HorizontalAlignment="Left" Margin="5,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
         <CheckBox x:Name="CheckBoxDienstag" Grid.Column="1" Content="Dienstag" HorizontalAlignment="Left" Margin="89,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
         <CheckBox x:Name="CheckBoxMittwoch" Grid.Column="1" Content="Mittwoch" HorizontalAlignment="Left" Margin="177,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
@@ -36,6 +36,7 @@
         <CheckBox x:Name="CheckBoxFreitag" Grid.Column="1" Content="Freitag" HorizontalAlignment="Left" Margin="5,28,0,0" Grid.Row="3" VerticalAlignment="Top"/>
         <CheckBox x:Name="CheckBoxSamstag" Grid.Column="1" Content="Samstag" HorizontalAlignment="Left" Margin="89,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
         <CheckBox x:Name="CheckBoxSonntag" Grid.Column="1" Content="Sonntag" HorizontalAlignment="Left" Margin="177,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
+
         <ListView x:Name="ListViewMitglieder" Grid.ColumnSpan="2" Grid.Row="4">
             <ListView.View>
                 <GridView>
@@ -62,15 +63,6 @@
         </ListView>
         <Button x:Name="AbbrechenBtn" Content="Abbrechen" Grid.Column="0" Grid.Row="5" Margin="20" Width="100" Click="AbbrechenBtn_Click"></Button>
         <Button x:Name="OKBtn" Content="OK" Grid.Column="1" Grid.Row="5" Margin="20" Width="100" Click="OKBtn_Click"></Button>
-        
-
-
-
-
-
-
-
-
 
     </Grid>
 </Window>
