@@ -47,8 +47,8 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  14.05.2025 | Personen-Klasse | Aleksandra Vidovic | 50% |
 |  14.05.2025 | Personen-Collection-Klasse | Aleksandra Vidovic | 50% |
 |  14.05.2025 | Trainingsgruppe-Collection-Klasse | Aleksandra Vidovic | 50% |
-|  14.05.2025 | Startseite | Aleksandra Vidovic | 15% |
-|  14.05.2025 | UserControl | Aleksandra Vidovic | 100% |
+|  14.05.2025 | Startseite GUI | Aleksandra Vidovic | 15% |
+|  14.05.2025 | UserControl GUI | Aleksandra Vidovic | 100% |
 |  14.05.2025 | Trainingsgruppe-Klasse | Alina Bischof| 50% |
 |  14.05.2025 | Library mit Klassen erstellt | Alina Bischof| 100% |
 |  14.05.2025 | Analysepage & Anwesenheitspage erstellt | Alina Bischof| 10% |
@@ -73,10 +73,11 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  04.06.2025 | Anwesenheitspage Begründung funktioniert. | Alina Bischof | 100% |
 |  04.06.2025 | MainWindow mit Trainingsgruppen anzeigen in arbeit. | Alina Bischof | 20% |
 |  05.06.2025 | Im MainWindow Trainingsgruppe erstellen und mit DatePicker anzeigen lassen weiterprogrammiert. | Alina Bischof | 70% |
-|  06.06.2025| Home Button für die Analyse-Page erstellt| Aleksandra Vidovic | 100% |
+|  06.06.2025 | Home Button für die Analyse-Page erstellt| Aleksandra Vidovic | 100% |
 |  06.06.2025 | Home Button wurde gecodet | Aleksandra Vidovic | 100 % |
 |  06.06.2025 | Personenhinzufuegen Fenster erstellt | Aleksandra Vidovic |50% |
 |  06.06.2025 | + Button für Personen hinzufügen erstellt | Aleksandra Vidovic | 100% |
+|  06.06.2025 | Mit der Checkbox angehakte Personen werden der Trainingsgruppe hinzugefügt. | Alina Bischof | 100% |
 
 
 			
