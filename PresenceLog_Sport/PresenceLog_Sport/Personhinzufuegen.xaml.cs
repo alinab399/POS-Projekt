@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PresenceLog_Sport
 {
     /// <summary>
-    /// Interaction logic for AnalysePage.xaml
+    /// Interaktionslogik für Personhinzufuegen.xaml
     /// </summary>
-    public partial class AnalysePage : Page
+    public partial class Personhinzufuegen : Window
     {
-        public AnalysePage()
+        public Personhinzufuegen()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {/* Home Button */
-            MainWindow erstesfenster = new MainWindow();
-            erstesfenster.ShowDialog();
         }
     }
 }
