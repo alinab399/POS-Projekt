@@ -75,6 +75,8 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  05.06.2025 | Im MainWindow Trainingsgruppe erstellen und mit DatePicker anzeigen lassen weiterprogrammiert. | Alina Bischof | 70% |
 |  06.06.2025| Home Button für die Analyse-Page erstellt| Aleksandra Vidovic | 100% |
 |  06.06.2025 | Home Button wurde gecodet | Aleksandra Vidovic | 100 % |
+|  06.06.2025 | Personenhinzufuegen Fenster erstellt | Aleksandra Vidovic |50% |
+|  06.06.2025 | + Button für Personen hinzufügen erstellt | Aleksandra Vidovic | 100% |
 
 
 			

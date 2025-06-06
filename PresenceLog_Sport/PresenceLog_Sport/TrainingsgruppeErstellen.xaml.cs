@@ -83,6 +83,10 @@ namespace PresenceLog_Sport
             return days;
         }
 
-       
+        private void HinzufuegenBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Personhinzufuegen neueperson = new Personhinzufuegen();
+            neueperson.ShowDialog();
+        }
     }
 }
