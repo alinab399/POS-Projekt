@@ -15,7 +15,10 @@ namespace PresenceLog_SportLib
             {
                 anwesenheit = value;
                 OnPropertyChanged(nameof(Anwesenheit));
-            } }
+            } 
+        }
+
+        public bool IstInTrainingsgruppe { get; set; }
 
        
 

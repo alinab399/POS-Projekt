@@ -24,11 +24,28 @@ namespace PresenceLog_Sport
         public List<string> AusgewaehlteTage {  get; set; }
         public DateTime Anfangsdatum {  get; set; }
         public DateTime Enddatum {  get; set; }
-        public PersonenCollection Personen { get; set; }
+
+        private PersonenCollection personen;
+        public PersonenCollection Personen 
+        { 
+            get => personen; 
+            set 
+            { 
+                personen = value;
+
+                ListViewMitglieder.ItemsSource = personen.Personen;
+                ListViewMitglieder.UpdateLayout();
+            } 
+        }
+        public PersonenCollection AusgewaehltePersonen = new PersonenCollection();
 
         public TrainingsgruppeErstellen()
         {
             InitializeComponent();
+
+            DatePickerStartdatum.SelectedDate = DateTime.Now;
+            DatePickerEnddatum.SelectedDate = DateTime.Now.AddDays(7);
+            
         }
 
         private void OKBtn_Click(object sender, RoutedEventArgs e)
@@ -38,8 +55,15 @@ namespace PresenceLog_Sport
             Anfangsdatum = DatePickerStartdatum.SelectedDate.Value;
             Enddatum = DatePickerEnddatum.SelectedDate.Value;
 
-            // TODO: Listview mit Checkboxen
-            
+            foreach(Person Mitglied in ListViewMitglieder.Items)
+            {
+                if(Mitglied.IstInTrainingsgruppe == true)
+                {
+                    AusgewaehltePersonen.PersonHinzufügen(Mitglied);
+                }
+            }
+
+
             this.DialogResult = true; // Fenster mit "OK" schließen
             this.Close();
         }

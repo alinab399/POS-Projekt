@@ -31,12 +31,22 @@ namespace PresenceLog_Sport
             TrainingsgruppeErstellen window = new TrainingsgruppeErstellen();
             Trainingsgruppe trainingsgruppe = new Trainingsgruppe();
 
+            PersonenCollection personList = new PersonenCollection();
+            personList.PersonHinzufügen(new Person("Anna", "Mayer", DateTime.Now));
+            personList.PersonHinzufügen(new Person("Franz", "Mayer", DateTime.Now));
+            personList.PersonHinzufügen(new Person("Peter", "Mayer", DateTime.Now));
+
+            personList.Speichern("data/personen.txt");
+            
+            window.Personen = personList;
+
             if (window.ShowDialog() == true)
             {
                 trainingsgruppe.Name = window.Titel;
                 trainingsgruppe.Wochentage = window.AusgewaehlteTage;
                 trainingsgruppe.DatumErstesTraining = window.Anfangsdatum;
                 trainingsgruppe.DatumLetztesTraining = window.Enddatum;
+                trainingsgruppe.Mitglieder = window.AusgewaehltePersonen;
             }
             trainingsgruppeCollection.TrainingsgruppenHinzufuegen(trainingsgruppe);
         }

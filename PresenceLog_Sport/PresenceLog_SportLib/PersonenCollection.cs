@@ -71,6 +71,9 @@ namespace PresenceLog_SportLib
         {
             try
             {
+                string directory = Path.GetDirectoryName(filename);
+                Directory.CreateDirectory(directory);
+
                 using (StreamWriter stream = new StreamWriter(filename))
                 {
                     foreach (Person Person in Personen)
