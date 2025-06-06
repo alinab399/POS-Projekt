@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="200">
     <Grid Background="AliceBlue">
-        <Label x:Name="TrainingsgruppeName" Content="Fußballmanschaft_2024/2025" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="10,0,0,0"/>
+        <Label x:Name="TrainingsgruppeName" Content="Titel" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="10,0,0,0"/>
 
     </Grid>
 </UserControl>

@@ -9,6 +9,23 @@
       Title="AnalysePage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <ListView x:Name="ListViewAnalyse" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Vorname" Width="250" DisplayMemberBinding="{Binding Path=Vorname}"></GridViewColumn>
+                    <GridViewColumn Header="Nachname" Width="250" DisplayMemberBinding="{Binding Path=Nachname}"></GridViewColumn>
+                    <GridViewColumn Header="Analyse" Width="250" DisplayMemberBinding="{Binding Analyse}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </Page>

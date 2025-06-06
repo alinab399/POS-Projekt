@@ -17,6 +17,7 @@ namespace PresenceLog_SportLib
 
         // TODO: Mitglieder Liste erstellen
         public Person Mitglied { get; set; }
+        public PersonenCollection Mitglieder { get; set; }
         public Trainingsgruppe()
         {
 
@@ -31,7 +32,7 @@ namespace PresenceLog_SportLib
 
         public void MitgliederHinzufuegen(Person mitglied)
         {
-
+            Mitglieder.PersonHinzufügen(mitglied);
         }
 
 

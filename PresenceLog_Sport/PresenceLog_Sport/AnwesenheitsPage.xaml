@@ -37,7 +37,6 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Begründung" Width="150" DisplayMemberBinding="{Binding Path=Anwesenheit.Begruendung}"></GridViewColumn>
-                    <!--Wenn auf AbwesendButton geklickt wird, wird ein Fenster geöffnet und man muss eine Begründung eingeben.-->
                 </GridView>
             </ListView.View>
         </ListView>
