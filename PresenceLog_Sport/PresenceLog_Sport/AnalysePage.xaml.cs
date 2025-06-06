@@ -24,5 +24,11 @@ namespace PresenceLog_Sport
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {/* Home Button */
+            MainWindow erstesfenster = new MainWindow();
+            erstesfenster.ShowDialog();
+        }
     }
 }

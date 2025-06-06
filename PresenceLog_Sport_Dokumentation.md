@@ -68,11 +68,13 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  28.05.2025 | AnwesenheitsPage Anwesend/Abwesend Button: Hintergrundfarbe und dass nur einer angeklickt werden kann | Alina Bischof | 100% |
 |  03.06.2025 | Begründung kann eingegeben werden aber wird noch nicht zur richtigen Person gespeichert. | Alina Bischof | 80% |
 |  03.06.2025 | AbAnwesenheitKlasse erstellt. Deshalb gibt es noch bugs.| Alina Bischof | 70% |
-|  03.06.2025 | Home-Button und Analyse-Buttons erstellt | Aleksandra Vidovic | 100% |
+|  04.06.2025 | Home-Button und Analyse-Buttons erstellt | Aleksandra Vidovic | 100% |
 |  04.06.2025 | Bugs gefixed. AbAnwesenheit Klasse funktioniert jetzt.| Alina Bischof | 100% |
 |  04.06.2025 | Anwesenheitspage Begründung funktioniert. | Alina Bischof | 100% |
 |  04.06.2025 | MainWindow mit Trainingsgruppen anzeigen in arbeit. | Alina Bischof | 20% |
 |  05.06.2025 | Im MainWindow Trainingsgruppe erstellen und mit DatePicker anzeigen lassen weiterprogrammiert. | Alina Bischof | 70% |
+|  06.06.2025| Home Button für die Analyse-Page erstellt| Aleksandra Vidovic | 100% |
+|  06.06.2025 | Home Button wurde gecodet | Aleksandra Vidovic | 100 % |
 
 
 			
