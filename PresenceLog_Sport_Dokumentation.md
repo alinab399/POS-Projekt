@@ -78,6 +78,7 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  06.06.2025 | Personenhinzufuegen Fenster erstellt | Aleksandra Vidovic |50% |
 |  06.06.2025 | + Button für Personen hinzufügen erstellt | Aleksandra Vidovic | 100% |
 |  06.06.2025 | Mit der Checkbox angehakte Personen werden der Trainingsgruppe hinzugefügt. | Alina Bischof | 100% |
+|  07.06.2025 | Personhinzufuegen GUI und Code behind wo alles Eingegebene gespeichert wird.| Alina Bischof | 100% |
 
 
 			

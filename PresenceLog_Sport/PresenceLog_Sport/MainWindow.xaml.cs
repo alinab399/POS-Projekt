@@ -22,8 +22,14 @@ namespace PresenceLog_Sport
         public MainWindow()
         {
             InitializeComponent();
+            List<string> days = new List<string>();
+            days.Add("Monday");
+            days.Add("Tuesday");
 
-            
+
+            Trainingsgruppe trainingsgruppetest = new Trainingsgruppe(days, "Test", DateTime.Now, DateTime.Now);
+            trainingsgruppeCollection.TrainingsgruppenHinzufuegen(trainingsgruppetest);
+
         }
 
         private void GruppeErstellenBtn_Click(object sender, RoutedEventArgs e)
@@ -37,6 +43,8 @@ namespace PresenceLog_Sport
             personList.PersonHinzufügen(new Person("Peter", "Mayer", DateTime.Now));
 
             personList.Speichern("data/personen.txt");
+
+            
             
             window.Personen = personList;
 
@@ -53,6 +61,7 @@ namespace PresenceLog_Sport
 
         private void DatePickerTraining_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
+            WrapPannelTrainingsgruppen.Children.Clear();
             // TODO: Filtern der Trainingsgruppen
 
             DateTime date = DatePickerTraining.SelectedDate.Value;
@@ -62,7 +71,8 @@ namespace PresenceLog_Sport
             {
                 if (gruppe.Wochentage.Contains(date.DayOfWeek.ToString()))
                 {
-                    
+                    TrainingsgruppeUserControl trainingsgruppeUserControl = new TrainingsgruppeUserControl(gruppe.Name);
+                    WrapPannelTrainingsgruppen.Children.Add(trainingsgruppeUserControl);
                 }
             }
         }

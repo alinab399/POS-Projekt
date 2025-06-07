@@ -5,10 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PresenceLog_Sport"
         mc:Ignorable="d"
-        Title="Personhinzufuegen" Height="200" Width="500">
+        Title="Person hinzufügen" Height="210" Width="500">
     <Grid>
-        <Label Content="Vorname:" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top" Width="130"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,18,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Vorname:" Grid.Row="0" Grid.Column="0"/>
+        <TextBox x:Name="TextBoxVorname" Grid.Row="0" Grid.Column="1"/>
+        <Label Content="Nachname:" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="TextBoxNachname" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Geburtsdatum:" Grid.Row="2" Grid.Column="0"/>
+        <DatePicker x:Name="DatePickerGeburtsdatum" Grid.Row="2" Grid.Column="1"/>
+
+
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="AbbrechenBtn" Content="Abbrechen" Padding="10" Width="90" Margin="5" Click="AbbrechenBtn_Click"/>
+            <Button x:Name="OkayBtn" Content="Okay" Padding="10" Width="90" Margin="5" Click="OkayBtn_Click"/>
+        </StackPanel>
+        
     </Grid>
 </Window>

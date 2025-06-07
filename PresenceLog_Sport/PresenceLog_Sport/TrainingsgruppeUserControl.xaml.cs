@@ -23,7 +23,12 @@ namespace PresenceLog_Sport
         public TrainingsgruppeUserControl(string titel)
         {
             InitializeComponent();
-         
+
+            this.Height = 150;
+            this.Width = 150;
+
+            LabelUserControlTitel.Content = titel;
+            
         }
     }
 }

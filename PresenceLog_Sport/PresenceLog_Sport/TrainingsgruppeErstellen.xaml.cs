@@ -39,6 +39,11 @@ namespace PresenceLog_Sport
         }
         public PersonenCollection AusgewaehltePersonen = new PersonenCollection();
 
+
+
+
+        
+
         public TrainingsgruppeErstellen()
         {
             InitializeComponent();
@@ -70,6 +75,7 @@ namespace PresenceLog_Sport
 
         private void AbbrechenBtn_Click(object sender, RoutedEventArgs e)
         {
+            this.DialogResult = false;
             this.Close(); /* Schließt das Fenster, sobald man auf den Abbrechen Button drückt*/
         }
 
@@ -110,7 +116,14 @@ namespace PresenceLog_Sport
         private void HinzufuegenBtn_Click(object sender, RoutedEventArgs e)
         {
             Personhinzufuegen neueperson = new Personhinzufuegen();
-            neueperson.ShowDialog();
+            if (neueperson.ShowDialog() == true)
+            {
+                Person person = new Person();
+                person.Vorname = neueperson.Vorname;
+                person.Nachname = neueperson.Nachname;
+                person.Geburtsdatum = neueperson.Geburtsdatum;
+            }
+           
         }
     }
 }
