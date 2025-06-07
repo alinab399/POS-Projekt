@@ -23,7 +23,6 @@ namespace PresenceLog_Sport
         public string Vorname { get; set; }
         public string Nachname { get; set; }
         public DateTime Geburtsdatum { get; set; }
-        // TODO: Geburtsdatum fehlerbehandlung
         public Personhinzufuegen()
         {
             InitializeComponent();
@@ -33,6 +32,7 @@ namespace PresenceLog_Sport
         {
             Vorname = TextBoxVorname.Text;
             Nachname = TextBoxNachname.Text;
+            // TODO: Geburtsdatum fehlerbehandlung
             Geburtsdatum = DatePickerGeburtsdatum.SelectedDate.Value;
 
             this.DialogResult = true;

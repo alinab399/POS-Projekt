@@ -122,7 +122,9 @@ namespace PresenceLog_Sport
                 person.Vorname = neueperson.Vorname;
                 person.Nachname = neueperson.Nachname;
                 person.Geburtsdatum = neueperson.Geburtsdatum;
+                Personen.PersonHinzufügen(person);
             }
+            
            
         }
     }
