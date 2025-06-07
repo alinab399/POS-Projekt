@@ -81,8 +81,10 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  07.06.2025 | Personhinzufuegen GUI und Code behind wo alles Eingegebene gespeichert wird. | Alina Bischof | 100% |
 |  07.06.2025 | Neu erstellte Person wird in Listview von TrainingsgruppeErstellen angezeigt. | Alina Bischof | 100% |
 |  07.06.2025 | Alle Personen die jemals hinzugefügt wurden werden in der ListView angezeigt. | Alina Bischof | 100% |
-|  07.06.2025 | Alle Trainingsgruppen werden in Json Format gespeichert. | Alina Bischof | 100% |
-|  07.06.2025 | Problem mit DatePicker und Trainingsgruppen werden nicht angezeigt gelöst. | Alina Bischof | 100% |
+|  07.06.2025 | Alle Trainingsgruppen werden in Json Format gespeichert und können geladen werden. | Alina Bischof | 100% |
+|  07.06.2025 | Problem mit DatePicker in MainWindow und Trainingsgruppen werden nicht angezeigt gelöst. | Alina Bischof | 100% |
+|  07.06.2025 | Eine StartPage erstellt und den Code vom MainWindow.xaml in die StartPage kopiert, damit im MainWindow nur der Frame steht. | Alina Bischof | 100% |
+|  07.06.2025 | Mit doppelklick auf ein TrainingsgruppeUserControl auf der StartPage öffnet sich die AnwesenheitsPage. | Alina Bischof | 100% |
 
 			
 			

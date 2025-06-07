@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PresenceLog_SportLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,15 +21,29 @@ namespace PresenceLog_Sport
     /// </summary>
     public partial class TrainingsgruppeUserControl : UserControl
     {
+        public string Titel { get; set; }
         public TrainingsgruppeUserControl(string titel)
         {
             InitializeComponent();
 
             this.Height = 150;
             this.Width = 150;
+            this.Titel = titel;
 
             LabelUserControlTitel.Content = titel;
-            
+
+        }
+
+        private void UserControl_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            AnwesenheitsPage anwesenheitPage = new AnwesenheitsPage();
+
+            // Typprüfung und Typumwandlung (Casting):
+            //Es wird geprüft: Ist das aktuelle Hauptfenster tatsächlich vom Typ MainWindow? Falls ja, wird es in die Variable mainWindow gespeichert.
+            if (Application.Current.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.MainFrame.Navigate(anwesenheitPage);
+            }
         }
     }
 }

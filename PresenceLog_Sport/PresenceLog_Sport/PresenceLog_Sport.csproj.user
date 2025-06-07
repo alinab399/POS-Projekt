@@ -13,6 +13,9 @@
     <Compile Update="Personhinzufuegen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="StartPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="TrainingsgruppeErstellen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -42,6 +45,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Personhinzufuegen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StartPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="TrainingsgruppeErstellen.xaml">

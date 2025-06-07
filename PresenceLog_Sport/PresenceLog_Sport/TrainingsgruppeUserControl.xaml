@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PresenceLog_Sport"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="200">
+             d:DesignHeight="200" d:DesignWidth="200"
+             MouseDoubleClick="UserControl_MouseDoubleClick">
     <Grid Background="AliceBlue">
         <Label x:Name="LabelUserControlTitel" Content="Titel" VerticalAlignment="Center" HorizontalAlignment="Center"/>
     </Grid>

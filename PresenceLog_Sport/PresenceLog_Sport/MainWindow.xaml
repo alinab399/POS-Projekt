@@ -7,19 +7,7 @@
         mc:Ignorable="d"
         Title="PresenceLog Sport" Height="450" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="6*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <DatePicker x:Name="DatePickerTraining" Padding="10" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" SelectedDateChanged="DatePickerTraining_SelectedDateChanged"/>
-
-        <WrapPanel x:Name="WrapPannelTrainingsgruppen" Grid.Row="1" Margin="30">
-
-        </WrapPanel>
         
-        <Button x:Name="GruppeErstellenBtn" Grid.Row="2" Content="neue Trainingsgruppe erstellen" HorizontalAlignment="Right" VerticalAlignment="Center" Height="45" Margin="0,0,10,0" Padding="10" Click="GruppeErstellenBtn_Click"/>
-        
-
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
