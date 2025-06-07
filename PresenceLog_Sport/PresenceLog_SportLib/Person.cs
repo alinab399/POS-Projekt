@@ -20,7 +20,10 @@ namespace PresenceLog_SportLib
 
         public bool IstInTrainingsgruppe { get; set; }
 
-       
+        public Person()
+        {
+
+        }
 
         public Person(string vorname, string nachname, DateTime geburtsdatum)
         {
@@ -37,9 +40,6 @@ namespace PresenceLog_SportLib
             this.Anwesenheit = anwesenheit;
         }
 
-        public Person()
-        {
-        }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -71,7 +71,10 @@ namespace PresenceLog_SportLib
         }
 
         protected void OnPropertyChanged(string property)
-        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
+        
        
     }
 

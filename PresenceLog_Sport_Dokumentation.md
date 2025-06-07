@@ -81,6 +81,8 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  07.06.2025 | Personhinzufuegen GUI und Code behind wo alles Eingegebene gespeichert wird. | Alina Bischof | 100% |
 |  07.06.2025 | Neu erstellte Person wird in Listview von TrainingsgruppeErstellen angezeigt. | Alina Bischof | 100% |
 |  07.06.2025 | Alle Personen die jemals hinzugefügt wurden werden in der ListView angezeigt. | Alina Bischof | 100% |
+|  07.06.2025 | Alle Trainingsgruppen werden in Json Format gespeichert. | Alina Bischof | 100% |
+|  07.06.2025 | Problem mit DatePicker und Trainingsgruppen werden nicht angezeigt gelöst. | Alina Bischof | 100% |
 
 			
 			
@@ -118,6 +120,7 @@ Detaillierte Beschreibung der Umsetzung mit möglichen Fehlern und Lösungen
 |  04.06.2025 |  Home-Button (Bild) konnte nicht richtig hinzugefügt werden | Mit dem <Image Source="Bilder/name des bildes"> verändert und damit das Foto in dem Home-Button drinnen ist, tut man das zwischen <Button><Image Source.../></Button> hinzufügen. | Aleksandra Vidovic |  
 |  04.06.2025 |  Es öffnen sich die falschen Fenster, wenn man auf die button drückt, obwohl die richtigen fenster angegeben worden sind | | Aleksandra Vidovic |
 |  04.06.2025 |  Wenn ich einen Titel eingebe und diesen speichern möchte, erscheint es nicht im MainWindow Fenster | | Aleksandra Vidovic |
+|  07.06.2025 |  Wenn mit dem DatePicker im MainWindow ein Datum ausgewählt wird, wo eigentlich eine Trainingsgruppe gespeichert ist, ist keine Trainingsgruppe vorhanden. | Mit debuggen habe ich herausgefunden, dass eine leere Wochentag-Liste aus der gespeicherten Datei geladen wird, weil System.Text.Json ignoriert Felder standardmäßig. Und die Wochentag-Liste war ein öffentliches Feld und kein Property. | Alina Bischof |  
 
 4.3	Ergebnisse, Interpretation (Tests)
 Wie läuft das Programm?
