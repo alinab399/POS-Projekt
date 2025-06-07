@@ -37,16 +37,11 @@ namespace PresenceLog_Sport
             TrainingsgruppeErstellen window = new TrainingsgruppeErstellen();
             Trainingsgruppe trainingsgruppe = new Trainingsgruppe();
 
-            PersonenCollection personList = new PersonenCollection();
-            personList.PersonHinzufügen(new Person("Anna", "Mayer", DateTime.Now));
-            personList.PersonHinzufügen(new Person("Franz", "Mayer", DateTime.Now));
-            personList.PersonHinzufügen(new Person("Peter", "Mayer", DateTime.Now));
+            PersonenCollection personenListe = new PersonenCollection();
+            personenListe.Laden("data/gespeichertePersonen.txt");
 
-            personList.Speichern("data/personen.txt");
 
-            
-            
-            window.Personen = personList;
+            window.Personen = personenListe;
 
             if (window.ShowDialog() == true)
             {

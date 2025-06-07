@@ -80,7 +80,7 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  06.06.2025 | Mit der Checkbox angehakte Personen werden der Trainingsgruppe hinzugefügt. | Alina Bischof | 100% |
 |  07.06.2025 | Personhinzufuegen GUI und Code behind wo alles Eingegebene gespeichert wird. | Alina Bischof | 100% |
 |  07.06.2025 | Neu erstellte Person wird in Listview von TrainingsgruppeErstellen angezeigt. | Alina Bischof | 100% |
-
+|  07.06.2025 | Alle Personen die jemals hinzugefügt wurden werden in der ListView angezeigt. | Alina Bischof | 100% |
 
 			
 			

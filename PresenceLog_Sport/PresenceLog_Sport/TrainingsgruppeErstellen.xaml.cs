@@ -124,8 +124,9 @@ namespace PresenceLog_Sport
                 person.Geburtsdatum = neueperson.Geburtsdatum;
                 Personen.PersonHinzufügen(person);
             }
-            
-           
+
+
+            Personen.Speichern("data/gespeichertePersonen.txt");
         }
     }
 }
