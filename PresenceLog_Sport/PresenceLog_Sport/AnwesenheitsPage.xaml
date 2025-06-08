@@ -11,15 +11,21 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Width="400" Background="black" Click="Button_Click" >
-                <Image Source="Bilder/home_button.png"/>
-            </Button>
-            
-            <Button Content="Analyse" Width="400" Background="Black" Foreground="White" Click="Button_Click_1"></Button>
-        </StackPanel>
+
+
+        <Grid Grid.Row="0" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" x:Name="ButtonZurueck" HorizontalAlignment="Left" Width="70" Background="Transparent" BorderThickness="0" Click="ButtonZurueck_Click" Content="↩" Margin="20,0,0,0"/>
+            <Button Grid.Column="1" x:Name="ButtonAnalyse" HorizontalAlignment="Right" Width="80" Background="Transparent" BorderThickness="0" Click="ButtonAnalyse_Click" Content="Analyse" Margin="0,0,20,0"/>
+        </Grid>
+
+
         <ListView x:Name="ListViewAnwesenheit" Grid.Row="1">
             <ListView.View>
                 <GridView>

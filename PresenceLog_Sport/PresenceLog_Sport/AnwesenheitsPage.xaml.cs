@@ -24,19 +24,17 @@ namespace PresenceLog_Sport
     /// </summary>
     public partial class AnwesenheitsPage : Page
     {
-        ObservableCollection<Person> personenCollection = new ObservableCollection<Person>();
-        public AnwesenheitsPage()
+        public PersonenCollection personenCollection = new PersonenCollection();
+        public Trainingsgruppe Traingsgruppe = new Trainingsgruppe();
+        public AnwesenheitsPage(Trainingsgruppe trainingsgruppe)
         {
             InitializeComponent();
-            //PersonenCollection personen = new PersonenCollection();
 
+            this.Traingsgruppe = trainingsgruppe;
+            this.personenCollection = trainingsgruppe.Mitglieder;
           
-            personenCollection.Add(new Person("Anna", "Mayer", DateTime.Now));
-            personenCollection.Add(new Person("Peter", "Fritz", DateTime.Now));
 
-  
-
-            ListViewAnwesenheit.ItemsSource = personenCollection;
+            ListViewAnwesenheit.ItemsSource = personenCollection.Personen;
 
         }
         private void AnwesendButton_Click(object sender, RoutedEventArgs e)
@@ -79,20 +77,18 @@ namespace PresenceLog_Sport
             person.Anwesenheit.Begruendung = abwesendBegruendungWindow.TextBoxBegruendung.Text;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        { /* Home Button */
-            MainWindow erstesfenster = new MainWindow();
-            erstesfenster.ShowDialog();
-            
-
+        private void ButtonZurueck_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService != null && this.NavigationService.CanGoBack)
+            {
+                this.NavigationService.GoBack();
+            }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        { /* Analyse Button */
+        private void ButtonAnalyse_Click(object sender, RoutedEventArgs e)
+        {
             AnalysePage analysieren = new AnalysePage();
             this.NavigationService.Navigate(analysieren);
-            
-           
         }
     }
 }

@@ -25,10 +25,12 @@ namespace PresenceLog_Sport
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {/* Home Button */
-            MainWindow erstesfenster = new MainWindow();
-            erstesfenster.ShowDialog();
+        private void ButtonZurueck_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService != null && this.NavigationService.CanGoBack)
+            {
+                this.NavigationService.GoBack();
+            }
         }
     }
 }

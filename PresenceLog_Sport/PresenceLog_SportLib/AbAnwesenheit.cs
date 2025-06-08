@@ -11,10 +11,10 @@ namespace PresenceLog_SportLib
     {
         public bool Status { get; set; }
 
-        private string begruending;
-        public string Begruendung { get => begruending; 
+        private string begruendung;
+        public string Begruendung { get => begruendung; 
             set { 
-                begruending = value;
+                begruendung = value;
                 OnPropertyChanged(nameof(Begruendung));
             } }
 

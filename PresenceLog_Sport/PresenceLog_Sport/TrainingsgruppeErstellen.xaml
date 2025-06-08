@@ -18,7 +18,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
-
         </Grid.RowDefinitions>
 
         <Label Content="Titel:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>

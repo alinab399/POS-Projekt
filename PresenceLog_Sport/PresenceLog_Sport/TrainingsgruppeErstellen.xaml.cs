@@ -24,11 +24,33 @@ namespace PresenceLog_Sport
         public List<string> AusgewaehlteTage {  get; set; }
         public DateTime Anfangsdatum {  get; set; }
         public DateTime Enddatum {  get; set; }
-        public PersonenCollection Personen { get; set; }
+
+        private PersonenCollection personen;
+        public PersonenCollection Personen 
+        { 
+            get => personen; 
+            set 
+            { 
+                personen = value;
+
+                ListViewMitglieder.ItemsSource = personen.Personen;
+                ListViewMitglieder.UpdateLayout();
+            } 
+        }
+        public PersonenCollection AusgewaehltePersonen = new PersonenCollection();
+
+
+
+
+        
 
         public TrainingsgruppeErstellen()
         {
             InitializeComponent();
+
+            DatePickerStartdatum.SelectedDate = DateTime.Now;
+            DatePickerEnddatum.SelectedDate = DateTime.Now.AddDays(7);
+            
         }
 
         private void OKBtn_Click(object sender, RoutedEventArgs e)
@@ -38,14 +60,22 @@ namespace PresenceLog_Sport
             Anfangsdatum = DatePickerStartdatum.SelectedDate.Value;
             Enddatum = DatePickerEnddatum.SelectedDate.Value;
 
-            // TODO: Listview mit Checkboxen
-            
+            foreach(var Item in ListViewMitglieder.Items)
+            {
+                if(Item is Person person && person.IstInTrainingsgruppe == true)
+                {
+                    AusgewaehltePersonen.PersonHinzufügen(person);
+                }
+            }
+
+
             this.DialogResult = true; // Fenster mit "OK" schließen
             this.Close();
         }
 
         private void AbbrechenBtn_Click(object sender, RoutedEventArgs e)
         {
+            this.DialogResult = false;
             this.Close(); /* Schließt das Fenster, sobald man auf den Abbrechen Button drückt*/
         }
 
@@ -86,7 +116,15 @@ namespace PresenceLog_Sport
         private void HinzufuegenBtn_Click(object sender, RoutedEventArgs e)
         {
             Personhinzufuegen neueperson = new Personhinzufuegen();
-            neueperson.ShowDialog();
+            if (neueperson.ShowDialog() == true)
+            {
+                Person person = new Person();
+                person.Vorname = neueperson.Vorname;
+                person.Nachname = neueperson.Nachname;
+                person.Geburtsdatum = neueperson.Geburtsdatum;
+                Personen.PersonHinzufügen(person);
+                Personen.Speichern("data/gespeichertePersonen.txt");
+            }
         }
     }
 }

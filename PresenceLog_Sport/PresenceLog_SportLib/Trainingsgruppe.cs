@@ -9,14 +9,10 @@ namespace PresenceLog_SportLib
 {
     public class Trainingsgruppe
     {
-        public List<string> Wochentage = new List<string>();
+        public List<string> Wochentage { get; set; } = new List<string>();
         public string Name { get; set; }
         public DateTime DatumErstesTraining {  get; set; }
         public DateTime DatumLetztesTraining { get; set; }
-
-
-        // TODO: Mitglieder Liste erstellen
-        public Person Mitglied { get; set; }
         public PersonenCollection Mitglieder { get; set; }
         public Trainingsgruppe()
         {
