@@ -14,9 +14,14 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
 
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+            <Button x:Name="ButtonZurueck" Width="70" Background="Transparent" BorderThickness="0" Content="↩" Margin="20,0,0,0" Click="ButtonZurueck_Click"/>
+        </StackPanel>
+
+        
         <ListView x:Name="ListViewAnalyse" Grid.Row="1">
             <ListView.View>
                 <GridView>
@@ -26,11 +31,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Width="200" Background="LightBlue" Click="Button_Click">
-                <Image Source="Bilder/home_button.png"/>
-            </Button>
-            
-        </StackPanel>
+        
     </Grid>
 </Page>

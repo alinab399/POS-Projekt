@@ -85,6 +85,8 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  07.06.2025 | Problem mit DatePicker in MainWindow und Trainingsgruppen werden nicht angezeigt gelöst. | Alina Bischof | 100% |
 |  07.06.2025 | Eine StartPage erstellt und den Code vom MainWindow.xaml in die StartPage kopiert, damit im MainWindow nur der Frame steht. | Alina Bischof | 100% |
 |  07.06.2025 | Mit doppelklick auf ein TrainingsgruppeUserControl auf der StartPage öffnet sich die AnwesenheitsPage. | Alina Bischof | 100% |
+|  08.06.2025 | Problem mit gespeichertePersonen.txt Datei eingetragen und gelöst. | Alina Bischof | 100% |
+|  08.06.2025 | AnwesenheitsPage und AnalysePage Buttons für "nächste-" und "vorherige Seite" eingebaut. | Alina Bischof | 100% |
 
 			
 			
@@ -123,7 +125,7 @@ Detaillierte Beschreibung der Umsetzung mit möglichen Fehlern und Lösungen
 |  04.06.2025 |  Es öffnen sich die falschen Fenster, wenn man auf die button drückt, obwohl die richtigen fenster angegeben worden sind | | Aleksandra Vidovic |
 |  04.06.2025 |  Wenn ich einen Titel eingebe und diesen speichern möchte, erscheint es nicht im MainWindow Fenster | | Aleksandra Vidovic |
 |  07.06.2025 |  Wenn mit dem DatePicker im MainWindow ein Datum ausgewählt wird, wo eigentlich eine Trainingsgruppe gespeichert ist, ist keine Trainingsgruppe vorhanden. | Mit debuggen habe ich herausgefunden, dass eine leere Wochentag-Liste aus der gespeicherten Datei geladen wird, weil System.Text.Json ignoriert Felder standardmäßig. Und die Wochentag-Liste war ein öffentliches Feld und kein Property. | Alina Bischof |
-|  07.06.2024 |  Sobald eine neue Trainingsgruppe erstellt wird, werden in der Json-Datei die Personen aus den anderen schon gespeicherten Trainingsgruppen gelöscht. | | Alina Bischof |
+|  07.06.2024 |  Sobald eine neue Trainingsgruppe erstellt wird, werden in der Json-Datei die Personen aus den anderen, schon gespeicherten Trainingsgruppen gelöscht. | | Alina Bischof |
 |  08.06.2024 |  Wenn auf den "+" Button geklickt wird um eine Person hinzuzufügen, wird in der .txt-Datei eine lehre Person hinzugefügt. | Nicht vor sonder in dem if wo man prüft ob das Fenster mit dem Button "Okay" oder "Abbrechen" beendet worden ist. | Alina Bischof |
 
 4.3	Ergebnisse, Interpretation (Tests)

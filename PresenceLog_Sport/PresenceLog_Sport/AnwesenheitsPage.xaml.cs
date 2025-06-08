@@ -77,20 +77,18 @@ namespace PresenceLog_Sport
             person.Anwesenheit.Begruendung = abwesendBegruendungWindow.TextBoxBegruendung.Text;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        { /* Home Button */
-            MainWindow erstesfenster = new MainWindow();
-            erstesfenster.ShowDialog();
-            
-
+        private void ButtonZurueck_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService != null && this.NavigationService.CanGoBack)
+            {
+                this.NavigationService.GoBack();
+            }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        { /* Analyse Button */
+        private void ButtonAnalyse_Click(object sender, RoutedEventArgs e)
+        {
             AnalysePage analysieren = new AnalysePage();
             this.NavigationService.Navigate(analysieren);
-            
-           
         }
     }
 }
