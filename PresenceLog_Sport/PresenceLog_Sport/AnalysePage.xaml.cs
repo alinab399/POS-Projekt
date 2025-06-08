@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PresenceLog_SportLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,15 @@ namespace PresenceLog_Sport
     /// </summary>
     public partial class AnalysePage : Page
     {
-        public AnalysePage()
+        public PersonenCollection PersonenColl { get; set; }
+        
+        public AbAnwesenheit Anwesenheit { get; set; } = new AbAnwesenheit();
+
+        public AnalysePage(Trainingsgruppe trainingsgruppe)
         {
             InitializeComponent();
+            this.PersonenColl = trainingsgruppe.Mitglieder;
+            ListViewAnalyse.ItemsSource = GeneriereAnalyseEinträge();
         }
 
         private void ButtonZurueck_Click(object sender, RoutedEventArgs e)
@@ -31,6 +38,27 @@ namespace PresenceLog_Sport
             {
                 this.NavigationService.GoBack();
             }
+        }
+
+        private List<AnalyseEintrag> GeneriereAnalyseEinträge()
+        {
+            List<AnalyseEintrag> analyseEintraege = new List<AnalyseEintrag>();
+            foreach (Person person in PersonenColl.Personen)
+            {
+                int anwesend = 0;
+                foreach (AbAnwesenheit eintrag in person.Anwesenheiten)
+                {
+                    if (eintrag.Status == true)
+                    {
+                        anwesend++;
+                    }
+                }
+                int gesamt = person.Anwesenheiten.Count;
+
+                analyseEintraege.Add(new AnalyseEintrag(person.Vorname, person.Nachname, anwesend, gesamt));
+            }
+
+            return analyseEintraege;
         }
     }
 }
