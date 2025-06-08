@@ -116,15 +116,15 @@ namespace PresenceLog_Sport
         private void HinzufuegenBtn_Click(object sender, RoutedEventArgs e)
         {
             Personhinzufuegen neueperson = new Personhinzufuegen();
-            Person person = new Person();
             if (neueperson.ShowDialog() == true)
             {
+                Person person = new Person();
                 person.Vorname = neueperson.Vorname;
                 person.Nachname = neueperson.Nachname;
                 person.Geburtsdatum = neueperson.Geburtsdatum;
+                Personen.PersonHinzufügen(person);
+                Personen.Speichern("data/gespeichertePersonen.txt");
             }
-            Personen.PersonHinzufügen(person);
-            Personen.Speichern("data/gespeichertePersonen.txt");
         }
     }
 }
