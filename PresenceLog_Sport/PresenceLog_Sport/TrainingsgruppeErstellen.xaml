@@ -63,7 +63,7 @@
         </ListView>
         <Button x:Name="AbbrechenBtn" Content="Abbrechen" Grid.Column="0" Grid.Row="5" Margin="20" Width="100" Click="AbbrechenBtn_Click"></Button>
         <Button x:Name="OKBtn" Content="OK" Grid.Column="1" Grid.Row="5" Margin="20" Width="100" Click="OKBtn_Click"></Button>
-        <Button x:Name="HinzufuegenBtn" Content="+" Grid.Column="1" Margin="403,31,10,5" Grid.Row="5"></Button>
+        <Button x:Name="HinzufuegenBtn" Content="+" Grid.Column="1" Margin="403,31,10,5" Grid.Row="5" Click="HinzufuegenBtn_Click"></Button>
 
     </Grid>
 </Window>
