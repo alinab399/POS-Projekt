@@ -62,21 +62,11 @@ namespace PresenceLog_Sport
 
             foreach (Trainingsgruppe gruppe in trainingsgruppeCollection.Trainingsgruppen)
             {
-                System.Diagnostics.Debug.WriteLine($"Gruppe: {gruppe.Name}");
-                System.Diagnostics.Debug.WriteLine($"Von: {gruppe.DatumErstesTraining.ToShortDateString()} Bis: {gruppe.DatumLetztesTraining.ToShortDateString()}");
-                if (gruppe.Wochentage == null)
-                {
-                    System.Diagnostics.Debug.WriteLine("Wochentage ist NULL!");
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine("Wochentage: " + string.Join(", ", gruppe.Wochentage));
-                }
                 if (gruppe.DatumErstesTraining <= date &&
                     gruppe.DatumLetztesTraining >= date &&
                     gruppe.Wochentage.Contains(date.DayOfWeek.ToString()))
                 {
-                    TrainingsgruppeUserControl trainingsgruppeUserControl = new TrainingsgruppeUserControl(gruppe.Name);
+                    TrainingsgruppeUserControl trainingsgruppeUserControl = new TrainingsgruppeUserControl(gruppe);
                     WrapPannelTrainingsgruppen.Children.Add(trainingsgruppeUserControl);
                 }
             }

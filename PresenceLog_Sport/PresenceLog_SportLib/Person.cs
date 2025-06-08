@@ -1,6 +1,7 @@
 
 using System.ComponentModel;
 using System.Xml.Linq;
+using Newtonsoft.Json;
 
 namespace PresenceLog_SportLib
 {
@@ -10,7 +11,7 @@ namespace PresenceLog_SportLib
         public string Nachname { get; set; }
         public DateTime Geburtsdatum { get; set; }
 
-        private AbAnwesenheit anwesenheit = new AbAnwesenheit(false, "");
+        private AbAnwesenheit anwesenheit = new AbAnwesenheit();
         public AbAnwesenheit Anwesenheit { get => anwesenheit; set
             {
                 anwesenheit = value;
@@ -18,7 +19,7 @@ namespace PresenceLog_SportLib
             } 
         }
 
-        public bool IstInTrainingsgruppe { get; set; }
+        public bool IstInTrainingsgruppe { get; set; }= false;
 
         public Person()
         {
@@ -30,6 +31,14 @@ namespace PresenceLog_SportLib
             this.Vorname = vorname;
             this.Nachname = nachname;
             this.Geburtsdatum = geburtsdatum;
+        }
+        public Person(string vorname, string nachname,bool istInTrainingsgruppe, DateTime geburtsdatum, AbAnwesenheit anwesenheit)
+        {
+            this.Vorname = vorname;
+            this.Nachname = nachname;
+            this.IstInTrainingsgruppe = istInTrainingsgruppe;
+            this.Geburtsdatum = geburtsdatum;
+            this.Anwesenheit = anwesenheit;
         }
 
         public Person(string vorname, string nachname, DateTime geburtsdatum, AbAnwesenheit anwesenheit)
@@ -54,12 +63,10 @@ namespace PresenceLog_SportLib
         public static Person Deserialisieren(string serialized)
         {
             string[] DataSplit = serialized.Split(";");
-
+            System.Diagnostics.Debug.WriteLine($"DataSplit: {DataSplit}");
             string vorname = DataSplit[0];
             string nachname = DataSplit[1];
             DateTime geburtsdatum = DateTime.Parse(DataSplit[2]);
-            
-
             string anwesenheitString = DataSplit[3];
             AbAnwesenheit abAnwesenheit = new AbAnwesenheit();
             abAnwesenheit = AbAnwesenheit.Deserialisieren(anwesenheitString);

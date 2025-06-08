@@ -62,7 +62,7 @@ namespace PresenceLog_SportLib
                 string directory = Path.GetDirectoryName(filename);
                 Directory.CreateDirectory(directory);
 
-                string json = JsonConvert.SerializeObject(this.Trainingsgruppen, Newtonsoft.Json.Formatting.Indented); // new JsonSerializerOptions { WriteIndented = true } ... macht Einrückungen und Zeilenumbrüche damit es besser lesebar ist
+                string json = JsonConvert.SerializeObject(this.Trainingsgruppen, Newtonsoft.Json.Formatting.Indented); // Formatting.Indented ... macht Einrückungen und Zeilenumbrüche damit es besser lesebar ist
                 File.WriteAllText(filename, json);
             }
             catch (IOException exception)
