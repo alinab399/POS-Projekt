@@ -75,7 +75,7 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  05.06.2025 | Im MainWindow Trainingsgruppe erstellen und mit DatePicker anzeigen lassen weiterprogrammiert. | Alina Bischof | 70% |
 |  06.06.2025 | Home Button für die Analyse-Page erstellt| Aleksandra Vidovic | 100% |
 |  06.06.2025 | Home Button wurde gecodet | Aleksandra Vidovic | 100 % |
-|  06.06.2025 | Personenhinzufuegen Fenster erstellt | Aleksandra Vidovic |50% |
+|  06.06.2025 | Personenhinzufuegen Fenster erstellt | Aleksandra Vidovic | 50% |
 |  06.06.2025 | + Button für Personen hinzufügen erstellt | Aleksandra Vidovic | 100% |
 |  06.06.2025 | Mit der Checkbox angehakte Personen werden der Trainingsgruppe hinzugefügt. | Alina Bischof | 100% |
 |  07.06.2025 | Personhinzufuegen GUI und Code behind wo alles Eingegebene gespeichert wird. | Alina Bischof | 100% |
@@ -87,11 +87,13 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  07.06.2025 | Mit doppelklick auf ein TrainingsgruppeUserControl auf der StartPage öffnet sich die AnwesenheitsPage. | Alina Bischof | 100% |
 |  08.06.2025 | Problem mit gespeichertePersonen.txt Datei eingetragen und gelöst. | Alina Bischof | 100% |
 |  08.06.2025 | AnwesenheitsPage und AnalysePage Buttons für "nächste-" und "vorherige Seite" eingebaut. | Alina Bischof | 100% |
+|  08.06.2025 | AnalysePage übernimmt Personen der ausgewählten Trainingsgruppe und eine ProgressBar zeigt die Anzahl der Anwesen- und Abwesenheiten an. | Alina Bischof | 100% |
 
-			
-			
-			
-			
+
+ANWESENHEIT WIRD NOCH NICHT RICHTIG GESPEICHERT!!!!!!!!!!!!!!!
+
+
+
 
 
 3	Lastenheft (Kurzbeschreibung, Funktionsumfang, Skizzen)
