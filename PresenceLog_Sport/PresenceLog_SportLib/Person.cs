@@ -64,27 +64,35 @@ namespace PresenceLog_SportLib
 
         public static Person Deserialisieren(string serialized)
         {
-            string[] DataSplit = serialized.Split(";", 4); // 4 ... in 4 Teile teilen
+            string[] DataSplit = serialized.Split(";", 4); // In 4 Teile trennen: Vorname;Nachname;Geburtsdatum;Anwesenheiten
 
             string vorname = DataSplit[0];
             string nachname = DataSplit[1];
             DateTime geburtsdatum = DateTime.Parse(DataSplit[2]);
 
-            List<AbAnwesenheit> anwesenheiten = JsonConvert.DeserializeObject<List<AbAnwesenheit>>(DataSplit[3]);
+            List<AbAnwesenheit> anwesenheiten;
 
-            Person person = new Person(vorname, nachname, geburtsdatum);
-            if (anwesenheiten != null)
+            try
             {
-                person.Anwesenheiten = anwesenheiten;
+                anwesenheiten = JsonConvert.DeserializeObject<List<AbAnwesenheit>>(DataSplit[3]);
             }
-            else
+            catch (JsonReaderException)
             {
-                person.Anwesenheiten = new List<AbAnwesenheit>();
+                // Falls kein gültiges JSON ? leere Liste verwenden
+                anwesenheiten = new List<AbAnwesenheit>();
             }
+
+            // Neues Person-Objekt mit deserialisierten Werten erzeugen
+            Person person = new Person(vorname, nachname, geburtsdatum)
+            {
+                Anwesenheiten = anwesenheiten
+            };
 
             return person;
-
         }
+
+
+
 
         protected void OnPropertyChanged(string property)
         {
