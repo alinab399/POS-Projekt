@@ -36,5 +36,18 @@ namespace PresenceLog_Sport
         {
             this.Close();
         }
+
+        private void TextBoxBegruendung_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBoxBegruendung.Text))
+            {
+                TextBoxBegruendung.Background = Brushes.Red;
+            }
+
+            else
+            {
+                TextBoxBegruendung.Background = Brushes.White;
+            }
+        }
     }
 }
