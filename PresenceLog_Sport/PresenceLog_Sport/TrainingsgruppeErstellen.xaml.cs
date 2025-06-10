@@ -55,6 +55,23 @@ namespace PresenceLog_Sport
 
         private void OKBtn_Click(object sender, RoutedEventArgs e)
         {
+           
+            if (DatePickerStartdatum == null)
+            {
+                MessageBox.Show("Bitte wählen Sie ein Startdatum für diese Gruppe aus");
+                return;
+            }
+
+            if (DatePickerEnddatum == null)
+            {
+                MessageBox.Show("Bitte wählen Sie ein Enddatum für diese Gruppe aus");
+                return;
+            }
+
+            Anfangsdatum = DatePickerStartdatum.SelectedDate.Value;
+            Enddatum = DatePickerEnddatum.SelectedDate.Value;
+
+
             Titel = TextBoxTitel.Text;
             AusgewaehlteTage = checkedDays();
             Anfangsdatum = DatePickerStartdatum.SelectedDate.Value;
@@ -124,6 +141,19 @@ namespace PresenceLog_Sport
                 person.Geburtsdatum = neueperson.Geburtsdatum;
                 Personen.PersonHinzufügen(person);
                 Personen.Speichern("data/gespeichertePersonen.txt");
+            }
+        }
+
+        private void TextBoxTitel_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBoxTitel.Text))
+            {
+                TextBoxTitel.Background = Brushes.Red;
+            }
+
+            else
+            {
+                TextBoxTitel.Background = Brushes.White;
             }
         }
     }
