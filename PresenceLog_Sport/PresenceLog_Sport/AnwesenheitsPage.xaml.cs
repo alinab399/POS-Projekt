@@ -51,7 +51,7 @@ namespace PresenceLog_Sport
             clickedButton.Background = Brushes.ForestGreen;
 
             Person person = (Person)stackPanel.DataContext;
-            person.Anwesenheiten.Add(new AbAnwesenheit(true, "War anwesend"));
+            person.Anwesenheiten.Add(new AbAnwesenheit(true, "War anwesend", DateTime.Now));
 
         }
 

@@ -21,9 +21,14 @@ namespace PresenceLog_SportLib
 
         public AbAnwesenheit() { }
         public AbAnwesenheit(bool status, string begruendung)
+        
+            :this(status, begruendung, DateTime.Now)
+        {}
+        public AbAnwesenheit(bool status, string begruendung, DateTime datum)
         {
             this.Status = status;
             this.Begruendung = begruendung;
+            this.Datum = DateTime.Now;
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
