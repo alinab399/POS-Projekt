@@ -88,6 +88,8 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  08.06.2025 | Problem mit gespeichertePersonen.txt Datei eingetragen und gelöst. | Alina Bischof | 100% |
 |  08.06.2025 | AnwesenheitsPage und AnalysePage Buttons für "nächste-" und "vorherige Seite" eingebaut. | Alina Bischof | 100% |
 |  08.06.2025 | AnalysePage übernimmt Personen der ausgewählten Trainingsgruppe und eine ProgressBar zeigt die Anzahl der Anwesen- und Abwesenheiten an. | Alina Bischof | 100% |
+|  10.06.2025 | Uhrzeit wird bei AnwesenheitsPage nicht mehr angezeigt. | Alina Bischof | 100% |
+|  10.06.2025 | Das Datum des DatePickers auf der Startseite wird der AnwesenheitsPage mitgegeben für das Speichern der Ab/Anwesenheit. | Alina Bischof | 100% |
 
 
 ANWESENHEIT WIRD NOCH NICHT RICHTIG GESPEICHERT!!!!!!!!!!!!!!!
