@@ -27,7 +27,16 @@
                 <GridView>
                     <GridViewColumn Header="Vorname" Width="250" DisplayMemberBinding="{Binding Path=Vorname}"></GridViewColumn>
                     <GridViewColumn Header="Nachname" Width="250" DisplayMemberBinding="{Binding Path=Nachname}"></GridViewColumn>
-                    <GridViewColumn Header="Analyse" Width="250" DisplayMemberBinding="{Binding Analyse}"></GridViewColumn>
+                    <GridViewColumn Header="Analyse" Width="250">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <ProgressBar Width="150" Height="20" Minimum="0" Maximum="{Binding GesamtTrainings}" Value="{Binding AnzahlAnwesenheiten}"/>
+                                    <Label Content="{Binding Anzeige}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

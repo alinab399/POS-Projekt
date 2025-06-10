@@ -24,13 +24,13 @@ namespace PresenceLog_Sport
     /// </summary>
     public partial class AnwesenheitsPage : Page
     {
-        public PersonenCollection personenCollection = new PersonenCollection();
-        public Trainingsgruppe Traingsgruppe = new Trainingsgruppe();
+        public PersonenCollection personenCollection { get; set; } = new PersonenCollection();
+        public Trainingsgruppe TrainingsgruppeAktuell { get; set; } = new Trainingsgruppe();
         public AnwesenheitsPage(Trainingsgruppe trainingsgruppe)
         {
             InitializeComponent();
 
-            this.Traingsgruppe = trainingsgruppe;
+            this.TrainingsgruppeAktuell = trainingsgruppe;
             this.personenCollection = trainingsgruppe.Mitglieder;
           
 
@@ -51,7 +51,7 @@ namespace PresenceLog_Sport
             clickedButton.Background = Brushes.ForestGreen;
 
             Person person = (Person)stackPanel.DataContext;
-            person.Anwesenheit = new AbAnwesenheit(true);
+            person.Anwesenheiten.Add(new AbAnwesenheit(true, "War anwesend"));
 
         }
 
@@ -72,9 +72,13 @@ namespace PresenceLog_Sport
             AbwesendBegruendung abwesendBegruendungWindow = new AbwesendBegruendung();
             if (abwesendBegruendungWindow.ShowDialog() == true)
             {
-                
+                person.Anwesenheiten.Add(new AbAnwesenheit(false, abwesendBegruendungWindow.TextBoxBegruendung.Text));
             }
-            person.Anwesenheit.Begruendung = abwesendBegruendungWindow.TextBoxBegruendung.Text;
+            else
+            {
+                person.Anwesenheiten.Add(new AbAnwesenheit(false, "War abwesend"));
+            }
+            
         }
 
         private void ButtonZurueck_Click(object sender, RoutedEventArgs e)
@@ -87,7 +91,7 @@ namespace PresenceLog_Sport
 
         private void ButtonAnalyse_Click(object sender, RoutedEventArgs e)
         {
-            AnalysePage analysieren = new AnalysePage();
+            AnalysePage analysieren = new AnalysePage(TrainingsgruppeAktuell);
             this.NavigationService.Navigate(analysieren);
         }
     }

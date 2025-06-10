@@ -10,6 +10,7 @@ namespace PresenceLog_SportLib
         public string Vorname { get; set; }
         public string Nachname { get; set; }
         public DateTime Geburtsdatum { get; set; }
+        public List<AbAnwesenheit> Anwesenheiten {  get; set; } = new List<AbAnwesenheit>();
 
         private AbAnwesenheit anwesenheit = new AbAnwesenheit();
         public AbAnwesenheit Anwesenheit { get => anwesenheit; set
@@ -54,27 +55,35 @@ namespace PresenceLog_SportLib
 
         public string Serialisieren()
         {
-            string anwesenheitString = Anwesenheit.Serialisieren();
             string geburtsdatumString = Geburtsdatum.ToString("yyyy-MM-dd");
 
-            return $"{Vorname};{Nachname};{geburtsdatumString};{anwesenheitString}";
+            string anwesenheitenJson = JsonConvert.SerializeObject(Anwesenheiten);
+
+            return $"{Vorname};{Nachname};{geburtsdatumString};{anwesenheitenJson}";
         }
 
         public static Person Deserialisieren(string serialized)
         {
-            string[] DataSplit = serialized.Split(";");
-            System.Diagnostics.Debug.WriteLine($"DataSplit: {DataSplit}");
+            string[] DataSplit = serialized.Split(";", 4); // 4 ... in 4 Teile teilen
+
             string vorname = DataSplit[0];
             string nachname = DataSplit[1];
             DateTime geburtsdatum = DateTime.Parse(DataSplit[2]);
-            string anwesenheitString = DataSplit[3];
-            AbAnwesenheit abAnwesenheit = new AbAnwesenheit();
-            abAnwesenheit = AbAnwesenheit.Deserialisieren(anwesenheitString);
-            
-            
-            
 
-            return new Person(vorname, nachname, geburtsdatum, abAnwesenheit);
+            List<AbAnwesenheit> anwesenheiten = JsonConvert.DeserializeObject<List<AbAnwesenheit>>(DataSplit[3]);
+
+            Person person = new Person(vorname, nachname, geburtsdatum);
+            if (anwesenheiten != null)
+            {
+                person.Anwesenheiten = anwesenheiten;
+            }
+            else
+            {
+                person.Anwesenheiten = new List<AbAnwesenheit>();
+            }
+
+            return person;
+
         }
 
         protected void OnPropertyChanged(string property)

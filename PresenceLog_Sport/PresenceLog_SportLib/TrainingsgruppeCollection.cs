@@ -40,7 +40,7 @@ namespace PresenceLog_SportLib
                 {
                     string json = File.ReadAllText(filename);
 
-                    var geladeneDaten = System.Text.Json.JsonSerializer.Deserialize<List<Trainingsgruppe>>(json);
+                    var geladeneDaten = JsonConvert.DeserializeObject<List<Trainingsgruppe>>(json);
 
                     if (geladeneDaten != null)
                     {

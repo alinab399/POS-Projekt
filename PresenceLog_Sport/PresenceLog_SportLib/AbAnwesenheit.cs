@@ -17,12 +17,9 @@ namespace PresenceLog_SportLib
                 begruendung = value;
                 OnPropertyChanged(nameof(Begruendung));
             } }
+        public DateTime Datum { get; set; }
 
         public AbAnwesenheit() { }
-        public AbAnwesenheit(bool status)
-        {
-            this.Status = status;
-        }
         public AbAnwesenheit(bool status, string begruendung)
         {
             this.Status = status;
@@ -35,7 +32,7 @@ namespace PresenceLog_SportLib
         {
             string statusString = Status.ToString();
 
-            return $"{statusString}§{Begruendung}"; // Ein Trennzeichen das warscheinlich nicht in der Begründung vorkommt
+            return $"{statusString}§{Begruendung}§{Datum:yyyy-MM-dd}"; // Ein Trennzeichen das warscheinlich nicht in der Begründung vorkommt
         }
 
         
@@ -45,6 +42,7 @@ namespace PresenceLog_SportLib
 
             bool status = bool.Parse(DataSplit[0]);
             string begruendung = DataSplit[1];
+            //DateTime datum = DataSplit.Length
 
             return new AbAnwesenheit(status, begruendung);
         }
