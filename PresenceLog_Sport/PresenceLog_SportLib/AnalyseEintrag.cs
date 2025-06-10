@@ -19,6 +19,17 @@ namespace PresenceLog_SportLib
                 return $"{AnzahlAnwesenheiten} / {GesamtTrainings}";
             }
         }
+        public double Prozent
+        {
+            get
+            {
+                if (GesamtTrainings == 0)
+                {
+                    return 0;
+                }
+                return (double)AnzahlAnwesenheiten / GesamtTrainings * 100;
+            }
+        }
 
         public AnalyseEintrag(string vorname, string nachname, int anzahlAnwesenheiten, int gesamtTrainings)
         {

@@ -9,7 +9,17 @@ namespace PresenceLog_SportLib
     {
         public string Vorname { get; set; }
         public string Nachname { get; set; }
-        public DateTime Geburtsdatum { get; set; }
+        private DateTime geburtsdatum;
+        public DateTime Geburtsdatum 
+        {
+            get
+            {
+                return geburtsdatum.Date;
+            }
+            set{
+                geburtsdatum = value.Date;
+            } 
+        }
         public List<AbAnwesenheit> Anwesenheiten {  get; set; } = new List<AbAnwesenheit>();
 
         private AbAnwesenheit anwesenheit = new AbAnwesenheit();

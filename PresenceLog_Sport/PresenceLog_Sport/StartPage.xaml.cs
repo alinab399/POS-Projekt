@@ -57,16 +57,16 @@ namespace PresenceLog_Sport
             // TODO: Filtern der Trainingsgruppen
             trainingsgruppeCollection.Laden("data/gespeicherteTrainingsgruppen.json");
 
-            DateTime date = DatePickerTraining.SelectedDate.Value;
+            DateTime ausgewaehltesDatum = DatePickerTraining.SelectedDate.Value;
 
 
             foreach (Trainingsgruppe gruppe in trainingsgruppeCollection.Trainingsgruppen)
             {
-                if (gruppe.DatumErstesTraining <= date &&
-                    gruppe.DatumLetztesTraining >= date &&
-                    gruppe.Wochentage.Contains(date.DayOfWeek.ToString()))
+                if (gruppe.DatumErstesTraining <= ausgewaehltesDatum &&
+                    gruppe.DatumLetztesTraining >= ausgewaehltesDatum &&
+                    gruppe.Wochentage.Contains(ausgewaehltesDatum.DayOfWeek.ToString()))
                 {
-                    TrainingsgruppeUserControl trainingsgruppeUserControl = new TrainingsgruppeUserControl(gruppe);
+                    TrainingsgruppeUserControl trainingsgruppeUserControl = new TrainingsgruppeUserControl(gruppe, ausgewaehltesDatum);
                     WrapPannelTrainingsgruppen.Children.Add(trainingsgruppeUserControl);
                 }
             }

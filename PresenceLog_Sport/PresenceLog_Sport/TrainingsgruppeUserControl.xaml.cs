@@ -21,22 +21,24 @@ namespace PresenceLog_Sport
     /// </summary>
     public partial class TrainingsgruppeUserControl : UserControl
     {
+        public DateTime AusgewaehltesDatum { get; set; }
         public Trainingsgruppe Trainingsgruppe { get; set; }
-        public TrainingsgruppeUserControl(Trainingsgruppe trainingsgruppe)
+        public TrainingsgruppeUserControl(Trainingsgruppe trainingsgruppe, DateTime datum)
         {
             InitializeComponent();
 
             this.Height = 150;
             this.Width = 150;
             this.Trainingsgruppe = trainingsgruppe;
+            this.AusgewaehltesDatum = datum;
 
             LabelUserControlTitel.Content = trainingsgruppe.Name;
-
+            
         }
 
         private void UserControl_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            AnwesenheitsPage anwesenheitPage = new AnwesenheitsPage(Trainingsgruppe);
+            AnwesenheitsPage anwesenheitPage = new AnwesenheitsPage(Trainingsgruppe, AusgewaehltesDatum);
 
             // Typprüfung und Typumwandlung (Casting):
             //Es wird geprüft: Ist das aktuelle Hauptfenster tatsächlich vom Typ MainWindow? Falls ja, wird es in die Variable mainWindow gespeichert.

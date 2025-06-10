@@ -17,13 +17,25 @@ namespace PresenceLog_SportLib
                 begruendung = value;
                 OnPropertyChanged(nameof(Begruendung));
             } }
-        public DateTime Datum { get; set; }
+        private DateTime datum;
+        public DateTime Datum 
+        { 
+            get
+            {
+                return datum;
+            }
+            set { 
+                datum = value;
+                OnPropertyChanged(nameof(Datum));
+            } 
+        } 
 
         public AbAnwesenheit() { }
-        public AbAnwesenheit(bool status, string begruendung)
+        public AbAnwesenheit(bool status, string begruendung, DateTime datum)
         {
             this.Status = status;
             this.Begruendung = begruendung;
+            this.Datum = datum;
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -42,9 +54,9 @@ namespace PresenceLog_SportLib
 
             bool status = bool.Parse(DataSplit[0]);
             string begruendung = DataSplit[1];
-            //DateTime datum = DataSplit.Length
+            DateTime datum = DateTime.Parse(DataSplit[2]);
 
-            return new AbAnwesenheit(status, begruendung);
+            return new AbAnwesenheit(status, begruendung, datum);
         }
 
         protected void OnPropertyChanged(string property)
