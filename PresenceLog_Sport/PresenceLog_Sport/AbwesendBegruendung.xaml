@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Content="Begründung:"/>
-        <TextBox x:Name="TextBoxBegruendung" Grid.Row="0" Grid.Column="1" Margin="0,5,0,46"/>
+        <TextBox x:Name="TextBoxBegruendung" Grid.Row="0" Grid.Column="1" Margin="0,5,0,46" TextChanged="TextBoxBegruendung_TextChanged"/>
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button x:Name="ButtonAbbrechen" Content="Abbrechen" Width="90" Margin="0 30" Click="ButtonAbbrechen_Click"/>
             <Button x:Name="ButtonOK" Content="OK" Width="90" Margin="10 30" Click="ButtonOK_Click"/>

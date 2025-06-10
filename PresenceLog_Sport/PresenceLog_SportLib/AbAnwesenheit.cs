@@ -35,7 +35,6 @@ namespace PresenceLog_SportLib
         {
             this.Status = status;
             this.Begruendung = begruendung;
-            this.Datum = datum;
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

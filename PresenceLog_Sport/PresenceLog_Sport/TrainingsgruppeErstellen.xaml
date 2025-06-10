@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
 
         <Label Content="Titel:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
-        <TextBox x:Name="TextBoxTitel" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="Trainingsname" VerticalAlignment="Center"/>
+        <TextBox x:Name="TextBoxTitel" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="Trainingsname" VerticalAlignment="Center" TextChanged="TextBoxTitel_TextChanged"/>
         <Label Content="Anfangsdatum" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
         <DatePicker x:Name="DatePickerStartdatum" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Grid.Column="0" Content="Enddatum:" Grid.Row="2" VerticalAlignment="Center"/>
