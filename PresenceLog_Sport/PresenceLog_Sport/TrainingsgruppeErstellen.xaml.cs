@@ -71,6 +71,17 @@ namespace PresenceLog_Sport
             Anfangsdatum = DatePickerStartdatum.SelectedDate.Value;
             Enddatum = DatePickerEnddatum.SelectedDate.Value;
 
+            bool einwochentagauswaehlen =
+                CheckBoxMontag.IsChecked == true || CheckBoxDienstag.IsChecked == true ||
+                CheckBoxMittwoch.IsChecked == true || CheckBoxDonnerstag.IsChecked == true ||
+                CheckBoxFreitag.IsChecked == true || CheckBoxSamstag.IsChecked == true ||
+                CheckBoxSonntag.IsChecked == true;
+
+            if (!einwochentagauswaehlen)
+            {
+                MessageBox.Show("Bitte wählen Sie mindestens ein Wochentag aus!");
+            }
+
 
             Titel = TextBoxTitel.Text;
             AusgewaehlteTage = checkedDays();
