@@ -17,18 +17,12 @@ namespace PresenceLog_Sport
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-        
-
         public MainWindow()
         {
             InitializeComponent();
             StartPage startPage = new StartPage();
             MainFrame.Navigate(startPage);
             
-
         }
-
-        
     }
 }

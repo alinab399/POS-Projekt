@@ -43,8 +43,8 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <Button x:Name="AnwesendButton" Content="✔" Click="AnwesendButton_Click"/>
-                                    <Button x:Name="AbwesendButton" Content="✖" Click="AbwesendButton_Click"/>
+                                    <Button x:Name="AnwesendButton" Content="✔" Click="AnwesendButton_Click" Loaded="AnwesendButton_Loaded"/>
+                                    <Button x:Name="AbwesendButton" Content="✖" Click="AbwesendButton_Click" Loaded="AbwesendButton_Loaded"/>
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>

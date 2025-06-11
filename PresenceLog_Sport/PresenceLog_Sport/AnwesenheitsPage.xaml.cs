@@ -96,5 +96,36 @@ namespace PresenceLog_Sport
             AnalysePage analysieren = new AnalysePage(TrainingsgruppeAktuell);
             this.NavigationService.Navigate(analysieren);
         }
+
+        private void AnwesendButton_Loaded(object sender, RoutedEventArgs e)
+        {
+            Button loadedButton = (Button)sender;
+            StackPanel stackPanel = (StackPanel)loadedButton.Parent;
+            Person person = (Person)stackPanel.DataContext;
+
+            foreach (AbAnwesenheit eintrag in person.Anwesenheiten)
+            {
+                if (eintrag.Datum == AusgewaehltesDatum)
+                {
+                    loadedButton.Background = Brushes.ForestGreen;
+                }
+            }
+            
+        }
+
+        private void AbwesendButton_Loaded(object sender, RoutedEventArgs e)
+        {
+            Button loadedButton = (Button)sender;
+            StackPanel stackPanel = (StackPanel)loadedButton.Parent;
+            Person person = (Person)stackPanel.DataContext;
+
+            foreach (AbAnwesenheit eintrag in person.Anwesenheiten)
+            {
+                if (eintrag.Datum == AusgewaehltesDatum)
+                {
+                    loadedButton.Background = Brushes.IndianRed;
+                }
+            }
+        }
     }
 }
