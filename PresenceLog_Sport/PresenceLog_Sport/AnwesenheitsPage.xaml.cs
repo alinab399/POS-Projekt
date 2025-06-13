@@ -74,13 +74,14 @@ namespace PresenceLog_Sport
             AbwesendBegruendung abwesendBegruendungWindow = new AbwesendBegruendung();
             if (abwesendBegruendungWindow.ShowDialog() == true)
             {
-                person.Anwesenheiten.Add(new AbAnwesenheit(false, abwesendBegruendungWindow.TextBoxBegruendung.Text, AusgewaehltesDatum));
+                person.Anwesenheiten.Add(new AbAnwesenheit(false, abwesendBegruendungWindow.Begruendung, AusgewaehltesDatum));
             }
             else
             {
                 person.Anwesenheiten.Add(new AbAnwesenheit(false, "War abwesend", AusgewaehltesDatum));
             }
-            
+
+            CollectionViewSource.GetDefaultView(ListViewAnwesenheit.ItemsSource).Refresh();
         }
 
         private void ButtonZurueck_Click(object sender, RoutedEventArgs e)

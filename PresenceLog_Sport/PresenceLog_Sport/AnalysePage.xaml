@@ -17,12 +17,18 @@
             <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
-            <Button x:Name="ButtonZurueck" Width="70" Background="Transparent" BorderThickness="0" Content="↩" Margin="20,0,0,0" Click="ButtonZurueck_Click"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,5">
+            <Button x:Name="ButtonZurueck" Background="CadetBlue" Opacity="0.9" Foreground="White" Width="70" BorderThickness="0" Content="↩" Margin="10,0,0,0" Click="ButtonZurueck_Click"/>
         </StackPanel>
 
 
-        <ListView x:Name="ListViewAnalyse" Grid.Row="1">
+        <ListView x:Name="ListViewAnalyse" Grid.Row="1" Margin="10" BorderThickness="3" BorderBrush="CadetBlue" FontSize="17" FontFamily="Bahnschrift" Foreground="Black">
+            <ListView.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#FFECEFF1" Offset="0.0"/>
+                    <GradientStop Color="#FFCFD8DC" Offset="1.0"/>
+                </LinearGradientBrush>
+            </ListView.Background>
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Vorname" Width="250" DisplayMemberBinding="{Binding Path=Vorname}"></GridViewColumn>

@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PresenceLog_Sport"
         mc:Ignorable="d"
-        Title="TrainingsgruppeErstellen" Height="450" Width="700">
+        Title="TrainingsgruppeErstellen" Height="550" Width="800" FontFamily="Bahnschrift" FontSize="17">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2.5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -20,26 +21,45 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Titel:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
-        <TextBox x:Name="TextBoxTitel" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="Trainingsname" VerticalAlignment="Center" TextChanged="TextBoxTitel_TextChanged"/>
-        <Label Content="Anfangsdatum" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
-        <DatePicker x:Name="DatePickerStartdatum" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Grid.Column="0" Content="Enddatum:" Grid.Row="2" VerticalAlignment="Center"/>
-        <DatePicker x:Name="DatePickerEnddatum" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"/>
-        <Label Content="Wochentage:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#FFECEFF1" Offset="0.0"/>
+                <GradientStop Color="#FFCFD8DC" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
-        <CheckBox x:Name="CheckBoxMontag" Grid.Column="1" Content="Montag" HorizontalAlignment="Left" Margin="5,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CheckBoxDienstag" Grid.Column="1" Content="Dienstag" HorizontalAlignment="Left" Margin="89,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CheckBoxMittwoch" Grid.Column="1" Content="Mittwoch" HorizontalAlignment="Left" Margin="177,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CheckBoxDonnerstag" Grid.Column="1" Content="Donnerstag" HorizontalAlignment="Left" Margin="268,2,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CheckBoxFreitag" Grid.Column="1" Content="Freitag" HorizontalAlignment="Left" Margin="5,28,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CheckBoxSamstag" Grid.Column="1" Content="Samstag" HorizontalAlignment="Left" Margin="89,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
-        <CheckBox x:Name="CheckBoxSonntag" Grid.Column="1" Content="Sonntag" HorizontalAlignment="Left" Margin="177,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
+        <Label Content="Titel:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Margin="10,0"/>
+        <TextBox x:Name="TextBoxTitel" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="Trainingsname" VerticalAlignment="Center" TextChanged="TextBoxTitel_TextChanged" BorderBrush="CadetBlue" BorderThickness="1" Margin="10,0"/>
+        <Label Content="Anfangsdatum" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="10,0"/>
+        <DatePicker x:Name="DatePickerStartdatum" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" BorderBrush="CadetBlue" Background="White"/>
+        <Label Grid.Column="0" Content="Enddatum:" Grid.Row="2" VerticalAlignment="Center" Margin="10,0"/>
+        <DatePicker x:Name="DatePickerEnddatum" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" BorderThickness="2" BorderBrush="CadetBlue" Background="White"/>
+        <Label Content="Wochentage:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="10,0"/>
 
-        <ListView x:Name="ListViewMitglieder" Grid.ColumnSpan="2" Grid.Row="4">
+        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="10,0">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:Name="CheckBoxMontag" Content="Montag" Margin="10,5"/>
+                <CheckBox x:Name="CheckBoxDienstag" Content="Dienstag" Margin="10,5"/>
+                <CheckBox x:Name="CheckBoxMittwoch" Content="Mittwoch" Margin="10,5"/>
+                <CheckBox x:Name="CheckBoxDonnerstag" Content="Donnerstag" Margin="10,5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:Name="CheckBoxFreitag" Content="Freitag" Margin="10,5"/>
+                <CheckBox x:Name="CheckBoxSamstag" Content="Samstag" Margin="10,5"/>
+                <CheckBox x:Name="CheckBoxSonntag" Content="Sonntag" Margin="10,5"/>
+            </StackPanel>
+        </StackPanel>
+
+        
+        <TextBlock Text="Mitglieder" FontSize="18" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" Margin="10,0"/>
+        <Button x:Name="HinzufuegenBtn" Content="＋ Neues Mitglied" Click="HinzufuegenBtn_Click" Background="CadetBlue" Foreground="White" BorderThickness="0" Padding="10,5"
+            Cursor="Hand" Margin="10,0" Height="36" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right"/>
+        
+
+        <ListView x:Name="ListViewMitglieder" Grid.ColumnSpan="2" Grid.Row="5" Margin="10,0" BorderThickness="3" BorderBrush="CadetBlue" Foreground="Black">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Hinzufügen" Width="100">
+                    <GridViewColumn Header="Hinzufügen" Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <CheckBox IsChecked="{Binding IstInTrainingsgruppe, UpdateSourceTrigger=PropertyChanged}">
@@ -54,15 +74,19 @@
                     <GridViewColumn Header="Nachname" Width="200" DisplayMemberBinding="{Binding Nachname}">
 
                     </GridViewColumn>
-                    <GridViewColumn Header="Geburtsdatum" Width="150" DisplayMemberBinding="{Binding Geburtsdatum}">
+                    <GridViewColumn Header="Geburtsdatum" Width="150" DisplayMemberBinding="{Binding Geburtsdatum,StringFormat='dd.MM.yyyy'}">
 
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="AbbrechenBtn" Content="Abbrechen" Grid.Column="0" Grid.Row="5" Margin="20" Width="100" Click="AbbrechenBtn_Click"></Button>
-        <Button x:Name="OKBtn" Content="OK" Grid.Column="1" Grid.Row="5" Margin="20" Width="100" Click="OKBtn_Click"></Button>
-        <Button x:Name="HinzufuegenBtn" Content="+" Grid.Column="1" Margin="403,31,10,5" Grid.Row="5" Click="HinzufuegenBtn_Click"></Button>
+        
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="15,0">
+            <Button x:Name="AbbrechenBtn" Content="Abbrechen" Width="110" Click="AbbrechenBtn_Click" Height="40" Padding="10" Margin="10,0" VerticalAlignment="Center" Background="CadetBlue"
+                Foreground="White" BorderThickness="0" Cursor="Hand" Opacity="0.9"/>
+            <Button x:Name="OKBtn" Content="OK" Width="110" Click="OKBtn_Click" Height="40" Padding="10" Margin="10,0" VerticalAlignment="Center" Background="CadetBlue"
+                Foreground="White" BorderThickness="0" Cursor="Hand" Opacity="0.9"/>
+        </StackPanel>
 
     </Grid>
 </Window>

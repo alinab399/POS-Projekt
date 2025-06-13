@@ -19,6 +19,7 @@ namespace PresenceLog_Sport
     /// </summary>
     public partial class AbwesendBegruendung : Window
     {
+        public string Begruendung {  get; set; }
         public AbwesendBegruendung()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace PresenceLog_Sport
 
         private void ButtonOK_Click(object sender, RoutedEventArgs e)
         {
-            string begruendung = TextBoxBegruendung.Text;
+            Begruendung = TextBoxBegruendung.Text;
 
             this.DialogResult = true;
             this.Close();

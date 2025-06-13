@@ -17,6 +17,7 @@ namespace PresenceLog_SportLib
                 begruendung = value;
                 OnPropertyChanged(nameof(Begruendung));
             } }
+
         private DateTime datum;
         public DateTime Datum 
         { 

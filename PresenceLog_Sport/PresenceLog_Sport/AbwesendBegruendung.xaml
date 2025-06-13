@@ -5,22 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PresenceLog_Sport"
         mc:Ignorable="d"
-        Title="AbwesendBegruendung" Height="200" Width="481">
+        Title="Begründung" Height="220" Width="470" FontFamily="Bahnschrift" FontSize="17">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>            
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="Begründung:"/>
-        <TextBox x:Name="TextBoxBegruendung" Grid.Row="0" Grid.Column="1" Margin="0,5,0,46" TextChanged="TextBoxBegruendung_TextChanged"/>
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="ButtonAbbrechen" Content="Abbrechen" Width="90" Margin="0 30" Click="ButtonAbbrechen_Click"/>
-            <Button x:Name="ButtonOK" Content="OK" Width="90" Margin="10 30" Click="ButtonOK_Click"/>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#FFECEFF1" Offset="0.0"/>
+                <GradientStop Color="#FFCFD8DC" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <Label Grid.Row="0" Grid.Column="0" Content="Begründung:" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        <TextBox x:Name="TextBoxBegruendung" Grid.Row="0" Grid.Column="1" Margin="8" Height="30" TextChanged="TextBoxBegruendung_TextChanged" BorderBrush="CadetBlue" BorderThickness="1"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="15,0">
+            <Button x:Name="ButtonAbbrechen" Content="Abbrechen" Width="110" Click="ButtonAbbrechen_Click" Height="40" Padding="10" Margin="10,0" VerticalAlignment="Center" Background="CadetBlue"
+        Foreground="White" BorderThickness="0" Cursor="Hand" Opacity="0.9"/>
+            <Button x:Name="ButtonOK" Content="OK" Width="110" Click="ButtonOK_Click" Height="40" Padding="10" Margin="10,0" VerticalAlignment="Center" Background="CadetBlue"
+        Foreground="White" BorderThickness="0" Cursor="Hand" Opacity="0.9"/>
 
         </StackPanel>
         

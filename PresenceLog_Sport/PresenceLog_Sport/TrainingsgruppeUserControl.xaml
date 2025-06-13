@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="200"
              MouseDoubleClick="UserControl_MouseDoubleClick">
-    <Grid Background="AliceBlue">
+    <Grid Background="GhostWhite" Margin="5">
         <Label x:Name="LabelUserControlTitel" Content="Titel" VerticalAlignment="Center" HorizontalAlignment="Center"/>
     </Grid>
 </UserControl>

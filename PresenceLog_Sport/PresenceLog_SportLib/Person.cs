@@ -22,6 +22,8 @@ namespace PresenceLog_SportLib
         }
         public List<AbAnwesenheit> Anwesenheiten {  get; set; } = new List<AbAnwesenheit>();
 
+        public string? LetzteAnwesenheit => Anwesenheiten.LastOrDefault()?.Begruendung;
+
         private AbAnwesenheit anwesenheit = new AbAnwesenheit();
         public AbAnwesenheit Anwesenheit { get => anwesenheit; set
             {

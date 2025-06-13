@@ -15,23 +15,31 @@
         </Grid.RowDefinitions>
 
 
-        <Grid Grid.Row="0" Margin="5">
+        <Grid Grid.Row="0" Margin="0,5,0,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" x:Name="ButtonZurueck" HorizontalAlignment="Left" Width="70" Background="Transparent" BorderThickness="0" Click="ButtonZurueck_Click" Content="↩" Margin="20,0,0,0"/>
-            <Button Grid.Column="1" x:Name="ButtonAnalyse" HorizontalAlignment="Right" Width="80" Background="Transparent" BorderThickness="0" Click="ButtonAnalyse_Click" Content="Analyse" Margin="0,0,20,0"/>
+            <Button Grid.Column="0" x:Name="ButtonZurueck" HorizontalAlignment="Left" Width="70" Background="CadetBlue" Opacity="0.9" Foreground="White" BorderThickness="0" Click="ButtonZurueck_Click" Content="↩" Margin="10,0,0,0"/>
+            <Button Grid.Column="1" x:Name="ButtonAnalyse" HorizontalAlignment="Right" Width="80" Background="CadetBlue" Opacity="0.9" Foreground="White" BorderThickness="0" Click="ButtonAnalyse_Click" Content="Analyse" Margin="0,0,10,0"/>
         </Grid>
 
 
-        <ListView x:Name="ListViewAnwesenheit" Grid.Row="1">
+
+
+        <ListView x:Name="ListViewAnwesenheit" Grid.Row="1" Margin="10" BorderThickness="3" BorderBrush="CadetBlue" FontSize="17" FontFamily="Bahnschrift" Foreground="Black">
+            <ListView.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#FFECEFF1" Offset="0.0"/>
+                        <GradientStop Color="#FFCFD8DC" Offset="1.0"/>
+                </LinearGradientBrush>
+            </ListView.Background>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Vorname" Width="150" DisplayMemberBinding="{Binding Path=Vorname}"></GridViewColumn>
-                    <GridViewColumn Header="Nachname" Width="150" DisplayMemberBinding="{Binding Path=Nachname}"></GridViewColumn>
-                    <GridViewColumn Header="Geburtsdatum" Width="150">
+                    <GridViewColumn Header="Vorname" Width="150" DisplayMemberBinding="{Binding Path=Vorname}"/>
+                    <GridViewColumn Header="Nachname" Width="150" DisplayMemberBinding="{Binding Path=Nachname}"/>
+                    <GridViewColumn Header="Geburtsdatum" Width="180">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Geburtsdatum, StringFormat='dd.MM.yyyy'}"/>
@@ -49,7 +57,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Begründung" Width="150" DisplayMemberBinding="{Binding Path=Anwesenheit.Begruendung}"></GridViewColumn>
+                    <GridViewColumn Header="Begründung" Width="200" DisplayMemberBinding="{Binding Path=LetzteAnwesenheit}"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
