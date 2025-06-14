@@ -12,37 +12,38 @@
 
 
 ## Betreuer: Lukas Diem, David Bechtold                                                                                    
-## Kurzbeschreibung: Programm für Sportvereine zur Unterstützung der Anwesenheitskontrolle und Trainingsvorbereitung.
+## Kurzbeschreibung: Desktop Anwendung für Sportvereine zur Unterstützung der Anwesenheitskontrolle und Trainingsvorbereitung.
 
-
-Collage mit mindestens zwei Screenshots 
-
-
-
+![Startseite](image.png)
+![Startseite](image-1.png)
 
 
 
 
-Relevanter Programmcode:
-for (int i = 0; i < ausgangswerte.Length; i++)
-{
-      double omega0 = eingangswerte[i] + t1 * a1 + t2 * a2;
-      ausgangswerte[i] = omega0 * b0 + t1 * b1 + t2 * b2;
-      t2 = t1;
-      t1 = omega0;
-}
+### 1	Inhaltsverzeichnis
+    2   Projektzeitplan
+    3	Lastenheft (Kurzbeschreibung, Funktionsumfang, Skizzen)
+        3.1. Kurzbeschreibung 
+        3.2. Skizzen
+        3.3. Funktionsumfang
+    4	Pflichtenheft
+        4.1	Interner Programmaufbau (Programmlogik)
+        4.2	Umsetzungsdetails
+        4.3	Ergebnisse, Interpretation (Tests)
+    5	Anleitung
+        5.1	Installationsanleitung
+        5.2	Bedienungsanleitung
+    6	Bekannte Bugs, Probleme
+    7	Erweiterungsmöglichkeiten
 
 
-1	Inhaltsverzeichnis
 
 
 
 
 
-
-
-2	Projektzeitplan
-|    Datum    |   Aufgabe  | Bearbeiter | Status (%) |
+### 2	Projektzeitplan
+|    Datum    |   Aufgabe  | Bearbeiter | Status in % |
 | ----------- | ---------- | ---------- | ---------- |
 |  14.05.2025 | Personen-Klasse | Aleksandra Vidovic | 50% |
 |  14.05.2025 | Personen-Collection-Klasse | Aleksandra Vidovic | 50% |
@@ -99,6 +100,8 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  11.06.2025 | GUI ansprechender gestaltet | Alina Bischof | 40% |
 |  13.06.2025 | GUI ansprechender gestaltet | Alina Bischof | 80% |
 |  14.06.2025 | GUI ansprechender gestaltet | Alina Bischof | 100% |
+|  14.06.2025 | Bug bei Abwesend Begründung richtig speichern gelöst. | Alina Bischof | 100% |
+|  14.06.2025 | Dokumentation vervollständigt | Alina Bischof | 90% |
 
 ANWESENHEIT WIRD NOCH NICHT RICHTIG GESPEICHERT!!!!!!!!!!!!!!!
 
@@ -106,28 +109,57 @@ ANWESENHEIT WIRD NOCH NICHT RICHTIG GESPEICHERT!!!!!!!!!!!!!!!
 
 
 
-3	Lastenheft (Kurzbeschreibung, Funktionsumfang, Skizzen)
-2.1. Kurzbeschreibung 
-Spielprinzip mit einigen Sätzen erklären
-2.2. Skizzen
+### 3	Lastenheft (Kurzbeschreibung, Funktionsumfang, Skizzen)
+#### 3.1. Kurzbeschreibung 
+Desktop Anwendung für Sportvereine zur Unterstützung der Anwesenheitskontrolle und Trainingsvorbereitung. Trainingsgruppen können erstellt, an benutzerdefinierten Tagen gespeichert und angezeigt werden. Die Anwesenheit der Personen einer Trainingsgruppe wird übersichtlich organisiert.
+
+#### 3.2. Skizzen
 Spielprinzip genau erklären
-2.3. Funktionsumfang
-Alle Funktionen genau erklären.
-Must-Haves und Nice-To-Haves beschreiben (Punkteliste). Must-Haves müssen umgesetzt werden.
-Beispiele: 
+![Startseite Skizze](Startseite_skizze.jpg)
+![AnwesenheitsPage Skizze](Anwesenheits_skizze.jpg)
+![AnalysePage Skizze](Analyse_skizze.jpg)
 
-Taste D	Bewegt die Spielerfigur um 5 Pixel nach rechts
-Taste S	Speichert aktuellen Zustand des Spiels (Save)
-Mausklick	Zerstört Sprite unter dem Cursor
-	
+#### 3.3. Funktionsumfang
+Auf der Startseite kann ein gewünschtes Datum ausgewählt oder eine neue Trainingsgruppe erstellt werden. Beim erstellen einer neuer Trainingsgruppe muss der Titel, Start- und Enddatum, gewünschten Trainingstage und die dazugehörigen Personen angeben. Es gibt auch die Möglichkeit, eine neue Person der Anwendung hinzuzufügen. Wird auf der Startseite ein Datum ausgewählt, erscheinen alle Trainingsgruppen die an diesem Tag eingetragen wurden. Mit einem Doppelklick auf die Trainingsgruppe gelangt man zur Anwesenheit. Hier kann die Anwesenheit der Mitglieder durch zwei Button festgehalten werden. Wenn eine Person als Abwesend eingtragen wird, öffnet sich ein weiteres Fenster zur Angabe wieso die Person abwesend ist. Mit einem Button kann man auch zur Analyse-Seite gelangen. Dort sieht man grafisch wieviel mal eine Person an- oder abwesend war.
 
+Must haves: 100% erfüllt
+* Kalenderansicht → Datumauswahl → Trainingsgruppen 
+* neue Trainingsgruppen erstellen
+* neue Personen anlegen
+* Personen bleiben gespeichert
+* Anwesenheitsliste pro Trainingsgruppe
+* Buttons für “Anwesend” oder “Abwesend”
+* “Abwesend” →  Unterfenster → Begründung eingeben 
+* “Zurück” Button
+* Analyse-Page
+
+Nice to haves: "Suchleiste für Datum" eigebaut
+* Suchleiste für Datum oder Trainingsgruppen
+* Notizfeld pro Trainingseinheit
+* Zufallsgenerator für Aufwärmübungen
+* Namen der Personen alphabetisch sortieren
+* Zusätzliche Informationen eingeben z.B.: Telefonnummer, etc.
+* Timer / Stoppuhr
+* Hintergrundfarbe der Trainingsgruppe ändern
 
  
-4	Pflichtenheft
-4.1	Interner Programmaufbau (Programmlogik)
-Klassendiagramme, um die Klassen abzubilden.
-Wie arbeiten die Klassen miteinander? Hier könnt ihr beispielsweise Flussdiagramme verwenden, um dies abzubilden.
-4.2	Umsetzungsdetails
+### 4	Pflichtenheft
+#### 4.1	Interner Programmaufbau (Programmlogik)
+Es gibt eine Library namens "PrecensLog_SportLib" für alle Klassen.
+Unsere Klassen:
+* AbAnwesenheit: speichert die Ab- oder Anweseneheit als Objekt mit Status, Begründung und Datum
+* AnalyseEintrag: die Anzeige in der GUI für die Analyse
+* Person: erzeugt Personenobjekte mit Vorname, Nachname, Geburtsdatum und Anwesenheit
+* PersonenCollection: speichert die Personenobjekte in eine Liste, speichert und ladet diese Liste
+* Trainingsgruppe: erzeugt Trainingsgruppenobjekte mit Titel, Startdatum, Enddatum, ausgewählte Wochentage und dazugehörige Personen
+* TrainingsgruppeCollection: speichert die Trainingsgruppenobjekte in eine Liste, speichert und ladet diese Liste
+
+
+![Personen Klassen](Klassenstrukturen1.jpeg)
+![Trainingsgruppen Klassen](Klassenstrukturen2.jpeg)
+Zu den anderen Klassen gibt es keine Skizzen da diese nicht geplant waren.
+
+#### 4.2	Umsetzungsdetails
 Detaillierte Beschreibung der Umsetzung mit möglichen Fehlern und Lösungen
 |    Datum    |   Fehler   | Lösung | Bearbeiter |
 | ----------- | ---------- | ---------- | ---------- |
@@ -139,21 +171,25 @@ Detaillierte Beschreibung der Umsetzung mit möglichen Fehlern und Lösungen
 |  07.06.2025 |  Wenn mit dem DatePicker im MainWindow ein Datum ausgewählt wird, wo eigentlich eine Trainingsgruppe gespeichert ist, ist keine Trainingsgruppe vorhanden. | Mit debuggen habe ich herausgefunden, dass eine leere Wochentag-Liste aus der gespeicherten Datei geladen wird, weil System.Text.Json ignoriert Felder standardmäßig. Und die Wochentag-Liste war ein öffentliches Feld und kein Property. | Alina Bischof |
 |  07.06.2024 |  Sobald eine neue Trainingsgruppe erstellt wird, werden in der Json-Datei die Personen aus den anderen, schon gespeicherten Trainingsgruppen gelöscht. | Wir hatten zwei unterschiedliche Serializer/Deserializer eingebaut. Einmal den von Newtonsoft und einmal den von .NET. Das hat zu Problemen geführt. Jetzt wird immer Deserialize von Newtonsoft verwendet.| Alina Bischof |
 |  08.06.2024 |  Wenn auf den "+" Button geklickt wird um eine Person hinzuzufügen, wird in der .txt-Datei eine leere Person hinzugefügt. | Nicht vor, sonder in dem if wo man prüft ob das Fenster mit dem Button "Okay" oder "Abbrechen" beendet worden ist. | Alina Bischof |
+|  14.06.2025 |  Wird im BegründungWindow auf "Abbrechen" geklickt, wird das Eigegebene trotzdem gespeichert. | Man hat vergessen beim Abbrechen-Button Click DialogResult auf False zu setzten | Alina Bischof |
+
+
 BUGS NOCH EINTRAGEN VON Aleksandra 
 
-4.3	Ergebnisse, Interpretation (Tests)
+#### 4.3	Ergebnisse, Interpretation (Tests)
 Wie läuft das Programm?
 Welche Schwachstellen hat es?   (z.B. Programmlauf nicht flüssig)
  
-5	Anleitung
-5.1	Installationsanleitung
+### 5	Anleitung
+#### 5.1	Installationsanleitung
 Was muss alles installiert werden 
-5.2	Bedienungsanleitung
-Muss so genau sein, dass auch ein neuer, unbedarfter Benutzer damit zurechtkommt.
+
+#### 5.2	Bedienungsanleitung
+Auf der Startseite kann ein gewünschtes Datum ausgewählt oder eine neue Trainingsgruppe erstellt werden. Beim erstellen einer neuer Trainingsgruppe muss der Titel, Start- und Enddatum, gewünschten Trainingstage und die dazugehörigen Personen angeben. Es gibt auch die Möglichkeit, eine neue Person der Anwendung hinzuzufügen. Wird auf der Startseite ein Datum ausgewählt, erscheinen alle Trainingsgruppen die an diesem Tag eingetragen wurden. Mit einem Doppelklick auf die Trainingsgruppe gelangt man zur Anwesenheit. Hier kann die Anwesenheit der Mitglieder durch zwei Button festgehalten werden. Wenn eine Person als Abwesend eingtragen wird, öffnet sich ein weiteres Fenster zur Angabe wieso die Person abwesend ist. Mit einem Button kann man auch zur Analyse-Seite gelangen. Dort sieht man grafisch wieviel mal eine Person an- oder abwesend war.
 
 
 
-6	Bekannte Bugs, Probleme
+### 6	Bekannte Bugs, Probleme
 Welche Bugs liegen noch vor? Warum konnten sie nicht behoben werden?
 
 
@@ -161,10 +197,10 @@ Welche Bugs liegen noch vor? Warum konnten sie nicht behoben werden?
 
 
  
-7	Erweiterungsmöglichkeiten
-Wenn ihr noch Zeit hättet, was würdet ihr verbessern oder erweitern?
+### 7	Erweiterungsmöglichkeiten
+Wenn wir noch mehr Zeit hätten, würden wir definitiv alle unsere Nice to haves implementieren.
  
-8	Info
+### 8	Info
 
 •	Der Zeitplan ist wöchentlich auszufüllen!
 •	Endabgabe: dieses Dokument und Projektverzeichnis per Teams abgeben
