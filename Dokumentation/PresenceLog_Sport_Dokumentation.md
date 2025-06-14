@@ -114,7 +114,6 @@ ANWESENHEIT WIRD NOCH NICHT RICHTIG GESPEICHERT!!!!!!!!!!!!!!!
 Desktop Anwendung für Sportvereine zur Unterstützung der Anwesenheitskontrolle und Trainingsvorbereitung. Trainingsgruppen können erstellt, an benutzerdefinierten Tagen gespeichert und angezeigt werden. Die Anwesenheit der Personen einer Trainingsgruppe wird übersichtlich organisiert.
 
 #### 3.2. Skizzen
-Spielprinzip genau erklären
 ![Startseite Skizze](Startseite_skizze.jpg)
 ![AnwesenheitsPage Skizze](Anwesenheits_skizze.jpg)
 ![AnalysePage Skizze](Analyse_skizze.jpg)
