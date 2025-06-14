@@ -64,7 +64,7 @@
             </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Hinzufügen" Width="150">
+                    <GridViewColumn Header="Hinzufügen" Width="125">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <CheckBox IsChecked="{Binding IstInTrainingsgruppe, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center">
