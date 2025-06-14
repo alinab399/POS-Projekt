@@ -24,17 +24,17 @@
         </Grid.Background>
         
         <DatePicker x:Name="DatePickerTraining" Padding="10" Grid.Row="0" HorizontalAlignment="Center" Width="250" BorderThickness="2" BorderBrush="CadetBlue" Background="White" FontFamily="Bahnschrift"
-            Margin="0,20" VerticalAlignment="Center" SelectedDateChanged="DatePickerTraining_SelectedDateChanged" FontSize="17"/>
+            Margin="0,20" VerticalAlignment="Center" SelectedDateChanged="DatePickerTraining_SelectedDateChanged" FontSize="19"/>
 
 
-        <TextBlock Grid.Row="1" Text="Trainingsgruppen" FontSize="20" FontWeight="Bold" Margin="25,0,0,0" VerticalAlignment="Center" FontFamily="Bahnschrift"/>
+        <TextBlock Grid.Row="1" Text="Trainingsgruppen" FontSize="23" FontWeight="Bold" Margin="25,0,0,0" VerticalAlignment="Center" FontFamily="Bahnschrift"/>
 
         <WrapPanel x:Name="WrapPannelTrainingsgruppen" Grid.Row="2" Margin="30">
 
         </WrapPanel>
 
         <Button x:Name="GruppeErstellenBtn" Grid.Row="3" Content="Neue Trainingsgruppe erstellen" HorizontalAlignment="Right" VerticalAlignment="Center" Height="46" Margin="0,0,25,0" Padding="10" Background="CadetBlue"
-        Foreground="White" BorderThickness="0" Cursor="Hand" Click="GruppeErstellenBtn_Click" FontSize="17" FontFamily="Bahnschrift" Opacity="0.9"/>
+        Foreground="White" BorderThickness="0" Cursor="Hand" Click="GruppeErstellenBtn_Click" FontSize="19" FontFamily="Bahnschrift" Opacity="0.9"/>
 
     </Grid>
 </Page>

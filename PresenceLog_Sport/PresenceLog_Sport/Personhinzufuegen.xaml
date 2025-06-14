@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PresenceLog_Sport"
         mc:Ignorable="d"
-        Title="Person hinzufügen" Height="210" Width="500">
+        Title="Person hinzufügen" Height="230" Width="510" FontFamily="Bahnschrift" FontSize="17">
     <Grid>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -19,18 +19,30 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Vorname:" Grid.Row="0" Grid.Column="0"/>
-        <TextBox x:Name="TextBoxVorname" Grid.Row="0" Grid.Column="1"/>
-        <Label Content="Nachname:" Grid.Row="1" Grid.Column="0"/>
-        <TextBox x:Name="TextBoxNachname" Grid.Row="1" Grid.Column="1"/>
-        <Label Content="Geburtsdatum:" Grid.Row="2" Grid.Column="0"/>
-        <DatePicker x:Name="DatePickerGeburtsdatum" Grid.Row="2" Grid.Column="1"/>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#FFECEFF1" Offset="0.0"/>
+                <GradientStop Color="#FFCFD8DC" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Label Content="Vorname:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="5,0"/>
+        <TextBox x:Name="TextBoxVorname" Grid.Row="0" Grid.Column="1" BorderBrush="CadetBlue" BorderThickness="1" Margin="8" Height="30" VerticalAlignment="Center"/>
+        <Label Content="Nachname:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="5,0"/>
+        <TextBox x:Name="TextBoxNachname" Grid.Row="1" Grid.Column="1" BorderBrush="CadetBlue" BorderThickness="1" Margin="8" Height="30" VerticalAlignment="Center"/>
+        <Label Content="Geburtsdatum:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="5,0"/>
+        <DatePicker x:Name="DatePickerGeburtsdatum" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="8" BorderThickness="1" BorderBrush="CadetBlue" Background="White"/>
 
 
-        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="AbbrechenBtn" Content="Abbrechen" Padding="10" Width="90" Margin="5" Click="AbbrechenBtn_Click"/>
-            <Button x:Name="OkayBtn" Content="Okay" Padding="10" Width="90" Margin="5" Click="OkayBtn_Click"/>
+       
+
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="15,0">
+            <Button x:Name="AbbrechenBtn" Content="Abbrechen" Width="110" Click="AbbrechenBtn_Click" Height="40" Padding="10" Margin="10,0" VerticalAlignment="Center" Background="CadetBlue"
+                Foreground="White" BorderThickness="0" Cursor="Hand" Opacity="0.9"/>
+            <Button x:Name="OkayBtn" Content="OK" Width="110" Click="OkayBtn_Click" Height="40" Padding="10" Margin="10,0" VerticalAlignment="Center" Background="CadetBlue"
+                Foreground="White" BorderThickness="0" Cursor="Hand" Opacity="0.9"/>
+
         </StackPanel>
-        
+
     </Grid>
 </Window>

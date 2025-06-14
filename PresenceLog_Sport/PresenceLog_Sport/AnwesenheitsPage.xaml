@@ -28,36 +28,61 @@
 
 
 
-        <ListView x:Name="ListViewAnwesenheit" Grid.Row="1" Margin="10" BorderThickness="3" BorderBrush="CadetBlue" FontSize="17" FontFamily="Bahnschrift" Foreground="Black">
+        <ListView x:Name="ListViewAnwesenheit" Grid.Row="1" Margin="10" BorderThickness="3" BorderBrush="CadetBlue" FontSize="19" FontFamily="Bahnschrift" Foreground="Black">
+            
             <ListView.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                         <GradientStop Color="#FFECEFF1" Offset="0.0"/>
                         <GradientStop Color="#FFCFD8DC" Offset="1.0"/>
                 </LinearGradientBrush>
             </ListView.Background>
+            
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Vorname" Width="150" DisplayMemberBinding="{Binding Path=Vorname}"/>
-                    <GridViewColumn Header="Nachname" Width="150" DisplayMemberBinding="{Binding Path=Nachname}"/>
-                    <GridViewColumn Header="Geburtsdatum" Width="180">
+                    <GridViewColumn Header="Vorname" Width="200">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Geburtsdatum, StringFormat='dd.MM.yyyy'}"/>
+                                <TextBlock Text="{Binding Vorname}" TextAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-
-                    <GridViewColumn Header="Anwesend" Width="100">
+                    <GridViewColumn Header="Nachname" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Nachname}" TextAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Geburtsdatum" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Geburtsdatum, StringFormat='dd.MM.yyyy'}" TextAlignment="Center" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Anwesend" Width="200">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <Button x:Name="AnwesendButton" Content="✔" Click="AnwesendButton_Click" Loaded="AnwesendButton_Loaded"/>
-                                    <Button x:Name="AbwesendButton" Content="✖" Click="AbwesendButton_Click" Loaded="AbwesendButton_Loaded"/>
+                                    <Button x:Name="AnwesendButton" Content="✔" Click="AnwesendButton_Click" Loaded="AnwesendButton_Loaded" Width="30" Height="30"/>
+                                    <Button x:Name="AbwesendButton" Content="✖" Click="AbwesendButton_Click" Loaded="AbwesendButton_Loaded" Width="30" Height="30"/>
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Begründung" Width="200" DisplayMemberBinding="{Binding Path=LetzteAnwesenheit}"></GridViewColumn>
+                    <GridViewColumn Header="Begründung" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=LetzteAnwesenheit}" TextAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PresenceLog_Sport"
         mc:Ignorable="d"
-        Title="TrainingsgruppeErstellen" Height="550" Width="800" FontFamily="Bahnschrift" FontSize="17">
+        Title="Trainingsgruppe erstellen" Height="550" Width="800" FontFamily="Bahnschrift" FontSize="17">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -29,11 +29,11 @@
         </Grid.Background>
 
         <Label Content="Titel:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Margin="10,0"/>
-        <TextBox x:Name="TextBoxTitel" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="Trainingsname" VerticalAlignment="Center" TextChanged="TextBoxTitel_TextChanged" BorderBrush="CadetBlue" BorderThickness="1" Margin="10,0"/>
+        <TextBox x:Name="TextBoxTitel" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="Trainingsname" VerticalAlignment="Center" Height="20" TextChanged="TextBoxTitel_TextChanged" BorderBrush="CadetBlue" BorderThickness="1" Margin="10,0"/>
         <Label Content="Anfangsdatum" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="10,0"/>
-        <DatePicker x:Name="DatePickerStartdatum" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" BorderBrush="CadetBlue" Background="White"/>
+        <DatePicker x:Name="DatePickerStartdatum" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="1" BorderBrush="CadetBlue" Background="White"/>
         <Label Grid.Column="0" Content="Enddatum:" Grid.Row="2" VerticalAlignment="Center" Margin="10,0"/>
-        <DatePicker x:Name="DatePickerEnddatum" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" BorderThickness="2" BorderBrush="CadetBlue" Background="White"/>
+        <DatePicker x:Name="DatePickerEnddatum" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" BorderThickness="1" BorderBrush="CadetBlue" Background="White"/>
         <Label Content="Wochentage:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="10,0"/>
 
         <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="10,0">
@@ -57,25 +57,42 @@
         
 
         <ListView x:Name="ListViewMitglieder" Grid.ColumnSpan="2" Grid.Row="5" Margin="10,0" BorderThickness="3" BorderBrush="CadetBlue" Foreground="Black">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Hinzufügen" Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <CheckBox IsChecked="{Binding IstInTrainingsgruppe, UpdateSourceTrigger=PropertyChanged}">
+                                <CheckBox IsChecked="{Binding IstInTrainingsgruppe, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center">
 
                                 </CheckBox>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Vorname" Width="200" DisplayMemberBinding="{Binding Vorname}">
-
+                    <GridViewColumn Header="Vorname" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Vorname}" TextAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Nachname" Width="200" DisplayMemberBinding="{Binding Nachname}">
-
+                    <GridViewColumn Header="Vorname" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Nachname}" TextAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Geburtsdatum" Width="150" DisplayMemberBinding="{Binding Geburtsdatum,StringFormat='dd.MM.yyyy'}">
-
+                    <GridViewColumn Header="Geburtsdatum" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Geburtsdatum,StringFormat='dd.MM.yyyy'}" TextAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>

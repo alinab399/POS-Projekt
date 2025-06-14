@@ -27,8 +27,8 @@ namespace PresenceLog_Sport
         {
             InitializeComponent();
 
-            this.Height = 150;
-            this.Width = 150;
+            this.Height = 200;
+            this.Width = 200;
             this.Trainingsgruppe = trainingsgruppe;
             this.AusgewaehltesDatum = datum;
 

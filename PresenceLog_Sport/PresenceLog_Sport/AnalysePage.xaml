@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PresenceLog_Sport"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="1000"
       Title="AnalysePage">
 
     <Grid>
@@ -22,23 +22,40 @@
         </StackPanel>
 
 
-        <ListView x:Name="ListViewAnalyse" Grid.Row="1" Margin="10" BorderThickness="3" BorderBrush="CadetBlue" FontSize="17" FontFamily="Bahnschrift" Foreground="Black">
+        <ListView x:Name="ListViewAnalyse" Grid.Row="1" Margin="10" BorderThickness="3" BorderBrush="CadetBlue" FontSize="19" FontFamily="Bahnschrift" Foreground="Black">
             <ListView.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                     <GradientStop Color="#FFECEFF1" Offset="0.0"/>
                     <GradientStop Color="#FFCFD8DC" Offset="1.0"/>
                 </LinearGradientBrush>
             </ListView.Background>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Vorname" Width="250" DisplayMemberBinding="{Binding Path=Vorname}"></GridViewColumn>
-                    <GridViewColumn Header="Nachname" Width="250" DisplayMemberBinding="{Binding Path=Nachname}"></GridViewColumn>
-                    <GridViewColumn Header="Analyse" Width="250">
+                    <GridViewColumn Header="Vorname" Width="350">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Vorname}" TextAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Nachname" Width="350">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Nachname}" TextAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Analyse" Width="350">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <ProgressBar Width="150" Height="20" Minimum="0" Maximum="100" Value="{Binding Prozent, Mode=OneWay}" />
-                                    <Label Content="{Binding Anzeige}"/>
+                                    <ProgressBar Width="200" Height="20" Minimum="0" Maximum="100" Value="{Binding Prozent, Mode=OneWay}" HorizontalContentAlignment="Center"/>
+                                    <Label Content="{Binding Anzeige}" HorizontalContentAlignment="Center"/>
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
