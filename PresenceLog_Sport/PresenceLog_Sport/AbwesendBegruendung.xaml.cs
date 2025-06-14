@@ -35,6 +35,7 @@ namespace PresenceLog_Sport
 
         private void ButtonAbbrechen_Click(object sender, RoutedEventArgs e)
         {
+            this.DialogResult = false;
             this.Close();
         }
 

@@ -96,7 +96,9 @@ for (int i = 0; i < ausgangswerte.Length; i++)
 |  10.06.2025 | Uhrzeit wird bei AnwesenheitsPage nicht mehr angezeigt. | Alina Bischof | 100% |
 |  10.06.2025 | Das Datum des DatePickers auf der Startseite wird der AnwesenheitsPage mitgegeben für das Speichern der Ab/Anwesenheit. | Alina Bischof | 100% |
 |  10.06.2025 | versucht dass die Buttons farbig bleiben auch wenn man zurück zur Startseite und wieder zur AnwesenheitsPage geht. | Alina Bischof | 50% |
-|  11.06.2025 | GUI bisschen ansprechender gestaltet | Alina Bischof | 70% |
+|  11.06.2025 | GUI ansprechender gestaltet | Alina Bischof | 40% |
+|  13.06.2025 | GUI ansprechender gestaltet | Alina Bischof | 80% |
+|  14.06.2025 | GUI ansprechender gestaltet | Alina Bischof | 100% |
 
 ANWESENHEIT WIRD NOCH NICHT RICHTIG GESPEICHERT!!!!!!!!!!!!!!!
 
