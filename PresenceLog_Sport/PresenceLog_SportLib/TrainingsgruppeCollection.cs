@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -47,10 +48,12 @@ namespace PresenceLog_SportLib
                         Trainingsgruppen = geladeneDaten;
                     }
                 }
+                Log.Logger.Information("TrainingsgruppeCollection erfolgreich geladen");
             }
             catch (IOException exception)
             {
                 MessageBox.Show($"Fehler beim Laden der Datei: {exception.Message}");
+                Log.Logger.Fatal($"Fehler beim Laden der Datei: {exception.Message}");
             }
 
         }
@@ -64,10 +67,12 @@ namespace PresenceLog_SportLib
 
                 string json = JsonConvert.SerializeObject(this.Trainingsgruppen, Newtonsoft.Json.Formatting.Indented); // Formatting.Indented ... macht Einrückungen und Zeilenumbrüche damit es besser lesebar ist
                 File.WriteAllText(filename, json);
+                Log.Logger.Information("TrainingsgruppeCollection erfolgreich gespeichert");
             }
             catch (IOException exception)
             {
                 MessageBox.Show($"Fehler beim Speichern der Datei: {exception.Message}");
+                Log.Logger.Fatal($"Fehler beim Speichern der Datei: {exception.Message}");
             }
 
         }

@@ -1,4 +1,5 @@
 ﻿using PresenceLog_SportLib;
+using Serilog;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,8 +21,17 @@ namespace PresenceLog_Sport
         public MainWindow()
         {
             InitializeComponent();
+
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .WriteTo.Console()
+                .WriteTo.File("PresenceLog_Sport.log", rollingInterval: RollingInterval.Day)
+                .CreateLogger();
+
             StartPage startPage = new StartPage();
             MainFrame.Navigate(startPage);
+
+            Log.Logger.Information("StartPage wird angezeigt");
             
         }
     }

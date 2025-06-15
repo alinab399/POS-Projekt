@@ -1,4 +1,5 @@
 ﻿
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -51,6 +52,7 @@ namespace PresenceLog_SportLib
                             {
                                 {
                                     MessageBox.Show($"Fehler beim Deserialisieren einer Person: {exception.Message}");
+                                    Log.Logger.Fatal($"Fehler beim Deserialisieren einer Person: {exception.Message}");
                                 }
 
                             }
@@ -59,10 +61,12 @@ namespace PresenceLog_SportLib
                         }
                     }
                 }
+                Log.Logger.Information("PersonenCollection erfolgreich geladen");
             }
             catch(IOException exception)
             {
                 MessageBox.Show($"Fehler beim Laden der Datei: {exception.Message}");
+                Log.Logger.Fatal($"Fehler beim Laden der Datei: {exception.Message}");
             }
             
         }
@@ -81,10 +85,12 @@ namespace PresenceLog_SportLib
                         stream.WriteLine(Person.Serialisieren());
                     }
                 }
+                Log.Logger.Information("PersonenCollection erfolgreich gespeichert");
             }
             catch(IOException exception)
             {
                 MessageBox.Show($"Fehler beim Speichern der Datei: {exception.Message}");
+                Log.Logger.Fatal($"Fehler beim Speichern der Datei: {exception.Message}");
             }
             
         }

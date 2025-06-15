@@ -1,4 +1,5 @@
 ﻿using PresenceLog_SportLib;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,13 +49,14 @@ namespace PresenceLog_Sport
             }
 
             trainingsgruppeCollection.TrainingsgruppenHinzufuegen(trainingsgruppe);
+            Log.Logger.Information("Neue Trainingsgruppe wurde der TrainingsgruppeCollection hinzugefügt");
             trainingsgruppeCollection.Speichern("data/gespeicherteTrainingsgruppen.json");
+
         }
 
         private void DatePickerTraining_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             WrapPannelTrainingsgruppen.Children.Clear();
-            // TODO: Filtern der Trainingsgruppen
             trainingsgruppeCollection.Laden("data/gespeicherteTrainingsgruppen.json");
 
             DateTime ausgewaehltesDatum = DatePickerTraining.SelectedDate.Value;
@@ -77,6 +79,7 @@ namespace PresenceLog_Sport
             if (WrapPannelTrainingsgruppen.Children.Count == 0)
             {
                 MessageBox.Show("Keine Trainingsgruppen für den ausgewählten Tag gefunden.");
+                Log.Logger.Information("Es wurden keine Trainingsgruppen für den ausgewählten Tag gefunden");
             }
         }
     }

@@ -102,6 +102,7 @@
 |  14.06.2025 | GUI ansprechender gestaltet | Alina Bischof | 100% |
 |  14.06.2025 | Bug bei Abwesend Begründung richtig speichern gelöst. | Alina Bischof | 100% |
 |  14.06.2025 | Dokumentation vervollständigt | Alina Bischof | 90% |
+|  15.06.2025 | Serilog NuGet Packages installiert | Alina Bischof | 100% |
 
 ANWESENHEIT WIRD NOCH NICHT RICHTIG GESPEICHERT!!!!!!!!!!!!!!!
 

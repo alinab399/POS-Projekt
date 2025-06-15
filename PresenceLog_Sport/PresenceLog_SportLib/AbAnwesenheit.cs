@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -44,6 +45,7 @@ namespace PresenceLog_SportLib
         {
             string statusString = Status.ToString();
 
+            Log.Logger.Information("AbAnwesenheit serialisiert");
             return $"{statusString}§{Begruendung}§{Datum:yyyy-MM-dd}"; // Ein Trennzeichen das warscheinlich nicht in der Begründung vorkommt
         }
 
@@ -56,6 +58,7 @@ namespace PresenceLog_SportLib
             string begruendung = DataSplit[1];
             DateTime datum = DateTime.Parse(DataSplit[2]);
 
+            Log.Logger.Information("AbAnwesenheit deserialisiert");
             return new AbAnwesenheit(status, begruendung, datum);
         }
 

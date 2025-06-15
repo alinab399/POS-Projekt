@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,17 +33,21 @@ namespace PresenceLog_Sport
         {
             Vorname = TextBoxVorname.Text;
             Nachname = TextBoxNachname.Text;
-            // TODO: Geburtsdatum fehlerbehandlung
             Geburtsdatum = DatePickerGeburtsdatum.SelectedDate.Value;
 
             this.DialogResult = true;
             this.Close();
+
+            Log.Logger.Information("Person-hinzufügen-Fenster wurde durch OK-Button geschlossen");
+            Log.Logger.Information("Neue Person wurde hinzugefügt.");
         }
 
         private void AbbrechenBtn_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
             this.Close();
+
+            Log.Logger.Information("Person-hinzufügen-Fenster wurde durch OK-Button geschlossen");
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Xml.Linq;
 using Newtonsoft.Json;
+using Serilog;
 
 namespace PresenceLog_SportLib
 {
@@ -71,6 +72,7 @@ namespace PresenceLog_SportLib
 
             string anwesenheitenJson = JsonConvert.SerializeObject(Anwesenheiten);
 
+            Log.Logger.Information("Person serialisiert");
             return $"{Vorname};{Nachname};{geburtsdatumString};{anwesenheitenJson}";
         }
 
@@ -87,11 +89,14 @@ namespace PresenceLog_SportLib
             try
             {
                 anwesenheiten = JsonConvert.DeserializeObject<List<AbAnwesenheit>>(DataSplit[3]);
+                Log.Logger.Warning("Abwesenheit in JSON Format gefunden");
             }
             catch (JsonReaderException)
             {
                 // Falls kein gültiges JSON ? leere Liste verwenden
                 anwesenheiten = new List<AbAnwesenheit>();
+                Log.Logger.Warning("Keine Abwesenheit in JSON Format gefunden");
+                Log.Logger.Warning("Leere Liste wird verwendet");
             }
 
             // Neues Person-Objekt mit deserialisierten Werten erzeugen
@@ -100,6 +105,7 @@ namespace PresenceLog_SportLib
                 Anwesenheiten = anwesenheiten
             };
 
+            Log.Logger.Information("Person deserialisiert");
             return person;
         }
 

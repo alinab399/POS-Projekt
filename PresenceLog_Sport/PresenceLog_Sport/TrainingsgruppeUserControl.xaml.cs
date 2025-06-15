@@ -1,4 +1,5 @@
 ﻿using PresenceLog_SportLib;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,7 @@ namespace PresenceLog_Sport
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {
                 mainWindow.MainFrame.Navigate(anwesenheitPage);
+                Log.Logger.Information("Zu AnwesenheitsPage gewechselt");
             }
         }
     }

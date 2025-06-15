@@ -1,4 +1,5 @@
 ﻿using PresenceLog_SportLib;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,12 +59,14 @@ namespace PresenceLog_Sport
            
             if (DatePickerStartdatum == null)
             {
+                Log.Logger.Error("'DatePickerStartdatum' ist leer");
                 MessageBox.Show("Bitte wählen Sie ein Startdatum für diese Gruppe aus");
                 return;
             }
 
             if (DatePickerEnddatum == null)
             {
+                Log.Logger.Error("'DatePickerEnddatum' ist leer");
                 MessageBox.Show("Bitte wählen Sie ein Enddatum für diese Gruppe aus");
                 return;
             }
@@ -79,6 +82,7 @@ namespace PresenceLog_Sport
 
             if (!einwochentagauswaehlen)
             {
+                Log.Logger.Error("Es ist kein Wochentag ausgewählt");
                 MessageBox.Show("Bitte wählen Sie mindestens ein Wochentag aus!");
             }
 
@@ -99,12 +103,14 @@ namespace PresenceLog_Sport
 
             this.DialogResult = true; // Fenster mit "OK" schließen
             this.Close();
+            Log.Logger.Information("Trainingsgruppe-erstellen-Fenster wurde durch OK-Button geschlossen");
         }
 
         private void AbbrechenBtn_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
             this.Close(); /* Schließt das Fenster, sobald man auf den Abbrechen Button drückt*/
+            Log.Logger.Information("Trainingsgruppe-erstellen-Fenster wurde durch Abbrechen-Button geschlossen");
         }
 
         private List<string> checkedDays()
@@ -160,8 +166,8 @@ namespace PresenceLog_Sport
             if (string.IsNullOrEmpty(TextBoxTitel.Text))
             {
                 TextBoxTitel.Background = Brushes.Red;
+                Log.Logger.Error("TextBoxTitel ist leer");
             }
-
             else
             {
                 TextBoxTitel.Background = Brushes.White;

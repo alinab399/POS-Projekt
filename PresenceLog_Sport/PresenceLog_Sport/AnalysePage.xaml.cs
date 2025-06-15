@@ -1,4 +1,5 @@
 ﻿using PresenceLog_SportLib;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace PresenceLog_Sport
             InitializeComponent();
             this.PersonenColl = trainingsgruppe.Mitglieder;
             ListViewAnalyse.ItemsSource = GeneriereAnalyseEinträge();
+            Log.Logger.Information("ListView wurde upgedatet");
         }
 
         private void ButtonZurueck_Click(object sender, RoutedEventArgs e)
@@ -37,6 +39,7 @@ namespace PresenceLog_Sport
             if (this.NavigationService != null && this.NavigationService.CanGoBack)
             {
                 this.NavigationService.GoBack();
+                Log.Logger.Information("Von AnalysePage zu vorheriger Seite (AnwesenheitsPage) gewechselt");
             }
         }
 
@@ -58,6 +61,7 @@ namespace PresenceLog_Sport
                 analyseEintraege.Add(new AnalyseEintrag(person.Vorname, person.Nachname, anwesend, gesamt));
             }
 
+            Log.Logger.Information("Einträge der Analyse wurde generiert");
             return analyseEintraege;
         }
     }

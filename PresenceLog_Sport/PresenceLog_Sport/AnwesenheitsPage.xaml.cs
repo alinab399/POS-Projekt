@@ -1,4 +1,5 @@
 ﻿using PresenceLog_SportLib;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -49,8 +50,10 @@ namespace PresenceLog_Sport
             {
                 button.Background = Brushes.LightGray;
             }
+            Log.Logger.Information("Alle Button auf Grau gesetzt");
 
             clickedButton.Background = Brushes.ForestGreen;
+            Log.Logger.Information("Anwesend-Button auf Grün gesetzt");
 
             Person person = (Person)stackPanel.DataContext;
             person.Anwesenheiten.Add(new AbAnwesenheit(true, "War anwesend", AusgewaehltesDatum));
@@ -66,8 +69,10 @@ namespace PresenceLog_Sport
             {
                 button.Background = Brushes.LightGray;
             }
+            Log.Logger.Information("Alle Button auf Grau gesetzt");
 
             clickedButton.Background = Brushes.IndianRed;
+            Log.Logger.Information("Anwesend-Button auf Grün gesetzt");
 
             Person person = (Person)stackPanel.DataContext;
 
@@ -75,13 +80,16 @@ namespace PresenceLog_Sport
             if (abwesendBegruendungWindow.ShowDialog() == true)
             {
                 person.Anwesenheiten.Add(new AbAnwesenheit(false, abwesendBegruendungWindow.Begruendung, AusgewaehltesDatum));
+                Log.Logger.Information("Begründung eingegeben und gespeichert");
             }
             else
             {
                 person.Anwesenheiten.Add(new AbAnwesenheit(false, "War abwesend", AusgewaehltesDatum));
+                Log.Logger.Information("Keine Begründung eingegeben und stattdessen 'War abwesend' gespeichert");
             }
 
             CollectionViewSource.GetDefaultView(ListViewAnwesenheit.ItemsSource).Refresh();
+            Log.Logger.Information("ListViewAnwesenheit upgedatet");
         }
 
         private void ButtonZurueck_Click(object sender, RoutedEventArgs e)
@@ -89,6 +97,7 @@ namespace PresenceLog_Sport
             if (this.NavigationService != null && this.NavigationService.CanGoBack)
             {
                 this.NavigationService.GoBack();
+                Log.Logger.Information("Von AnwesenheitsPage zu vorheriger Seite (StartPage) gewechselt");
             }
         }
 
@@ -96,10 +105,12 @@ namespace PresenceLog_Sport
         {
             AnalysePage analysieren = new AnalysePage(TrainingsgruppeAktuell);
             this.NavigationService.Navigate(analysieren);
+            Log.Logger.Information("Zu AnalysePage gewechselt");
         }
 
         private void AnwesendButton_Loaded(object sender, RoutedEventArgs e)
         {
+            Log.Debug("AnwesendButton wurde geladen");
             Button loadedButton = (Button)sender;
             StackPanel stackPanel = (StackPanel)loadedButton.Parent;
             Person person = (Person)stackPanel.DataContext;
@@ -109,6 +120,7 @@ namespace PresenceLog_Sport
                 if (eintrag.Datum == AusgewaehltesDatum)
                 {
                     loadedButton.Background = Brushes.ForestGreen;
+                    Log.Debug("AbwesendButton wurde auf die Farbe Grün gesetzt");
                 }
             }
             
@@ -116,6 +128,7 @@ namespace PresenceLog_Sport
 
         private void AbwesendButton_Loaded(object sender, RoutedEventArgs e)
         {
+            Log.Debug("AbwesendButton wurde geladen");
             Button loadedButton = (Button)sender;
             StackPanel stackPanel = (StackPanel)loadedButton.Parent;
             Person person = (Person)stackPanel.DataContext;
@@ -125,6 +138,7 @@ namespace PresenceLog_Sport
                 if (eintrag.Datum == AusgewaehltesDatum)
                 {
                     loadedButton.Background = Brushes.IndianRed;
+                    Log.Debug("AbwesendButton wurde auf die Farbe Rot gesetzt");
                 }
             }
         }

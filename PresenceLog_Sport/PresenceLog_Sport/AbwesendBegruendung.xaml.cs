@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,12 +32,16 @@ namespace PresenceLog_Sport
 
             this.DialogResult = true;
             this.Close();
+
+            Log.Logger.Information("Begründungs Fenster der Abwesenheit durch OK-Button geschlossen");
         }
 
         private void ButtonAbbrechen_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
             this.Close();
+
+            Log.Logger.Information("Begründungs Fenster der Abwesenheit durch Abbrechen-Button geschlossen");
         }
 
         private void TextBoxBegruendung_TextChanged(object sender, TextChangedEventArgs e)
@@ -44,6 +49,8 @@ namespace PresenceLog_Sport
             if (string.IsNullOrEmpty(TextBoxBegruendung.Text))
             {
                 TextBoxBegruendung.Background = Brushes.Red;
+
+                Log.Logger.Warning("Begründungseingabefeld ist leer");
             }
 
             else

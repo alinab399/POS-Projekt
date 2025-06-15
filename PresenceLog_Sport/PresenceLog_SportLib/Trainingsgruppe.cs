@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,8 @@ namespace PresenceLog_SportLib
         public void MitgliederHinzufuegen(Person mitglied)
         {
             Mitglieder.PersonHinzufügen(mitglied);
+
+            Log.Logger.Information("Person wurde der PersonenCollection hinzugefügt");
         }
 
 
