@@ -105,6 +105,9 @@
 |  15.06.2025 | Serilog NuGet Packages installiert | Alina Bischof | 100% |
 |  15.06.2025 | Logging eingebaut | Alina Bischof | 100% |
 |  15.06.2025 | Dokumentation vervollständigt | Alina Bischof | 95% |
+|  15.06.2025 | Logging in die Unterordner data/log/ geändert | 100% |
+|  15.06.2025 | GIT-Repo mit Ordner strukturiert | 100% |
+
 
 
 
