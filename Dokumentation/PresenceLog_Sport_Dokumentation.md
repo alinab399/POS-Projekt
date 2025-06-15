@@ -92,7 +92,7 @@
 |  10.06.2025 | Textbox Fehlerbehandlung bei Begründungsfenster | Aleksandra Vidovic | 100% |
 |  10.06.2025 | Startdatum und Enddatum Fehlerbehandlung bei TrainingsgruppeErstellen.XAML.cs | Aleksandra Vidovic | 100% | 
 |  10.06.2025 | Wochentage Fehlerbehandlung bei TrainingsgruppeErstellen.XAML.cs | Aleksandra Vidovic | 100% |
-|  10.06.2025 | Bug bei snew AbAnwesenheit gelöst | Aleksandra Vidovic | 100 % | 
+|  10.06.2025 | Bug bei new AbAnwesenheit gelöst | Aleksandra Vidovic | 100 % | 
 |  10.06.2025 | Bug bei Deserialize bei Person.cs gelöst | Aleksandra Vidovic | 100 % |
 |  10.06.2025 | Uhrzeit wird bei AnwesenheitsPage nicht mehr angezeigt. | Alina Bischof | 100% |
 |  10.06.2025 | Das Datum des DatePickers auf der Startseite wird der AnwesenheitsPage mitgegeben für das Speichern der Ab/Anwesenheit. | Alina Bischof | 100% |
@@ -103,8 +103,9 @@
 |  14.06.2025 | Bug bei Abwesend Begründung richtig speichern gelöst. | Alina Bischof | 100% |
 |  14.06.2025 | Dokumentation vervollständigt | Alina Bischof | 90% |
 |  15.06.2025 | Serilog NuGet Packages installiert | Alina Bischof | 100% |
+|  15.06.2025 | Logging eingebaut | Alina Bischof | 100% |
+|  15.06.2025 | Dokumentation vervollständigt | Alina Bischof | 95% |
 
-ANWESENHEIT WIRD NOCH NICHT RICHTIG GESPEICHERT!!!!!!!!!!!!!!!
 
 
 
@@ -178,11 +179,21 @@ BUGS NOCH EINTRAGEN VON Aleksandra
 
 #### 4.3	Ergebnisse, Interpretation (Tests)
 Wie läuft das Programm?
-Welche Schwachstellen hat es?   (z.B. Programmlauf nicht flüssig)
+Welche Schwachstellen hat es?
+Schwachstellen: Fehlerhafte eingaben
  
 ### 5	Anleitung
 #### 5.1	Installationsanleitung
-Was muss alles installiert werden 
+
+* SerilogNewtonsoft.Json 
+    Version: 13.0.3
+* Serilog 
+    Version: 4.3.0
+* Serilog.Sinks.Console
+    Version: 6.0.0
+* Serilog.Sinks.File
+    Version: 7.0.0
+
 
 #### 5.2	Bedienungsanleitung
 Auf der Startseite kann ein gewünschtes Datum ausgewählt oder eine neue Trainingsgruppe erstellt werden. Beim erstellen einer neuer Trainingsgruppe muss der Titel, Start- und Enddatum, gewünschten Trainingstage und die dazugehörigen Personen angeben. Es gibt auch die Möglichkeit, eine neue Person der Anwendung hinzuzufügen. Wird auf der Startseite ein Datum ausgewählt, erscheinen alle Trainingsgruppen die an diesem Tag eingetragen wurden. Mit einem Doppelklick auf die Trainingsgruppe gelangt man zur Anwesenheit. Hier kann die Anwesenheit der Mitglieder durch zwei Button festgehalten werden. Wenn eine Person als Abwesend eingtragen wird, öffnet sich ein weiteres Fenster zur Angabe wieso die Person abwesend ist. Mit einem Button kann man auch zur Analyse-Seite gelangen. Dort sieht man grafisch wieviel mal eine Person an- oder abwesend war.
@@ -192,20 +203,13 @@ Auf der Startseite kann ein gewünschtes Datum ausgewählt oder eine neue Traini
 ### 6	Bekannte Bugs, Probleme
 Welche Bugs liegen noch vor? Warum konnten sie nicht behoben werden?
 
+Bei der AnwesenheitsPage werden die Button zur An- oder Abwesenheits-Angabe nur kurz Grün ode Rot danach wieder Grau.
+Nicht überall sind Fehlerbehandlungen eingebaut.
+
 
 
 
 
  
 ### 7	Erweiterungsmöglichkeiten
-Wenn wir noch mehr Zeit hätten, würden wir definitiv alle unsere Nice to haves implementieren.
- 
-### 8	Info
-
-•	Der Zeitplan ist wöchentlich auszufüllen!
-•	Endabgabe: dieses Dokument und Projektverzeichnis per Teams abgeben
-•	Projektbenotung: Neben dem Endprodukt werden vor allem der Projektfortgang, die Arbeitsweise und die Termintreue benotet (keine Projekte, die in der letzten Nacht fertiggestellt werden!) Der Code soll möglichst übersichtlich gehalten werden (Einsatz von Funktionen und Klassen).
-
-Viel Spaß und happy coding!
-
-   
+Wenn wir noch mehr Zeit hätten, würden wir definitiv alle unsere Nice to haves implementieren und die Fehlerbehandlungen verbessern.
