@@ -25,7 +25,7 @@ namespace PresenceLog_Sport
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
                 .WriteTo.Console()
-                .WriteTo.File("PresenceLog_Sport.log", rollingInterval: RollingInterval.Day)
+                .WriteTo.File("data/log/PresenceLog_Sport.log", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
             StartPage startPage = new StartPage();
