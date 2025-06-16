@@ -4,9 +4,8 @@
 ## Klasse: 2AHIF
 ## Jahr: 2025
 
-
-
-
+![Startseite](image.png)
+![Startseite](image-1.png)
 
 
 
@@ -14,8 +13,7 @@
 ## Betreuer: Lukas Diem, David Bechtold                                                                                    
 ## Kurzbeschreibung: Desktop Anwendung für Sportvereine zur Unterstützung der Anwesenheitskontrolle und Trainingsvorbereitung.
 
-![Startseite](image.png)
-![Startseite](image-1.png)
+
 
 
 
@@ -35,7 +33,6 @@
         5.2	Bedienungsanleitung
     6	Bekannte Bugs, Probleme
     7	Erweiterungsmöglichkeiten
-
 
 
 
@@ -105,9 +102,11 @@
 |  15.06.2025 | Serilog NuGet Packages installiert | Alina Bischof | 100% |
 |  15.06.2025 | Logging eingebaut | Alina Bischof | 100% |
 |  15.06.2025 | Dokumentation vervollständigt | Alina Bischof | 95% |
-|  15.06.2025 | Logging in die Unterordner data/log/ geändert | 100% |
-|  15.06.2025 | GIT-Repo mit Ordner strukturiert | 100% |
-
+|  15.06.2025 | Logging in die Unterordner data/log/ geändert| Alina Bischof | 100% |
+|  15.06.2025 | GIT-Repo mit Ordner strukturiert | Alina Bischof | 100% |
+|  16.06.2025 | AnwesenheitsPage Bug mit Begründung gelöst. | Alina Bischof | 100% |
+|  16.06.2025 | Gelöst dass keine Trainingsgruppen mit null gespeichert werden. | Alina Bischof | 100% |
+|  16.06.2025 | Dokumentation vervollständigt | Alina Bischof | 100% |
 
 
 
@@ -124,7 +123,7 @@ Desktop Anwendung für Sportvereine zur Unterstützung der Anwesenheitskontrolle
 ![AnalysePage Skizze](Analyse_skizze.jpg)
 
 #### 3.3. Funktionsumfang
-Auf der Startseite kann ein gewünschtes Datum ausgewählt oder eine neue Trainingsgruppe erstellt werden. Beim erstellen einer neuer Trainingsgruppe muss der Titel, Start- und Enddatum, gewünschten Trainingstage und die dazugehörigen Personen angeben. Es gibt auch die Möglichkeit, eine neue Person der Anwendung hinzuzufügen. Wird auf der Startseite ein Datum ausgewählt, erscheinen alle Trainingsgruppen die an diesem Tag eingetragen wurden. Mit einem Doppelklick auf die Trainingsgruppe gelangt man zur Anwesenheit. Hier kann die Anwesenheit der Mitglieder durch zwei Button festgehalten werden. Wenn eine Person als Abwesend eingtragen wird, öffnet sich ein weiteres Fenster zur Angabe wieso die Person abwesend ist. Mit einem Button kann man auch zur Analyse-Seite gelangen. Dort sieht man grafisch wieviel mal eine Person an- oder abwesend war.
+Auf der Startseite kann ein gewünschtes Datum ausgewählt oder eine neue Trainingsgruppe erstellt werden. Beim Erstellen einer neuer Trainingsgruppe müssen der Titel, Start- und Enddatum, gewünschten Trainingstage und die dazugehörigen Personen angeben. Es gibt auch die Möglichkeit, eine neue Person der Anwendung hinzuzufügen. Wird auf der Startseite ein Datum ausgewählt, erscheinen alle Trainingsgruppen, die an diesem Tag eingetragen wurden. Mit einem Doppelklick auf die Trainingsgruppe gelangt man zur Anwesenheit. Hier kann die Anwesenheit der Mitglieder durch zwei Button festgehalten werden. Wenn eine Person als Abwesend eingetragen wird, öffnet sich ein weiteres Fenster zur Angabe wieso die Person abwesend ist. Mit einem Button kann man auch zur Analyse-Seite gelangen. Dort sieht man grafisch wieviel mal eine Person an- oder abwesend war.
 
 Must haves: 100% erfüllt
 * Kalenderansicht → Datumauswahl → Trainingsgruppen 
@@ -146,6 +145,8 @@ Nice to haves: "Suchleiste für Datum" eigebaut
 * Timer / Stoppuhr
 * Hintergrundfarbe der Trainingsgruppe ändern
 
+
+
  
 ### 4	Pflichtenheft
 #### 4.1	Interner Programmaufbau (Programmlogik)
@@ -161,7 +162,7 @@ Unsere Klassen:
 
 ![Personen Klassen](Klassenstrukturen1.jpeg)
 ![Trainingsgruppen Klassen](Klassenstrukturen2.jpeg)
-Zu den anderen Klassen gibt es keine Skizzen da diese nicht geplant waren.
+Zu den anderen Klassen gibt es keine Skizzen da diese nicht von anfang an geplant waren.
 
 #### 4.2	Umsetzungsdetails
 Detaillierte Beschreibung der Umsetzung mit möglichen Fehlern und Lösungen
@@ -170,21 +171,21 @@ Detaillierte Beschreibung der Umsetzung mit möglichen Fehlern und Lösungen
 |  26.05.2025 |  kein Zugriff auf Properties | Properties öffentlich machen | Alina Bischof |
 |  26.05.2025 |  Property einmal Geburtsdatum und einmal Geburtstag benannt | alles auf Geburtsdatum geändert | Alina Bischof |
 |  04.06.2025 |  Home-Button (Bild) konnte nicht richtig hinzugefügt werden | Mit dem <Image Source="Bilder/name des bildes"> verändert und damit das Foto in dem Home-Button drinnen ist, tut man das zwischen <Button><Image Source.../></Button> hinzufügen. | Aleksandra Vidovic |  
-|  04.06.2025 |  Es öffnen sich die falschen Fenster, wenn man auf die button drückt, obwohl die richtigen fenster angegeben worden sind | | Aleksandra Vidovic |
-|  04.06.2025 |  Wenn ich einen Titel eingebe und diesen speichern möchte, erscheint es nicht im MainWindow Fenster |  | Aleksandra Vidovic |
+|  04.06.2025 |  Es öffnen sich die falschen Fenster, wenn man auf die button drückt, obwohl die richtigen fenster angegeben worden sind | Ich habe versucht, ein Fenster zu öffnen, anstatt eine Page. Mit ShowDialog öffnet man ein Fenster und keine Page. | Aleksandra Vidovic |
+|  04.06.2025 |  Wenn ich auf dem Button "Trainingsgruppe erstellen" drücke, dann öffnet sich das Fenster nicht wo der Titel etc. eingegeben wird.| Fehlerbehandlung programmieren, da DataSplit[3] kein gültiges JSON ist. | Aleksandra Vidovic |
 |  07.06.2025 |  Wenn mit dem DatePicker im MainWindow ein Datum ausgewählt wird, wo eigentlich eine Trainingsgruppe gespeichert ist, ist keine Trainingsgruppe vorhanden. | Mit debuggen habe ich herausgefunden, dass eine leere Wochentag-Liste aus der gespeicherten Datei geladen wird, weil System.Text.Json ignoriert Felder standardmäßig. Und die Wochentag-Liste war ein öffentliches Feld und kein Property. | Alina Bischof |
 |  07.06.2024 |  Sobald eine neue Trainingsgruppe erstellt wird, werden in der Json-Datei die Personen aus den anderen, schon gespeicherten Trainingsgruppen gelöscht. | Wir hatten zwei unterschiedliche Serializer/Deserializer eingebaut. Einmal den von Newtonsoft und einmal den von .NET. Das hat zu Problemen geführt. Jetzt wird immer Deserialize von Newtonsoft verwendet.| Alina Bischof |
 |  08.06.2024 |  Wenn auf den "+" Button geklickt wird um eine Person hinzuzufügen, wird in der .txt-Datei eine leere Person hinzugefügt. | Nicht vor, sonder in dem if wo man prüft ob das Fenster mit dem Button "Okay" oder "Abbrechen" beendet worden ist. | Alina Bischof |
-|  14.06.2025 |  Wird im BegründungWindow auf "Abbrechen" geklickt, wird das Eigegebene trotzdem gespeichert. | Man hat vergessen beim Abbrechen-Button Click DialogResult auf False zu setzten | Alina Bischof |
-
-
-BUGS NOCH EINTRAGEN VON Aleksandra 
+|  14.06.2025 |  Wird im BegründungWindow auf "Abbrechen" geklickt, wird das Eingegebene trotzdem gespeichert. | Man hat vergessen beim Abbrechen-Button Click DialogResult auf False zu setzten | Alina Bischof |
+|  16.06.2025 |  Die Farbe der Buttons auf der AnwesenheitsPage werden nicht mehr richtig angezeigt und die Begründung wird nicht richtig gespeichert. | Bei deiner AbAnwesenheit Klasse, war im Konstruktor kein Datum zu gesetzt. Bei der TextBox Begründung noch ein Loaded-Event inzugefügt. | Alina Bischof |
+|  16.06.2025 |  Wenn beim TrainingsgruppenErstellenWindow auf "Abbrechen" geklickt wird, wird in der JSON-Datei eine Trainingsgruppe mit allen Properties null gespeichert.| Die Zeile Code zum die neu erstellte Trainingsgruppe der Collection hinzuzufügen in das if hineingetan in dem geprüft wird ob das ShowDialogResult true ist. Weil es soll ja nur eine Trainingsgruppe erstellt werden, wenn auf "Okay" geklickt wurde. | Alina Bischof | 
 
 #### 4.3	Ergebnisse, Interpretation (Tests)
-Wie läuft das Programm?
-Welche Schwachstellen hat es?
 Schwachstellen: Fehlerhafte eingaben
  
+
+
+
 ### 5	Anleitung
 #### 5.1	Installationsanleitung
 
@@ -199,20 +200,15 @@ Schwachstellen: Fehlerhafte eingaben
 
 
 #### 5.2	Bedienungsanleitung
-Auf der Startseite kann ein gewünschtes Datum ausgewählt oder eine neue Trainingsgruppe erstellt werden. Beim erstellen einer neuer Trainingsgruppe muss der Titel, Start- und Enddatum, gewünschten Trainingstage und die dazugehörigen Personen angeben. Es gibt auch die Möglichkeit, eine neue Person der Anwendung hinzuzufügen. Wird auf der Startseite ein Datum ausgewählt, erscheinen alle Trainingsgruppen die an diesem Tag eingetragen wurden. Mit einem Doppelklick auf die Trainingsgruppe gelangt man zur Anwesenheit. Hier kann die Anwesenheit der Mitglieder durch zwei Button festgehalten werden. Wenn eine Person als Abwesend eingtragen wird, öffnet sich ein weiteres Fenster zur Angabe wieso die Person abwesend ist. Mit einem Button kann man auch zur Analyse-Seite gelangen. Dort sieht man grafisch wieviel mal eine Person an- oder abwesend war.
+Auf der Startseite kann ein gewünschtes Datum ausgewählt oder eine neue Trainingsgruppe erstellt werden. Beim erstellen einer neuer Trainingsgruppe muss der Titel, Start- und Enddatum, gewünschten Trainingstage und die dazugehörigen Personen angeben. Es gibt auch die Möglichkeit, eine neue Person der Anwendung hinzuzufügen. Wird auf der Startseite ein Datum ausgewählt, erscheinen alle Trainingsgruppen die an diesem Tag eingetragen wurden. Mit einem Doppelklick auf die Trainingsgruppe gelangt man zur Anwesenheit. Hier kann die Anwesenheit der Mitglieder durch zwei Button festgehalten werden. Wenn eine Person als Abwesend eingetragen wird, öffnet sich ein weiteres Fenster zur Angabe wieso die Person abwesend ist. Mit einem Button kann man auch zur Analyse-Seite gelangen. Dort sieht man grafisch wieviel mal eine Person an- oder abwesend war.
+
 
 
 
 ### 6	Bekannte Bugs, Probleme
-Welche Bugs liegen noch vor? Warum konnten sie nicht behoben werden?
-
-Bei der AnwesenheitsPage werden die Button zur An- oder Abwesenheits-Angabe nur kurz Grün ode Rot danach wieder Grau.
-Nicht überall sind Fehlerbehandlungen eingebaut.
-
-
-
+An einigen Stellen fehlen Fehlerbehandlungen. Diese wurden aus Zeitgründen nicht implementiert.
 
 
  
 ### 7	Erweiterungsmöglichkeiten
-Wenn wir noch mehr Zeit hätten, würden wir definitiv alle unsere Nice to haves implementieren und die Fehlerbehandlungen verbessern.
+Wenn wir mehr Zeit gehabt hätten, hätten wir auf jeden Fall alle Nice-to-Haves umgesetzt.

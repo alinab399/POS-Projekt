@@ -56,7 +56,26 @@ namespace PresenceLog_Sport
             Log.Logger.Information("Anwesend-Button auf Grün gesetzt");
 
             Person person = (Person)stackPanel.DataContext;
-            person.Anwesenheiten.Add(new AbAnwesenheit(true, "War anwesend", AusgewaehltesDatum));
+
+            AbAnwesenheit vorhandenerEintrag = null;
+            foreach (AbAnwesenheit eintrag in person.Anwesenheiten)
+            {
+                if (eintrag.Datum.Date == AusgewaehltesDatum.Date)
+                {
+                    vorhandenerEintrag = eintrag;
+                    break;
+                }
+            }
+
+            if (vorhandenerEintrag != null)
+            {
+                vorhandenerEintrag.Status = true;
+                vorhandenerEintrag.Begruendung = "War anwesend";
+            }
+            else
+            {
+                person.Anwesenheiten.Add(new AbAnwesenheit(true, "War anwesend", AusgewaehltesDatum));
+            }
 
         }
 
@@ -76,18 +95,47 @@ namespace PresenceLog_Sport
 
             Person person = (Person)stackPanel.DataContext;
 
+            AbAnwesenheit vorhandenerEintrag = null;
+            foreach (AbAnwesenheit eintrag in person.Anwesenheiten)
+            {
+                if (eintrag.Datum.Date == AusgewaehltesDatum.Date)
+                {
+                    vorhandenerEintrag = eintrag;
+                    break;
+                }
+            }
+
             AbwesendBegruendung abwesendBegruendungWindow = new AbwesendBegruendung();
             if (abwesendBegruendungWindow.ShowDialog() == true)
             {
-                person.Anwesenheiten.Add(new AbAnwesenheit(false, abwesendBegruendungWindow.Begruendung, AusgewaehltesDatum));
+                if (vorhandenerEintrag != null)
+                {
+                    vorhandenerEintrag.Status = false;
+                    vorhandenerEintrag.Begruendung = abwesendBegruendungWindow.Begruendung;
+                }
+                else
+                {
+                    person.Anwesenheiten.Add(new AbAnwesenheit(false, abwesendBegruendungWindow.Begruendung, AusgewaehltesDatum));
+                }
+
                 Log.Logger.Information("Begründung eingegeben und gespeichert");
             }
             else
             {
-                person.Anwesenheiten.Add(new AbAnwesenheit(false, "War abwesend", AusgewaehltesDatum));
+                if (vorhandenerEintrag != null)
+                {
+                    vorhandenerEintrag.Status = false;
+                    vorhandenerEintrag.Begruendung = "War abwesend";
+                }
+                else
+                {
+                    person.Anwesenheiten.Add(new AbAnwesenheit(false, "War abwesend", AusgewaehltesDatum));
+                }
+
                 Log.Logger.Information("Keine Begründung eingegeben und stattdessen 'War abwesend' gespeichert");
             }
 
+            // Aktualisieren aller Felder
             CollectionViewSource.GetDefaultView(ListViewAnwesenheit.ItemsSource).Refresh();
             Log.Logger.Information("ListViewAnwesenheit upgedatet");
         }
@@ -117,7 +165,7 @@ namespace PresenceLog_Sport
 
             foreach (AbAnwesenheit eintrag in person.Anwesenheiten)
             {
-                if (eintrag.Datum == AusgewaehltesDatum)
+                if (eintrag.Datum == AusgewaehltesDatum && eintrag.Status == true)
                 {
                     loadedButton.Background = Brushes.ForestGreen;
                     Log.Debug("AbwesendButton wurde auf die Farbe Grün gesetzt");
@@ -135,10 +183,24 @@ namespace PresenceLog_Sport
 
             foreach (AbAnwesenheit eintrag in person.Anwesenheiten)
             {
-                if (eintrag.Datum == AusgewaehltesDatum)
+                if (eintrag.Datum == AusgewaehltesDatum && eintrag.Status == false)
                 {
                     loadedButton.Background = Brushes.IndianRed;
                     Log.Debug("AbwesendButton wurde auf die Farbe Rot gesetzt");
+                }
+            }
+        }
+
+        private void TextBlockAbwesenheitBegruendung_Loaded(object sender, RoutedEventArgs e)
+        {
+            TextBlock textBlock = (TextBlock)sender;
+            Person person = (Person)textBlock.DataContext;
+
+            foreach (AbAnwesenheit eintrag in person.Anwesenheiten)
+            {
+                if (eintrag.Datum == AusgewaehltesDatum)
+                {
+                    textBlock.Text = eintrag.Begruendung;
                 }
             }
         }

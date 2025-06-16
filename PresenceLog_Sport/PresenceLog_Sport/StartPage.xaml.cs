@@ -46,12 +46,11 @@ namespace PresenceLog_Sport
                 trainingsgruppe.DatumErstesTraining = window.Anfangsdatum;
                 trainingsgruppe.DatumLetztesTraining = window.Enddatum;
                 trainingsgruppe.Mitglieder = window.AusgewaehltePersonen;
+                trainingsgruppeCollection.TrainingsgruppenHinzufuegen(trainingsgruppe);
+                Log.Logger.Information("Neue Trainingsgruppe wurde der TrainingsgruppeCollection hinzugefügt");
             }
 
-            trainingsgruppeCollection.TrainingsgruppenHinzufuegen(trainingsgruppe);
-            Log.Logger.Information("Neue Trainingsgruppe wurde der TrainingsgruppeCollection hinzugefügt");
             trainingsgruppeCollection.Speichern("data/gespeicherteTrainingsgruppen.json");
-
         }
 
         private void DatePickerTraining_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

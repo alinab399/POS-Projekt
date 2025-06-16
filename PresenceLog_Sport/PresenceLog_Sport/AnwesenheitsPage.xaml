@@ -79,7 +79,7 @@
                     <GridViewColumn Header="Begründung" Width="200">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=LetzteAnwesenheit}" TextAlignment="Center"/>
+                                <TextBlock x:Name="TextBlockAbwesenheitBegruendung" Text="{Binding Path=LetzteAnwesenheit}" TextAlignment="Center" Loaded="TextBlockAbwesenheitBegruendung_Loaded"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
